@@ -1,0 +1,273 @@
+{
+  "run_id": "2026-10-13-manuscript",
+  "time_utc": "2026-10-13T13:06:38.718633+00:00",
+  "Git_parent": "7b8393c398f392f0388cb72027e6201eed9fe657",
+  "Git_new_commit": false,
+  "Git_worktree_preexisting_changes": true,
+  "source_files": [
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-24-disease-side-v3.5-g6-input-audit\\registries\\G1_microglia_signed_sender_244.tsv.gz",
+      "bytes": 16276,
+      "sha256": "267bbf17bb41235002c8d093f6938ae08b262c768513ca04bfaf19396deaf30e"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-20-disease-side-v3.2-g3-model-scoped\\tables\\D2_model_temporal_evidence.tsv",
+      "bytes": 1147,
+      "sha256": "870bd036ab49972fe032814b295b2e30388d2a549713463cf52483b2b90ec72c"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-20-disease-side-v3.2-g4\\tables\\D2_G4_RNA_sample_level_module_effects.tsv",
+      "bytes": 2867,
+      "sha256": "7ff18565ede81a68ae488863c0835212377e345f94dc2e8406733f55a0978f58"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-22-disease-side-v3.4-g5\\tables\\GSE261698_primary_module_effects.tsv",
+      "bytes": 2380,
+      "sha256": "1c7831cbe589dc63031d63508b6348516153d353b9c4fc6ec11b1787515e0db6"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-04-g1-g5-docking-reuse\\E1成分靶点去重清单.csv",
+      "bytes": 40440,
+      "sha256": "330bceb6f2b742b6eef50da081208644fee1008c9386dd917156b4a986c39d8d"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-04-expanded-docking-20\\20靶点分析汇总.csv",
+      "bytes": 2956,
+      "sha256": "1b55f23f2b77a5035ff2966872cd652d4c4b67af2a908c4052f4a486d7990841"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-11-virtual-ko-scientific-review-035\\target_verification_conclusions.tsv",
+      "bytes": 298523,
+      "sha256": "4b8626a0137029147e6c222fe00bd36067f4a51bdf81430ea4e739ecadb42ca5"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-11-virtual-ko-matching-correction-036\\functional_response_comparison.tsv",
+      "bytes": 11652513,
+      "sha256": "aab60c49149649834be2997efc28f04f44522548fd32b2e339c91cf2c91463b6"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\README.md",
+      "bytes": 5482,
+      "sha256": "d1dd8b420d243472e48656967e61f529c13b518f5660e21d3df3531d0f3e5a51"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\params.yaml",
+      "bytes": 10330,
+      "sha256": "28a27ee280f8c5eaf0d7d0d040a6a64547a3e543bd5e7a83fb4121c69d5a5544"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\environment.yml",
+      "bytes": 358,
+      "sha256": "8151d707a38b0de22e5647c9b4349b52995d0d564ff2dffae996b206cdf32b89"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\requirements.txt",
+      "bytes": 195,
+      "sha256": "c15e141854f2533006fd2f1c4ea5fe960f5a389eec833a75f8e7af1142174780"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\docs\\protocol\\disease_side_latest.md",
+      "bytes": 5431,
+      "sha256": "35053b93143c1246238df40cca749cf7d3603eb413d30e2c86ee6a7f7570e82a"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\archive\\2026-09-20-disease-side-v3.1-g2-stop-historical\\execution_report.md",
+      "bytes": 2783,
+      "sha256": "a1b3d810acf3bbf7c52b061d565a40652b1c4ea9aab9b1b4bd18824b61730757"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\archive\\2026-09-20-disease-side-v3.1-g2-stop-historical\\meta\\random_effects_meta_summary.tsv",
+      "bytes": 2612719,
+      "sha256": "e8aaab014b9b3ee1c057207a704f08835e1db1fe1088f540a089aca50a03b206"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\archive\\2026-09-20-disease-side-v3.1-g2-stop-historical\\meta\\leave_one_cohort_out.tsv",
+      "bytes": 8898889,
+      "sha256": "bf18a950349fa175c10557bb6b51aef712e749145b388400720a8b264a0515ce"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-20-disease-side-v3.2-g2\\execution_report.md",
+      "bytes": 2712,
+      "sha256": "94e4b9526aa7c96c57c09a76ec62901c66ecccd962c8391f854a8f027d76f039"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-20-disease-side-v3.2-g2\\g2_decision.json",
+      "bytes": 4472,
+      "sha256": "0f028008c02df16f6eef67a2f409eaf291b8f16b7033037946f2ed1f315ba79a"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-30-fixed-formula-drug-prior-020\\report.md",
+      "bytes": 7165,
+      "sha256": "0f9071c73fcbd3a78f8c4df8a36904b0c0fc758ab1d0ad01a0fb9d694156a8e2"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-09-30-fixed-formula-admet-recovery-021\\formula_admet_predictions.tsv",
+      "bytes": 285292,
+      "sha256": "831480c0555139b76305ce66de64e867f1f0c6d535a65d8bbb4362045b603bf1"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-03-fixed-formula-target-supplement-024-continuation\\report.md",
+      "bytes": 2604,
+      "sha256": "6657689654e6b0df46a3f700e13c908a34049834c08a89d6e7c58299eeec6b18"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-03-stage-a-mechanism-030\\report.md",
+      "bytes": 9536,
+      "sha256": "5cd6fa0a837438791939402de1f2970c3878b773292966cc8831618e9ec31b8b"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-03-stage-a-mechanism-030\\result_summary.json",
+      "bytes": 243,
+      "sha256": "7582643e50f6305b13ed45c43ac2fdb1efbf6e68a150cb83479e0edf8161cd93"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-03-stage-a-mechanism-030\\GSEA_sensitivity_comparison.tsv",
+      "bytes": 1022248,
+      "sha256": "256c98a113b44014313d6591ada3fcd4ce0bf405e6ec984112de28de54d1c1ee"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-04-stage-b-tcmsp-docking-032\\README.md",
+      "bytes": 646,
+      "sha256": "163e54ba6352872cab71be583c8a37990e4784c752e070038a41f3c03b4538a0"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-04-expanded-docking-20\\20靶点对接分析报告.md",
+      "bytes": 10847,
+      "sha256": "0c67928ec87079d81e06d9fe5f835ce9bbbbdc03b30b942e1e84a18973302d15"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-11-virtual-ko-scientific-review-035\\最终科学复核报告.md",
+      "bytes": 12108,
+      "sha256": "055a83dda469c2b98cc5a091f6688f846aff9c4a1fd4fef61bc6fc9f34b92c56"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-11-virtual-ko-matching-correction-036\\最小修正报告.md",
+      "bytes": 3797,
+      "sha256": "09b5c7c3f793656bd5425c22dfaf3de0ae811a9d20b118cbb4d0385ce15a8fdd"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-11-virtual-ko-matching-correction-036\\final_status.json",
+      "bytes": 769,
+      "sha256": "836171c84e2f779116d64840ceb8147f3ed883b605f9a29620a365c4200648c6"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\results\\2026-10-11-virtual-ko-matching-correction-036\\completion_review.json",
+      "bytes": 882,
+      "sha256": "11bda8bc9a60e7c78b92e73db7fd1161c6fbbbd698ac1b35aff0df287c149a39"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\docs\\reports\\2026-10-13-matching-correction-036-completion-review.md",
+      "bytes": 2341,
+      "sha256": "aa9fa3c28100e28f503f4138316eb135301d50a19b524256370936d7e0d62087"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\src\\25_run_g1_v3_1.R",
+      "bytes": 16799,
+      "sha256": "6f590f0d98fa46d8e0954208a13465ae63bc81d9504e5f77c79ec77b11f85843"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\src\\30_run_g3_v3_2.py",
+      "bytes": 21861,
+      "sha256": "e504517e336874747accd54138da827b7fe9c0b816efe94d9013ea3898dc5820"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\src\\32_run_g4_v3_2.py",
+      "bytes": 16855,
+      "sha256": "55d6744daf17589280e4db66b5b3f5396fd1a2ace995bbfe6d3c2e92e9e296de"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\src\\47_run_g5_v3_4.R",
+      "bytes": 26254,
+      "sha256": "624f627e016cec1d9cbc45287727fa0829bdefcce0167c1a6305c0870c9cb725"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\src\\108_process_fixed_formula_prior_019.py",
+      "bytes": 45562,
+      "sha256": "938000d66b047c98d166f8acdb57fd7fb9227a6d95a6e5c8bb839953a2c556d7"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\configs\\g5_v3.4_execution.yaml",
+      "bytes": 3560,
+      "sha256": "c1627d2a23d4efffbab8d23b484aec7b6c4fd113aeb7370fc8eb704865837a1c"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\configs\\virtual_ko_matching_correction_036.yaml",
+      "bytes": 1355,
+      "sha256": "316e7dd07e4b68ad495e34fb2822f6ef4f770a6ce212f655eacff927c3fc9076"
+    },
+    {
+      "path": "F:\\TCM select\\config\\pipeline_policy.json",
+      "bytes": 10325,
+      "sha256": "276cc879b5f840e660ad0b27705cdfed996483ff50ab5eb9eeb50b3e653790b4"
+    },
+    {
+      "path": "F:\\TCM select\\code\\6_ADMET_filter.py",
+      "bytes": 15335,
+      "sha256": "2a0c4ab5d0a9a35796c3b6adad64e8807daaeba3cea388f26184059cbcdc2d7e"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\docs\\manuscript\\manuscript_en.md",
+      "bytes": 53678,
+      "sha256": "6328e805bca2b1d3b19fb6bd07919db4f17236a57fce97a73e5a36949e427c85"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\docs\\manuscript\\editorial_audit_zh.md",
+      "bytes": 7375,
+      "sha256": "50e83c89dafd7fef359d897c5fb2fcd5a50f9e3cea9fc09a8e429835e56f8712"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\docs\\manuscript\\claim_evidence.tsv",
+      "bytes": 4843,
+      "sha256": "357990ab207e28e0950211275866709b1ca2582bca9e4b7be04f498954509249"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\configs\\manuscript_20261013.json",
+      "bytes": 884,
+      "sha256": "054ebaf334e9e582e73918652c8bb804055d76f0de70278e5b5dc89bbd311980"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\src\\build_manuscript_20261013.py",
+      "bytes": 21133,
+      "sha256": "740f1f420933eff22194b393f6e01c0cfb9fa4bf31c68dbca4ecaab8e55b4dbf"
+    },
+    {
+      "path": "F:\\益智地黄汤_小胶质_表观遗传_免疫微环境\\docs\\decisions\\2026-10-13-manuscript-framing.md",
+      "bytes": 1852,
+      "sha256": "9bd0d45da7843709f03d482aa9611885c42a0cadaf2c0e6b9c8ff81ef43da6ab"
+    },
+    {
+      "path": "F:\\BaiduNetdiskDownload\\bbaf623.pdf",
+      "bytes": 2471650,
+      "sha256": "8e4d5366e0d2616d10d4c4d87d0e7221785fd8c73e8b2c5c5aec02f1c3cc4f02"
+    }
+  ],
+  "reference_number_map_at_build": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "11": 11,
+    "12": 12,
+    "13": 13,
+    "14": 14,
+    "15": 15,
+    "16": 16,
+    "17": 17,
+    "18": 18,
+    "19": 19,
+    "20": 20,
+    "21": 21,
+    "22": 22,
+    "23": 23
+  },
+  "ReportLab": "4.4.9",
+  "science_rerun": false,
+  "compute": "local document construction; web only for reference verification",
+  "strict_cross_machine_reproduction": false
+}

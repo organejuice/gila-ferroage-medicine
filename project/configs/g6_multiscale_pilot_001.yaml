@@ -1,0 +1,30 @@
+id: G6-MS-2026-09-26-001
+status: effect_blind_diagnostic_only
+parent_protocol: docs/protocol/disease_side_v3.6_G6_GSE233208.md
+historical_result: G6_v3.5_GSE269906_NOT_EXECUTABLE
+candidate_primary: GSE269906_BA10
+source_layer: tissue_GEF_geneExp_bin1
+donor_sections: 12
+bin_width_DNB: [50, 110]
+DNB_pitch_um: 0.5
+global_grid_origin_DNB: [1, 1]
+section_mask: valid_CellBin_polygon_tile_intersection
+identity_input: centroid_supported_subset_of_masked_bins
+detected_feature_screen: 400
+detected_feature_screen_role: cross_scale_diagnostic_not_new_pass_rule
+reference: GSE174367_7_broad_types_conservatively_exclude_6_candidate_overlap_donors
+reference_crosswalk_status: unresolved
+identity_method: RCTD_2.2.1_full_mode_both_scales
+identity_fit_exclude: [G1_sender_244, G5_human_orthologs, holdout_MG_ASC_markers]
+MG_weight_0_5_role: diagnostic_comparability_only
+scale_selection: apply_locked_addendum_002_per_scale; independent_protocol_review_still_required
+gate_addendum: docs/decisions/2026-09-26-g6-multiscale-gates-addendum-002.md
+minimum_supported_bins_per_donor_lineage: 20
+minimum_positive_holdout_marker_correlations_donors_per_lineage: 10
+minimum_disjoint_holdout_markers_per_lineage: 3
+G1_coverage: {minimum_genes: 61, minimum_bin_detection_prevalence: 0.01, minimum_donors: 10}
+G5_module_coverage: {minimum_gene_fraction: 0.25, minimum_bin_detection_prevalence: 0.01, minimum_donors: 10}
+diagnosis_access: forbidden_during_pilot
+group_effects: forbidden
+spatial_interpretation: bin_scale_mixed_cell_coenrichment_proxy
+historical_outputs_write_protected: true

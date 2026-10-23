@@ -1,0 +1,91 @@
+schema_version: 1
+run:
+  id: G6-GSE269906-REASSESS-2026-09-28-001
+  date: 2026-09-28
+  status: EFFECT_BLIND_REASSESSMENT_NOT_EXECUTABLE
+  requested_by_user: true
+  parent_plan: G6-PLAN-2026-09-27-005
+  amendment: docs/protocol/2026-09-28-g6-gse269906-reopen-amendment-006.md
+  decision_log: docs/decisions/2026-09-28-g6-gse269906-reassessment-001.md
+  config: configs/g6_gse269906_plan005_reassessment_001.yaml
+  parent_freeze_manifest: docs/protocol/g6_staged_plan_005.sha256
+scope:
+  analysis: effect_blind_dataset_and_measurement_eligibility_reassessment
+  diagnosis_group_effects: false
+  diagnosis_linked_cell_or_spatial_analysis: false
+  g6_pass_allowed: false
+  use_existing_blind_outputs_only: true
+  refit_rctd_or_recluster: false
+  alter_frozen_G1_G5: false
+  lower_identity_or_spatial_thresholds: false
+  raw_data_read_only: true
+dataset:
+  accession: GSE269906
+  n_donors: 12
+  reported_AD_donors: 6
+  reported_control_donors: 6
+  region: BA10_prefrontal_cortex
+  platform: Stereo_seq_CellBin
+  raw_cellbin_dir: data/raw/GSE269906_cellbin
+  raw_tissue_dir: data/raw/GSE269906_tissue
+  donor_manifest: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/GSE269906_donor_section_manifest.tsv
+  source_metadata_files:
+    - data/raw/G6_source_metadata_2026-09-23/GSE269906_family.soft.gz
+    - data/raw/G6_source_metadata_2026-09-23/GSE269906_Supplementary_Data1.xlsx
+  raw_hash_manifest: results/2026-09-27-g6-next-feasibility/cellbin/input_sha256_manifest.tsv
+  existing_blind_result_dir: results/2026-09-27-g6-next-feasibility
+protocol_scope:
+  plan005_required_region: hippocampus
+  this_run_region: BA10_prefrontal_cortex
+  role: out_of_region_technical_feasibility_only
+  can_test_plan005_hippocampal_estimand: false
+  can_serve_as_same_hippocampal_region_validation: false
+frozen_assets:
+  G1:
+    registry: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz
+    expected_sha256: 267bbf17bb41235002c8d093f6938ae08b262c768513ca04bfaf19396deaf30e
+    genes: 244
+  G5:
+    registry: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G5_receiver_one_to_one_human_ortholog_registry.tsv.gz
+    expected_sha256: c6138fcc824a9848fd84931a365379d805142c3d7098607234db75b37ceea8c1
+    frozen_primary_modules:
+      - M3_SASP_Senescence
+      - M5_Iron_Uptake
+      - M5_Iron_Export
+      - M6_LPO_ACSL4
+      - M7_FerroAging_Author
+    genes_and_directions_unchanged: true
+existing_diagnostic_inputs:
+  identity: results/2026-09-27-g6-next-feasibility/cellbin/identity_marker_gate.tsv
+  g1_by_donor: results/2026-09-27-g6-next-feasibility/cellbin/G1_coverage_gate_by_donor.tsv
+  g5_by_module: results/2026-09-27-g6-next-feasibility/cellbin/G5_coverage_gate_by_module.tsv
+  neighborhood: results/2026-09-27-g6-next-feasibility/cellbin/neighborhood_geometric_gate.tsv
+  cellbin_qc: results/2026-09-27-g6-next-feasibility/cellbin/cellbin_nucleus_counts_qc.tsv
+  cellbin_qc_after_150: results/2026-09-27-g6-next-feasibility/cellbin/cellbin_nucleus_qc_after_150_genes.tsv
+  rctd_reference_status: results/2026-09-27-g6-next-feasibility/numi/mechanical_gate_by_donor.tsv
+threshold_policy:
+  source_panel_61_of_244_is_hard_exclusion: false
+  legacy_G5_25_percent_is_hard_exclusion: false
+  identity_threshold_status: pending_blind_calibration_in_plan005
+  neighborhood_scale_status: pending_blind_calibration_in_plan005
+  do_not_import_old_numeric_cutoffs_as_plan005_thresholds: true
+release_gates:
+  input_and_frozen_asset_hashes_must_match: true
+  validated_MG_and_ASC_identity_required_for_state_or_neighborhood: true
+  auditable_tissue_mask_required: true
+  separate_numbered_effect_execution_lock_required: true
+  independent_same_hippocampal_region_validation_required_for_g6_pass: true
+outputs:
+  directory: results/2026-09-28-g6-gse269906-plan005-reassessment
+  report: results/2026-09-28-g6-gse269906-plan005-reassessment/reassessment_report.md
+  gates: results/2026-09-28-g6-gse269906-plan005-reassessment/gate_register.tsv
+  raw_hash_verification: results/2026-09-28-g6-gse269906-plan005-reassessment/raw_hash_verification.tsv
+  source_design_audit: results/2026-09-28-g6-gse269906-plan005-reassessment/source_design_audit.tsv
+  audit_json: results/2026-09-28-g6-gse269906-plan005-reassessment/audit.json
+  artifact_manifest: results/2026-09-28-g6-gse269906-plan005-reassessment/artifact_sha256.tsv
+runner:
+  script: src/100_reassess_g6_gse269906_plan005.py
+  command: D:/conda/python.exe src/100_reassess_g6_gse269906_plan005.py .
+  dependencies: [Python_3.14.0, PyYAML_6.0.3, openpyxl_3.1.5]
+  network: false
+  large_download: false

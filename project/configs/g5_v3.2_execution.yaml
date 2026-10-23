@@ -1,0 +1,36 @@
+run_id: 2026-09-20-disease-side-v3.2-g5
+protocol: docs/protocol/disease_side_v3.2_latest_frozen.md
+superseded_run: results/2026-09-20-disease-side-v3.2-g4
+
+inputs:
+  g4_decision: results/2026-09-20-disease-side-v3.2-g4/g4_decision.json
+  d3_counts: data/interim/D3_pseudobulk_counts_astrocyte.tsv.gz
+  d3_metadata: data/interim/D3_pseudobulk_metadata_astrocyte.tsv
+  d7_counts: data/interim/D7_GSE148822/D7_pseudobulk_counts_astrocyte.tsv.gz
+  d7_metadata: data/interim/D7_GSE148822/D7_pseudobulk_metadata_astrocyte.tsv
+  d8_counts: data/interim/D8_GSE174367/D8_pseudobulk_counts_astrocyte.tsv.gz
+  d8_metadata: data/interim/D8_GSE174367/D8_pseudobulk_metadata_astrocyte.tsv
+  d5_reference: results/archive/2026-09-20-pre-v3-freeze/results/tables/D5_ferroaging_reference.tsv
+
+analysis:
+  biological_unit: donor_within_region_and_celltype
+  region_strategy: region_stratified_then_random_effects_meta_analysis
+  minimum_cells_per_donor_region: 20
+  covariates: age_sex_RIN_if_complete_and_batch_for_D8_if_estimable
+  normalization: edgeR_TMM_then_limma_voom
+  fdr: BH_FDR
+  fdr_threshold: 0.05
+  response_modules:
+    - M3_SASP_Senescence
+    - M5_Iron_Uptake
+    - M5_Iron_Storage
+    - M5_Iron_Export
+    - M5_Ferritinophagy
+    - M6_LPO_ACSL4
+    - M7_FerroAging_Author
+  gate:
+    all_primary_cohorts_estimable: true
+    minimum_concordant_cohorts: 2
+    random_effects_meta_fdr_max: 0.05
+    leave_one_cohort_out_direction_stable: true
+    sensitivity_cohort_can_rescue_failure: false

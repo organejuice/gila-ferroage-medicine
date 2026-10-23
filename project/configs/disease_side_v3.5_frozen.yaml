@@ -1,0 +1,496 @@
+protocol:
+  name: AD disease-side mechanism-chain protocol
+  version: "3.5"
+  status: LATEST_FROZEN
+  frozen_on: "2026-09-23"
+  canonical_document: docs/protocol/disease_side_v3.5_latest_frozen.md
+  supersedes_for_future_work: docs/protocol/disease_side_v3.4_latest_frozen.md
+  preserves_completed_v2_results: true
+  preserves_completed_v3_0_results: true
+  preserves_v3_1_results: true
+  preserves_v3_2_results: true
+  preserves_v3_3_results: true
+  preserves_v3_4_results: true
+  execution_status: G5_PASS_MODEL_SCOPED_G6_NOT_RUN
+  amendment_scope: G6_dataset_roles_and_conditional_analysis_plan_only
+
+scope:
+  disease_side_only: true
+  drug_perturbation_data: false
+  drug_ranking: false
+  treatment_efficacy_claims: false
+  drug_side_interface_only: true
+  primary_contrast: AD_minus_normal_control
+  excluded_primary_diagnoses:
+    - MCI
+    - suspected_AD
+    - CTR_plus
+    - pathological_aging
+    - PART
+    - intermediate_or_ambiguous
+  fixed_primary_brain_region: false
+  primary_cell_type: Microglia
+  downstream_cell_type: Astrocyte
+  downstream_failure_policy: stop
+
+g1_cohort_roles:
+  discovery:
+    dataset_id: D3_GSE160936
+    regions: [EC, SSC]
+    current_strict_donors_per_region: {AD: 6, Control: 6}
+    contributes_to_hard_gate: true
+  primary_validation:
+    dataset_id: D7_GSE148822
+    regions: [OC, OTC]
+    current_strict_donors_per_region: {AD: 10, Control: 5}
+    excluded_group: CTR_plus
+    contributes_to_hard_gate: true
+  secondary_validation:
+    dataset_id: D8_GSE174367
+    regions: [PFC]
+    current_strict_donors: {AD: 11, Control: 7}
+    current_covariate_complete_donors: 17
+    contributes_to_hard_gate: true
+  sensitivity:
+    dataset_id: D9_GSE263468_BA9
+    regions: [BA9]
+    current_strict_donors: {AD: 28, Control: 5}
+    excluded_group: PART
+    contributes_to_hard_gate: false
+    may_replace_primary_without_new_version: false
+  exploratory_only:
+    dataset_id: D6_GSE214979
+    reason: no_region_has_at_least_2_AD_and_2_control_donors
+    contributes_to_hard_gate: false
+  non_independent_sensitivity:
+    dataset_id: GSE264648
+    detectable_overlap_with: D3_GSE160936
+    overlapping_donors: 11
+    total_donors: 17
+    contributes_to_hard_gate: false
+
+input_policy:
+  prefer_public_processed_counts: true
+  accepted_G1_processed_formats:
+    - Cell_Ranger_MTX
+    - Cell_Ranger_H5
+    - auditable_H5AD_with_integer_count_layer
+  accepted_G5_processed_formats:
+    - integer_gene_count_matrix
+    - source_confirmed_nonnegative_expected_or_estimated_gene_count_matrix
+    - audited_normalized_expression_matrix_for_validation
+    - processed_microarray_expression_for_validation
+  fastq_or_sra_required_for_G1: false
+  fastq_or_sra_required_for_G5: false
+  raw_reprocessing_trigger:
+    - processed_file_integrity_failure
+    - donor_or_animal_mapping_failure
+    - non_count_expression_only_for_primary
+    - unauditable_cell_annotation
+  raw_data_read_only: true
+  selective_sample_download_allowed: true
+
+mechanism_chain:
+  - AD
+  - microglial_disease_state
+  - glycolysis_lactate_alteration
+  - H4K12la_dysregulation
+  - senescence_SASP
+  - iron_homeostasis_lipid_peroxidation_ferro_aging
+  - astrocyte_response
+  - spatial_cell_communication
+
+evidence_hierarchy:
+  priority:
+    - human_AD_brain
+    - human_iPSC_glial_model
+    - AD_animal_model
+  animal_models_allowed:
+    - amyloid
+    - tau
+    - mixed_pathology
+  analyze_animal_models_separately: true
+  allowed_causal_evidence:
+    - GWAS
+    - eQTL
+    - sQTL
+    - colocalization
+    - Mendelian_randomization
+    - computational_mediation
+    - causal_networks
+    - non_drug_CRISPR_Perturb_seq
+
+evidence_tiers:
+  A: public_raw_reanalyzable
+  B: public_processed_or_complete_supplementary
+  C: publication_quantitative_result_or_figure
+  tier_B_processed_counts_can_fully_support_G1: true
+  tier_B_processed_counts_can_fully_support_G5_model_route: true
+  tier_C_can_contribute_to_gate: true
+  tier_C_single_study_can_pass_gate: false
+  h4k12la_minimum_auditable_direct_tier: B
+
+analysis:
+  biological_unit: donor_or_animal_within_region_and_celltype
+  region_strategy: stratified_then_random_effects_meta_analysis_when_multiple_regions_exist
+  minimum_QC_passing_microglia_per_donor_region: 20
+  cross_species_pooling: false
+  multiple_testing: BH_FDR
+  fdr_threshold: 0.05
+  microglia_primary_model: donor_level_pseudobulk
+  frozen_modules_for_confirmatory_analysis: true
+  newly_learned_states_are_exploratory: true
+  g2_predeclared_target_sets_required: true
+  g2_whole_gene_spearman_role: exploratory_only
+  g2_global_sign_concordance_role: exploratory_only
+  g2_human_translation_can_be_unresolved_without_failing_model_scoped_gate: true
+  g5_normalization: edgeR_TMM_then_limma_voom
+  g5_primary_input_mode: source_confirmed_nonnegative_count_like_matrix
+  g5_fractional_values_allowed: true
+  g5_rounding_or_integer_coercion_prohibited: true
+  g5_DESeq2_prohibited_for_primary_matrix: true
+  g5_low_expression_filter: edgeR_filterByExpr_before_voom
+  g5_duplicate_gene_symbol_rule: sum_count_like_values_before_normalization
+  g5_module_score: arithmetic_mean_of_voom_logCPM_for_present_module_genes
+  g5_minimum_present_genes_per_module: 2
+  g5_primary_estimand: average_APP_PS1_minus_WT_effect_across_24_hour_cycle
+  g5_primary_formula: "module_score ~ disease + sin_time + cos_time + batch + sex"
+  g5_primary_coefficient: diseaseAPP_PS1
+  g5_frozen_modules:
+    - M3_SASP_Senescence
+    - M5_Iron_Uptake
+    - M5_Iron_Storage
+    - M5_Iron_Export
+    - M5_Ferritinophagy
+    - M6_LPO_ACSL4
+    - M7_FerroAging_Author
+  required_sensitivity_analyses:
+    - leave_one_primary_cohort_out
+    - sex
+    - age
+    - APOE_when_available
+    - platform
+    - brain_region
+    - cell_proportion
+    - incomplete_covariate_donor_exclusion
+    - animal_model_type
+    - influential_dataset
+    - G5_disease_by_circular_time
+    - G5_AM_PM_time_bins
+    - G5_leave_one_time_point_out
+    - G5_leave_one_batch_out
+    - G5_animal_influence
+
+g5_dataset_roles:
+  primary_hard_gate:
+    dataset_id: GSE261698
+    model: APP_PS1_21
+    contrast: six_month_APP_PS1_21_minus_WT
+    species: Mus_musculus
+    cell_type: astrocyte
+    assay: AstroTRAP_RNA_seq
+    region: cerebral_cortex
+    biological_unit: animal
+    n_model: 24
+    n_control: 24
+    time_points: 12
+    time_interval_hours: 2
+    batches: 2
+    processed_count_files:
+      - GSE261698_APP_Astrocyte_Counts.csv.gz
+      - GSE261698_WT_Astrocyte_Counts.csv.gz
+    source_matrix_value_type: nonnegative_expected_or_estimated_gene_counts
+    fractional_values_allowed: true
+    rounding_prohibited: true
+    contributes_to_hard_gate: true
+  independent_animal_validation:
+    dataset_id: GSE291239
+    model: AppNL_G_F
+    contrast: forty_week_AppNL_G_F_minus_WT
+    cell_type: FACS_sorted_astrocyte
+    n_model: 5
+    n_control: 4
+    sex_adjustment_if_estimable: true
+    contributes_to_hard_gate: false
+    can_rescue_primary_failure: false
+  orthogonal_platform_validation:
+    dataset_id: GSE74614
+    model: APPswe_PS1dE9
+    contrast: AD_minus_WT_within_GFAP_WT_Vim_WT
+    cell_type: acutely_isolated_cortical_astrocyte
+    assay: microarray
+    n_model: 4
+    n_control: 4
+    contributes_to_hard_gate: false
+    can_rescue_primary_failure: false
+  mechanistic_subpopulation_sensitivity:
+    dataset_id: GSE290101
+    model: APP_PS1dE9
+    contrast: twelve_month_APP_PS1dE9_minus_WT
+    cell_type: reporter_sorted_prefrontal_cortex_astrocyte
+    n_model_animals: 5
+    n_control_animals: 4
+    libraries: 18
+    repeated_measure: reporter_defined_subpopulation_within_animal
+    contributes_to_hard_gate: false
+    can_rescue_primary_failure: false
+  future_raw_reprocessing_only:
+    dataset_id: E-MTAB-10985
+    reason: no_processed_count_matrix
+    contributes_to_hard_gate: false
+  excluded_from_hard_gate:
+    - dataset_id: E-MTAB-13937
+      reason: one_pooled_library_per_condition
+    - dataset_id: GSE301825
+      reason: no_untreated_disease_vs_baseline_contrast
+    - dataset_id: GSE310518
+      reason: unresolved_AD_control_genotype_mapping_and_pooled_technical_replicates
+
+gates:
+  G0:
+    name: data_admissibility
+    processed_integer_counts_required_for_G1: true
+    processed_integer_counts_required_for_G5_primary: false
+    source_confirmed_nonnegative_count_like_values_required_for_G5_primary: true
+    finite_values_required_for_G5_primary: true
+    complete_animal_mapping_required_for_G5_primary: true
+    rounding_to_create_integer_counts_allowed: false
+    on_fail: exclude_dataset_and_log
+  G1:
+    name: reproducible_human_microglial_AD_state
+    required_primary_human_cohorts: 3
+    required_primary_dataset_ids:
+      - D3_GSE160936
+      - D7_GSE148822
+      - D8_GSE174367
+    all_primary_cohorts_must_be_estimable: true
+    donor_aware: true
+    region_stratified: true
+    concordant_direction_minimum_cohorts: 2
+    random_effects_meta_FDR_max: 0.05
+    every_leave_one_primary_cohort_out_direction_stable: true
+    sensitivity_cohort_can_rescue_failure: false
+    D6_can_contribute: false
+    on_fail: stop_G2_to_G6
+  G2:
+    name: glycolysis_lactate_H4K12la_linkage_v3_2
+    direct_human_H4K12la_required: false
+    direct_AD_animal_H4K12la_sufficient_for_G2a: true
+    whole_brain_or_region_H4K12la_allowed: true
+    microglial_localization_required: true
+    cell_specific_measurement_required_for_microglia_specific_claim: true
+    accepted_direct_assays:
+      - H4K12la_ChIP_seq
+      - H4K12la_CUT_and_Tag
+      - H4K12la_CUT_and_RUN
+      - quantitative_proteomics
+    components:
+      G2a_direct_H4K12la:
+        hard_component: true
+        minimum_auditable_direct_sources: 1
+      G2b_within_model_coupling:
+        hard_component: true
+        predeclared_target_set_required: true
+        direct_target_signal_required: true
+        orthogonal_activity_layer_required: true
+      G2c_human_translation:
+        hard_component: false
+        module_or_target_set_analysis_preferred: true
+        whole_gene_spearman_exploratory_only: true
+        global_sign_concordance_exploratory_only: true
+        unresolved_label: HUMAN_TRANSLATION_UNRESOLVED
+      G2d_independent_support:
+        hard_component: true
+        acceptable_support:
+          - independent_H4K12la_specific_source
+          - independent_orthogonal_H4K12la_assay
+          - independent_non_drug_H4K12la_perturbation_or_rescue
+        other_lactylation_sites_are_supportive_not_H4K12la_replication: true
+    decision_states:
+      - G2_PASS_HUMAN_CONVERGENT
+      - G2_PASS_MODEL_SCOPED
+      - G2_NOT_YET_PASS
+      - G2_FAIL
+    model_scoped_pass_allows_downstream: true
+    model_scoped_claim_boundary: animal_or_model_level_H4K12la_mechanism_only
+    on_not_yet_pass: stop_G3_to_G6
+    on_fail: stop_G3_to_G6
+  G3:
+    name: senescence_SASP_linkage
+    qualified_animal_or_cell_model_can_pass: true
+    human_translation_is_supportive_not_hard: true
+    donor_or_animal_aware_disease_association: true
+    directionally_compatible_with_G2: true
+    on_fail: stop_G4_to_G6
+  G4:
+    name: iron_lipid_peroxidation_ferro_aging
+    minimum_convergent_modalities: 2
+    RNA_module_alone_can_pass: false
+    model_scoped_pass_allowed: true
+    on_fail: stop_G5_to_G6
+  G5:
+    name: astrocyte_response_v3_4
+    run_only_after_G1_to_G4_pass: true
+    primary_dataset_id: GSE261698
+    primary_biological_unit: animal
+    primary_region: cerebral_cortex
+    primary_model_formula: "module_score ~ disease + sin_time + cos_time + batch + sex"
+    primary_disease_coefficient: diseaseAPP_PS1
+    primary_input_mode: source_confirmed_nonnegative_expected_or_estimated_counts
+    primary_rounding_prohibited: true
+    primary_module_family_size: 7
+    multiple_testing: BH_FDR
+    primary_module_FDR_max: 0.05
+    minimum_passing_primary_modules: 1
+    animal_or_cell_model_sufficient: true
+    human_translation_is_supportive_not_hard: true
+    validation_can_rescue_primary_failure: false
+    validation_runs_after_primary_model_for_replication_context: true
+    time_bin_can_rescue_primary_failure: false
+    nominal_p_can_rescue_primary_failure: false
+    pass_state: G5_PASS_MODEL_SCOPED
+    not_yet_pass_state: G5_NOT_YET_PASS
+    on_fail: stop_G6
+  G6:
+    name: spatial_communication
+    run_only_after_G1_to_G5_pass: true
+    AD_control_required: true
+    donor_replication_required: true
+    region_and_section_aware: true
+    spatial_support_required: true
+    role_selection_status: SELECTED_PENDING_INPUT_AUDIT
+    analysis_lock_status: PENDING_INPUT_ADMISSIBILITY
+    primary:
+      dataset_id: GSE269906
+      platform: Stereo_seq
+      region: BA10_prefrontal_cortex
+      reported_donors: {AD: 6, Control: 6}
+      analysis_unit: donor
+      spatial_unit: audited_cellbin_or_nucleus_associated_bin
+      input_status: pending_direct_audit
+    independent_validation:
+      dataset_id: GSE233208
+      platform: Visium
+      reported_donors_late_sporadic_AD_vs_control: {AD: 10, Control: 10}
+      include_diagnoses: [definite_late_sporadic_AD, normal_control]
+      exclude_diagnoses: [early_AD, Down_syndrome_AD, ambiguous]
+      author_metadata_correction_required: true
+      corrected_donor_mapping_required: true
+      cross_cohort_independence_required: true
+      input_status: held_for_metadata_correction_and_audit
+      analysis_unit: donor
+      spatial_unit: mixed_cell_spot
+    cross_region_support:
+      dataset_id: GSE220442
+      platform: Visium
+      region: middle_temporal_gyrus
+      reported_donors: {AD: 3, Control: 3}
+      input_status: pending_direct_audit
+      analysis_unit: donor
+      spatial_unit: mixed_cell_spot
+      evidence_weight: supportive_only
+    descriptive_only:
+      dataset_id: D4_GSE263791
+      reason: AD_sections_only_in_current_project
+      contributes_to_AD_control_gate: false
+    reserve:
+      dataset_id: Zenodo_16938034
+      status: hold_donor_region_diagnosis_and_panel_coverage_audit
+      may_replace_primary_without_new_version: false
+    input_audit_required:
+      - source_file_integrity_and_sha256
+      - donor_section_diagnosis_region_mapping
+      - GSE269906_control_pathology_against_strict_control_definition
+      - cross_cohort_donor_overlap
+      - count_layer_gene_identifiers_and_frozen_signature_coverage
+      - coordinates_scale_tissue_mask_and_image_alignment
+      - per_section_microglia_and_astrocyte_identifiability
+      - source_metadata_correction_for_GSE233208
+    primary_estimand: AD_minus_control_donor_level_change_in_microglia_astrocyte_neighborhood_enrichment
+    primary_spatial_test: within_section_region_constrained_label_permutation_then_donor_level_comparison
+    sender_state: resolve_from_frozen_G1_outputs_and_lock_before_G6_effects
+    receiver_state: pre_G6_frozen_G5_astrocyte_modules_with_human_ortholog_mapping
+    condition_on_cell_abundance_layer_and_tissue_geometry: true
+    visium_requires_audited_cell_type_inference: true
+    ligand_receptor_tools_are_secondary: true
+    validation_cannot_rescue_primary_failure: true
+    units_nested_within_donor: [section, field_of_view, bin, spot, cell]
+    thresholds_and_graph_scale:
+      status: to_freeze_after_input_audit_before_any_G6_effects
+      neighborhood_radius: pending_physical_scale_and_geometry_audit
+      min_cell_or_bin_support: pending_platform_specific_QC
+      signature_coverage: pending_input_audit
+      permutation_count: pending_design_lock
+      primary_multiplicity_family: pending_design_lock
+    result_status: NOT_RUN_NO_PASS_CLAIM
+
+metadata:
+  required_registries:
+    - dataset_registry.tsv
+    - sample_manifest.tsv
+    - file_manifest.tsv
+    - evidence_registry.tsv
+    - exclusion_log.tsv
+    - per_dataset_provenance.json
+    - checksums.sha256
+  required_fields:
+    - accession
+    - database
+    - source_url
+    - download_date
+    - version
+    - license
+    - access_conditions
+    - file_name
+    - file_size
+    - sha256
+    - processing_level
+    - raw_processed_relationship
+    - species
+    - model
+    - pathology_type
+    - brain_region
+    - layer_or_ROI
+    - age
+    - sex
+    - diagnosis
+    - donor_count
+    - sample_count
+    - cell_count
+    - assay
+    - platform
+    - antibody
+    - genome_build
+    - covariates
+    - pairing_structure
+    - donor_overlap_audit
+    - inclusion_decision
+    - exclusion_reason
+    - evidence_tier
+    - mechanism_node
+    - analysis_role
+
+history:
+  v3_0_final_decision: STOPPED_AT_G1
+  v3_0_results_are_historical: true
+  v3_1_g2_reassessment_result: G2_REASSESSMENT_COMPLETE_NOT_PASS
+  v3_1_results_are_historical: true
+  v3_2_g5_result: G5_NOT_YET_PASS
+  v3_2_results_are_historical: true
+  v3_3_g5_result: G5_NOT_YET_PASS_AT_G0_INPUT_ADMISSIBILITY
+  v3_3_results_are_historical: true
+  v3_4_g5_result: G5_PASS_MODEL_SCOPED
+  v3_4_results_are_historical: true
+  overwrite_prior_results: false
+  v3_5_run_id_required: true
+
+change_control:
+  edit_frozen_file_in_place: false
+  substantive_change_requires_new_version: true
+  cohort_promotion_requires_new_version: true
+  G5_primary_dataset_change_requires_new_version: true
+  G5_model_or_gate_change_requires_new_version: true
+  G5_input_mode_change_requires_new_version: true
+  G6_dataset_role_or_gate_change_requires_new_version: true
+  G6_effect_inspection_before_analysis_lock_prohibited: true
+  decision_log_required: true

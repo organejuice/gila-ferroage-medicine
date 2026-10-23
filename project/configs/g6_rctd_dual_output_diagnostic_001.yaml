@@ -1,0 +1,49 @@
+id: G6-DIAG-2026-09-26-001
+date: 2026-09-26
+status: LOCKED_BEFORE_DIAGNOSTIC_PILOT
+scope: diagnosis_blind_RCTD_output_definition_test
+parent_execution_lock: G6-EXEC-2026-09-24-001
+changes_to_frozen_G6_v3_5_gate_or_pass_rule: false
+
+inputs:
+  accession: GSE269906
+  selection_rule: smallest_bin_count_among_original_MG_weight_0_5_failures_and_passes
+  pilot_GSMs: [GSM8330063, GSM8330064]
+  diagnostic_selection_source: results/2026-09-26-g6-mg-support-diagnostic/G6_MG_donor_diagnostic.csv
+  no_diagnosis_or_group_effect_fields: true
+
+fit:
+  method: spacexr_RCTD
+  version: 2.2.1
+  source_sha: 9f5dc33c8060f946c6072a138b70e189636e1435
+  model_script_basis: src/72_fit_g6_rctd_effect_blind.R
+  doublet_mode: doublet
+  random_seed: 42
+  max_cores: 1
+  chunk_size_bins: 5000
+  preserve_original_fit_parameters: true
+  save_both: [results_weights_all_types, results_weights_doublet, results_df]
+  never_overwrite_original_fit: true
+
+audits:
+  exact_barcode_alignment: true
+  exact_spot_class_and_type_reproduction: true
+  full_weight_max_absolute_difference_tolerance: 1.0e-6
+  doublet_weight_finite_nonnegative_and_sum_audit: true
+  doublet_mapping: package_get_doublet_weights
+  uncertain_and_reject_mapped_to_zero: true
+  exploratory_support_thresholds: [0.5]
+  holdout_marker_excluded_from_fit: true
+  G1_detection_fraction_per_donor: 0.01
+  minimum_MG_bins_for_stable_state_score: 40
+  no_inference_from_two_donors_to_12_donor_gate: true
+
+stop_rules:
+  missing_or_misaligned_input: stop
+  failed_full_weight_or_class_reproduction: stop_interpretation
+  insufficient_MG_bins: report_unstable_do_not_select_threshold
+  diagnosis_group_effect_calculation: prohibited
+
+outputs:
+  interim: data/interim/G6_GSE269906_RCTD_dual_output_pilot
+  results: results/2026-09-26-g6-rctd-dual-output-pilot

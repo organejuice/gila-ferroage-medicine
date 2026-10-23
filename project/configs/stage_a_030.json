@@ -1,0 +1,9 @@
+{
+  "run_id": "2026-10-03-stage-a-mechanism-030",
+  "seed": 30030,
+  "fdr": 0.05,
+  "ora": {"min_size": 5, "max_size": 500, "min_overlap_for_interpretation": 2},
+  "gsea": {"main_sizes": [15, 500], "sensitivity_sizes": [10, 300], "eps": 0.00001, "nPermSimple": 1000, "ranking": "meta_z", "ranking_sensitivity": "meta_logFC", "workers": 1},
+  "network": {"version": "12.0", "main_channel": "experiments", "threshold": 400, "sensitivity_threshold": 700, "null_iterations": 1000, "extended_iterations": 10000, "degree_bin_min": 100, "metric": "mean drug-to-nearest-disease shortest path; both sets size/degree matched", "retain_zero_overlap_distance": true},
+  "interpretation": {"claim_ceiling": "C0", "formula_efficacy_ranking": false, "reopen_017": false, "reopen_029": false, "G2_G5_membership_enrichment": "annotation of prespecified programs only", "drug_source_universe": "positive-record target universe is a selection sensitivity, NOT proven tested-source universe"}
+}

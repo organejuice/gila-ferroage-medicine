@@ -1,0 +1,29 @@
+protocol_amendment_id: G6-PROT-2026-09-25-001
+parent_protocol: docs/protocol/disease_side_v3.5_latest_frozen.md
+amends: G6_dataset_role_subsection_only
+status: FROZEN_PRE_EFFECT
+
+roles:
+  primary:
+    accession: GSE269906
+    region: BA10
+    donors: {AD: 6, author_labelled_Normal_Aging: 6}
+  intended_independent_validation:
+    accession: GSE233208
+    audited_eligible_donors_after_fail_closed_overlap_exclusion: {AD: 0, Control: 5}
+    status: NOT_ELIGIBLE
+  cross_region_supportive_candidate:
+    accession: GSE220442
+    donors: {AD: 3, Control: 3}
+    status: NOT_ELIGIBLE_patient_mapping_unresolved
+  descriptive_only:
+    accession: GSE263791
+    status: AD_only
+  reserve:
+    resources: Zenodo_CosMx_and_Visium_HD_candidates
+    status: NOT_PROMOTED
+
+g6_pass_requires_eligible_independent_GSE233208_AD_validation: true
+current_input_roles_can_pass_G6: false
+reason: no_eligible_independent_GSE233208_AD_donors
+effects_used_when_issued: false

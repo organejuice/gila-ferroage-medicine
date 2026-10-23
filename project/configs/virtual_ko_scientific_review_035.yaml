@@ -1,0 +1,20 @@
+run_id: 2026-10-11-virtual-ko-scientific-review-035
+source_dir: results/2026-10-05-virtual-ko-verification-execution-035
+output_dir: results/2026-10-11-virtual-ko-scientific-review-035
+scope_path: docs/protocol/2026-10-05-virtual-ko-verification-035/verification_targets.tsv
+source_config: configs/virtual_ko_verification_execution_035.yaml
+fdr: 0.05
+numeric_tolerance: 1.0e-10
+ora_tolerance: 1.0e-12
+bootstrap_replicates: 20
+matched_controls: 20
+network_seeds: [42, 43]
+independent_ES_replays_per_library_mode: 1
+global_fdr: exploratory_separate_ORA_and_GSEA_families_across_all_2707_jobs
+focus: frozen_034_shared_terms_only_for_stability_interpretation
+matching_response: frozen_module_gene_mean_percentile_distance_rank
+matching_inference: descriptive_20_controls_no_causal_or_specificity_pass
+identity: descriptive_existing_multilineage_evidence_no_automatic_relabel
+direction_estimated: false
+new_networks_or_permutations: false
+reviewer: Codex_AI_scientific_review_not_human_signoff

@@ -1,0 +1,68 @@
+run_id: 2026-09-20-disease-side-v3.2-g3
+protocol: docs/protocol/disease_side_v3.2_latest_frozen.md
+inputs:
+  d2_gene_tpm: results/archive/2026-09-20-pre-v3-freeze/results/tables/D2_gene_tpm.tsv
+  d2_metadata: results/archive/2026-09-20-pre-v3-freeze/results/tables/D2_sample_metadata.tsv
+  d2_raw_matrix: data/raw/D2_GSE227221/GSE227221_iMGLs.bulk.tpm.txt.gz
+  d2_transcript_map: data/interim/D2_transcript_gene_map.tsv
+  d3_counts: data/interim/D3_pseudobulk_counts_microglia.tsv.gz
+  d3_metadata: data/interim/D3_pseudobulk_metadata_microglia.tsv
+  d7_counts: data/interim/D7_GSE148822/D7_pseudobulk_counts_microglia.tsv.gz
+  d7_metadata: data/interim/D7_GSE148822/D7_pseudobulk_metadata_microglia.tsv
+  d8_counts: data/interim/D8_GSE174367/D8_pseudobulk_counts_microglia.tsv.gz
+  d8_metadata: data/interim/D8_GSE174367/D8_pseudobulk_metadata_microglia.tsv
+  m2_weights: results/archive/2026-09-20-pre-v3-freeze/results/tables/I2_regulatory_activity.tsv
+design:
+  primary_human_cohorts:
+    - D3_GSE160936
+    - D7_GSE148822
+    - D8_GSE174367
+  excluded_from_primary:
+    - D6_GSE214979
+  d2_time_hours: [0, 4, 24, 96]
+  min_microglia_per_donor_region: 20
+  primary_contrast: AD_minus_control
+  d2_contrast: post_A_beta_timepoint_minus_h0
+modules:
+  M3_SASP_Senescence:
+    source: project_operational_SenMayo_CellAge_SASP_cell_cycle_arrest_proxy
+    genes:
+      - CDKN1A
+      - CDKN2A
+      - IL6
+      - IL1B
+      - TNF
+      - CCL2
+      - CCL3
+      - CCL4
+      - CSF1
+      - CXCL10
+      - MMP9
+      - MMP14
+      - SERPINE1
+      - IGFBP3
+      - IGFBP7
+      - NFKB1
+      - RELA
+      - TGFB1
+  inflammation_control:
+    genes: [IL6, IL1B, TNF, CCL2, CCL3, CCL4, CSF1, CXCL10, NFKB1, RELA]
+  senescence_core:
+    genes: [CDKN1A, CDKN2A, MMP9, MMP14, SERPINE1, IGFBP3, IGFBP7, TGFB1]
+analysis:
+  human_expression: log2_CPM_plus_2
+  d2_expression: log2_TPM_plus_1_then_gene_z_score
+  human_model: module_score ~ disease + age + sex + RIN + optional_batch
+  cell_count_sensitivity: add_log1p_n_cells_used
+  inflammation_sensitivity: add_inflammation_control_score
+  g2_g3_association: M3_score ~ M2_H4K12la_target_proxy + disease + age + sex + RIN + optional_batch
+  meta: DerSimonian_Laird_random_effects_over_cohort_region_units
+  multiple_testing: Benjamini_Hochberg
+  fdr: 0.05
+  independent_unit: donor_within_brain_region; D2_replicate_for_timecourse
+gate:
+  require_positive_donor_aware_M3_AD_association: true
+  require_directional_G2_compatibility: true
+  require_cell_composition_audit: true
+  require_generic_inflammation_audit: true
+  fail_closed_downstream: stop_G4_to_G6

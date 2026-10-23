@@ -1,0 +1,146 @@
+execution_lock_id: G6-EXEC-2026-09-24-001
+protocol: docs/protocol/disease_side_v3.5_latest_frozen.md
+protocol_version: "3.5"
+status: LOCKED_EFFECT_BLIND_INPUT_AUDIT
+run_id: 2026-09-24-disease-side-v3.5-g6-primary
+date: 2026-09-24
+seed: 42
+
+cohorts:
+  primary:
+    accession: GSE269906
+    region: BA10_prefrontal_cortex
+    platform: Stereo-seq
+    donors: 12
+    author_diagnosis_counts: {AD: 6, Control: 6}
+    donor_manifest: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/GSE269906_donor_section_manifest.tsv
+    primary_control_definition: author_labelled_Normal_Aging
+    pathology_sensitivity: Not_AD_neuropathologic_change_controls_only
+    donor_unit: true
+  independent_validation:
+    accession: GSE233208
+    status: NOT_ELIGIBLE
+    reason: fail_closed_cross_cohort_candidate_exclusion_leaves_0_AD_and_5_controls
+  cross_region_support:
+    accession: GSE220442
+    status: NOT_ELIGIBLE
+    reason: GSM_to_patientID_mapping_unresolved_for_6_of_6
+
+input_and_qc:
+  raw_source: CNGB_STOmicsDB_STDS0000318_crosswalked_to_GEO_GSE269906
+  raw_files_read_only: true
+  source_sha256_required: true
+  spatial_matrix: tissue_GEF_reconstructed_50_by_50_DNB_tiles
+  bin_width_dnb: 50
+  physical_resolution_nm_per_dnb: 500
+  bin_width_um: 25
+  minimum_detected_genes_per_bin: 400
+  require_valid_CellBin_polygon_overlap: true
+  require_at_least_one_CellBin_centroid_in_bin: true
+  minimum_primary_bins_per_donor: 5000
+  layer_or_roi_available: false
+  histology_image_available: false
+  mask: union_of_valid_CellBin_cellBorder_polygons
+  exclude_oversize_invalid_or_unmapped_sections: true
+
+reference_and_cell_identity:
+  reference_accession: GSE174367
+  reference_type: human_cortical_single_nucleus_RNA_seq
+  reference_donors: 18
+  broad_cell_types: [ASC, EX, INH, MG, ODC, OPC, PER.END]
+  per_donor_cell_type_cap: 100
+  minimum_reference_umi: 100
+  random_seed: 42
+  feature_leakage_exclusion:
+    - frozen_G1_signed_sender_244_genes
+    - all_frozen_G5_one_to_one_human_ortholog_genes
+    - predeclared_holdout_lineage_markers
+  holdout_marker_candidates:
+    MG: [AIF1, C1QA, C1QB, C1QC, CX3CR1, LST1, P2RY12, TMEM119, TREM2, TYROBP]
+    ASC: [ALDH1L1, GFAP, GJA1, GLUL, S100B, SLC1A2, SLC1A3, SOX9, CD74, AQP4]
+  marker_overlap_rule: exclude_any_holdout_marker_also_in_a_frozen_G1_or_G5_signature_from_RCTD_and_marker_QC
+  marker_qc_acceptance: at_least_3_disjoint_detected_markers_per_lineage_and_positive_spearman_marker_score_vs_RCTD_weight_in_at_least_10_of_12_donors
+  software: spacexr_RCTD
+  version: 2.2.1
+  git_commit: 9f5dc33c8060f946c6072a138b70e189636e1435
+  mode: doublet
+  max_cores: 1
+  gene_cutoff: 0.000125
+  fc_cutoff: 0.5
+  gene_cutoff_reg: 0.0002
+  fc_cutoff_reg: 0.75
+  min_umi_spatial_bin: 100
+  max_umi_spatial_bin: 20000000
+  counts_MIN: 10
+  min_reference_umi_sigma: 300
+  confidence_threshold: 5
+  doublet_threshold: 20
+  fitpixels_chunk_size_bins: 5000
+  chunking_note: fitBulk_and_sigma_selection_remain_section_wide; only_independent_per_bin_fitPixels_calls_are_batched_to_limit_dense_temporary_memory
+  primary_cell_type_weight_threshold: 0.5
+  uncertainty_sensitivity_weight_thresholds: [0.4, 0.7]
+  retain_continuous_weights: true
+  weight_handling: preserve_RCTD_raw_weights; set_reject_rows_to_zero_and_normalize_nonrejected_rows_for_compositional_use; report_raw_sums_and_rejection_rate
+
+state_scoring:
+  gene_abundance: CPM_then_log2_CPM_plus_1
+  feature_standardization: gene_wise_z_across_all_eligible_bins_without_diagnosis_labels
+  sender_signature: frozen_G1_signed_244_genes
+  sender_score: signed_mean_of_gene_wise_z_scores
+  receiver_signatures: frozen_G5_one_to_one_human_orthologs
+  receiver_score: module_mean_gene_wise_z_times_frozen_G5_module_direction
+  g5_module_coverage_rule: at_least_ceil_25_percent_of_one_to_one_genes_detected_in_at_least_1_percent_of_relevant_bins_in_at_least_10_of_12_donors
+  sender_coverage_rule: at_least_25_percent_of_frozen_genes_detected_in_at_least_1_percent_of_relevant_bins_in_at_least_10_of_12_donors
+  score_weighting: continuous_RCTD_cell_type_weight
+  high_state_rule: top_quartile_within_donor_among_bins_with_cell_type_weight_at_least_0_5
+
+spatial_test:
+  independent_unit: donor
+  graph_scope: within_section_only
+  tissue_geometry: valid_CellBin_polygon_mask
+  primary_radius_um: 25
+  sensitivity_radii_um: [50, 75]
+  edge_path_rule: all_intervening_25um_grid_tiles_must_be_valid_mask_tiles
+  same_bin_sender_receiver_pair_allowed: false
+  endpoint: fraction_of_high_receiver_bins_with_at_least_one_high_sender_bin_within_radius
+  null: within_section_mask_constrained_rigid_translation_of_receiver_cell_type_and_state_maps
+  null_preserves: [section, receiver_cell_abundance, receiver_state_spatial_clustering, sender_map, tissue_mask_geometry]
+  translation_distance_um: [250, 1000]
+  minimum_mask_overlap_fraction: 0.8
+  null_permutations_per_section: 999
+  primary_donor_metric: observed_fraction_minus_mean_translation_null_fraction
+  disease_contrast: AD_minus_author_labelled_Normal_Aging
+  donor_effect_estimate: age_midpoint_adjusted_linear_model_with_unadjusted_Welch_sensitivity
+  confidence_interval: 95_percent_t_interval
+  neighborhood_multiple_testing: BH_FDR_across_all_7_frozen_G5_modules
+  state_multiple_testing: BH_FDR_across_1_G1_sender_plus_all_7_frozen_G5_modules
+  fdr_threshold: 0.05
+  g6_pass_rule: G1_sender_state_and_at_least_one_G5_v3_4_passing_and_G6_estimable_receiver_state_must_be_AD_direction_concordant_at_state_FDR_0_05_and_the_same_module_must_have_positive_AD_minus_control_neighborhood_excess_at_neighborhood_FDR_0_05_plus_independent_GSE233208_directional_validation
+  no_validation_rescue: true
+
+predeclared_sensitivities:
+  - primary_control_vs_AD_with_Not_ADNC_controls_only
+  - leave_one_donor_out
+  - cell_type_weight_thresholds_0_4_and_0_7
+  - neighborhood_radii_50_and_75_um
+  - separate_RCTD_cell_type_abundance_from_state_scores
+  - report_unavailable_layer_ROI_image_PMI_RIN_and_batch_covariates
+  - reference_marker_holdout_QC
+  - leave_one_reference_donor_out_reference_sensitivity
+
+important_limitations:
+  - cellTypeID_is_zero_for_all_CellBin_units_and_RCTD_cell_identity_is_inferred
+  - RCTD_published_platform_evaluation_does_not_include_Stereo_seq
+  - no_histology_image_or_layer_ROI_annotation_is_available
+  - GSE233208_is_not_an_independent_AD_validation_cohort_after_fail_closed_overlap_exclusion
+  - GSE220442_patient_mapping_is_unresolved
+  - G6_PASS_is_not_possible_under_current_validation_inputs
+
+runtime:
+  r_version: 4.3.3
+  r_library: C:/Users/administer/.codex/visualizations/2026/09/23/01a0ce11-eaa9-7cb1-aa30-49773cbedb70/g6_R_library
+  execution_host: local_Windows
+  dvc_remote: none_configured
+  RCTD_per_fit_max_cores: 1
+  RCTD_max_concurrent_donor_fits: 2
+  RCTD_parallelism_min_available_memory_mb: 6000

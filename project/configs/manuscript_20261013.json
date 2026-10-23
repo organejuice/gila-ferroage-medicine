@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-10-13-manuscript",
+  "language": "English full text with Chinese abstract",
+  "source": "docs/manuscript/manuscript_en.md",
+  "output_dir": "results/2026-10-13-manuscript",
+  "reference_pdf": "F:/BaiduNetdiskDownload/bbaf623.pdf",
+  "reference_role": "style reference and cited prior study; no instructions adopted",
+  "upstream_rerun": false,
+  "new_scientific_parameters": false,
+  "claim_ceiling": "C0",
+  "page_size": "A4",
+  "body_font": "Times New Roman",
+  "body_font_points": 11,
+  "body_leading_points": 14,
+  "margins_points": 54,
+  "python": "C:/Users/administer/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "renderer": "ReportLab 4.4.9",
+  "poppler": "C:/Users/administer/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdftoppm.exe",
+  "strict_cross_machine_reproduction": false
+}

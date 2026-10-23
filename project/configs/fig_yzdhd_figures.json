@@ -1,0 +1,34 @@
+{
+  "backend": "python",
+  "python": "D:/conda/envs/adni_ai/python.exe",
+  "output_dir": "results/2026-10-14-FIG-YZDHD/figures",
+  "width_mm": 174,
+  "dpi": 600,
+  "font_points": 8,
+  "upstream_rerun": false,
+  "claim_ceiling": "C0",
+  "archetype": "quantitative grid",
+  "selection": "Frozen source tables retained. Fig4a displays only combinations with finite LODO and bootstrap weighted reproduction rates (20/29); Fig4b displays only finite corrected storage reference tail fractions (42/58 records, 21 combinations). Independent panel labels; exclusions logged with reasons. Fig2c shows all six estimable astrocyte modules; the one-gene storage row is excluded from display only.",
+  "fig4_missing_policy": {
+    "panel_a_required": [
+      "lodo_weighted_median_unconditional_rate",
+      "bootstrap_weighted_median_unconditional_rate"
+    ],
+    "panel_b_required": [
+      "reference_tail_fraction"
+    ],
+    "include_zero": true,
+    "imputation": false
+  },
+  "fig2c_missing_policy": {
+    "required": [
+      "logFC",
+      "CI_low",
+      "CI_high",
+      "FDR_BH_7"
+    ],
+    "include_zero": true,
+    "imputation": false,
+    "preserve_original_BH_family": 7
+  }
+}

@@ -1,0 +1,7 @@
+outs:
+- path:
+    ../data/processed/2026-10-05-virtual-ko-verification-execution-035/A_existing_data
+  md5: ea4a7efcd27218746d32dd2cdf7a0390.dir
+  size: 368025879
+  nfiles: 11
+  hash: md5

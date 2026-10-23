@@ -1,0 +1,203 @@
+schema_version: 1
+study:
+  id: G6-PLAN-2026-09-27-005
+  title: HHSTA hippocampal CellBin staged feasibility and blind qualification
+  created: 2026-09-27
+  status: PROSPECTIVE_STAGED_PLAN_NOT_EXECUTION_LOCK
+  execution_authorized: false
+  diagnosis_group_effects_allowed: false
+  g6_pass_allowed: false
+  raw_data_read_only: true
+  reproducibility_target: level_2
+  protocol: docs/protocol/2026-09-27-g6-staged-research-plan-005.md
+  sop: docs/protocol/2026-09-27-g6-staged-research-sop-005.md
+  decision_log: docs/decisions/2026-09-27-g6-staged-plan-005.md
+  latest_pointer: docs/protocol/disease_side_latest.md
+  checksum_manifest: docs/protocol/g6_staged_plan_005.sha256
+
+scope:
+  phase: blind_source_input_identity_state_geometry_feasibility
+  confirmatory_effect_analysis: prohibited
+  no_large_matrix_download: true
+  no_g6_effect_runner_in_this_plan: true
+  no_automatic_fallback: true
+  preserve_historical_v3_5_v3_6: true
+  preserve_historical_g6_not_executable: true
+
+cohorts:
+  primary_candidate:
+    id: HHSTA
+    source: https://github.com/qyTao185/BGI-Alzheimer-s-Hippocampal-Atlas
+    reported_AD_samples: 8
+    reported_control_samples: 8
+    reported_sections_per_sample: 2
+    independent_donor_status: PENDING_DIRECT_CROSSWALK
+    platform: Stereo_seq_CellBin
+    brain_region: hippocampus
+    role_status: PRIORITY_CANDIDATE_NOT_ADMITTED
+    minimum_metadata_screen_per_group: 4
+  auxiliary_cross_region:
+    id: ROSMAP_spatial
+    source: https://doi.org/10.1186/s44477-025-00002-z
+    reported_AD_donors: 13
+    reported_control_donors: 8
+    modality: Visium_mixed_spots
+    role_status: CROSS_REGION_AUXILIARY_ONLY
+    same_region_validation: false
+  historical_only:
+    - GSE269906
+    - GSE233208
+
+frozen_assets:
+  G1:
+    genes: 244
+    signed_direction: unchanged
+    source_registry: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz
+    source_registry_sha256: 267bbf17bb41235002c8d093f6938ae08b262c768513ca04bfaf19396deaf30e
+    source_hash_required: true
+    legacy_panel_reference_genes: 61
+    legacy_panel_reference_is_hard_exclusion: false
+  G5:
+    modules:
+      - id: M3_SASP_Senescence
+        upstream_status: PASS
+        signed_direction: frozen
+        primary_family_candidate: true
+      - id: M5_Iron_Uptake
+        upstream_status: PASS
+        signed_direction: negative
+        primary_family_candidate: true
+      - id: M5_Iron_Storage
+        upstream_status: NON_ESTIMABLE
+        primary_family_candidate: false
+      - id: M5_Iron_Export
+        upstream_status: PASS
+        signed_direction: frozen
+        primary_family_candidate: true
+      - id: M5_Ferritinophagy
+        upstream_status: NO_PASS
+        primary_family_candidate: false
+      - id: M6_LPO_ACSL4
+        upstream_status: PASS
+        signed_direction: frozen
+        primary_family_candidate: true
+      - id: M7_FerroAging_Author
+        upstream_status: PASS
+        signed_direction: frozen
+        primary_family_candidate: true
+    legacy_panel_reference_fraction: 0.25
+    legacy_panel_reference_is_hard_exclusion: false
+    source_configuration: configs/disease_side_v3.5_frozen.yaml
+    source_configuration_sha256: 610b3a2ae22f6ce9af5f6ef3ec45efeeda1bf8d73f2f0ab7eef4841b8a38105f
+    source_registry: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G5_receiver_one_to_one_human_ortholog_registry.tsv.gz
+    source_registry_sha256: c6138fcc824a9848fd84931a365379d805142c3d7098607234db75b37ceea8c1
+    source_hash_required: true
+
+screening:
+  minimum_independent_donors_per_group_for_metadata_continuation: 4
+  minimum_is_not_power_guarantee: true
+  one_brain_region_or_common_subregion_required: true
+  cells_spots_sections_fields_do_not_increase_n: true
+  donor_diagnosis_region_section_slide_chip_batch_crosswalk_required: true
+  stop_if_diagnosis_fully_aliased_with_key_technical_factor: true
+  design_matrix_full_rank_required: true
+  low_panel_overlap_routes_to_blind_measurement_validation: true
+  unknown_panel_overlap_requires_panel_inventory: true
+  reference_donor_independence_required_if_reference_used: true
+
+work_packages:
+  - id: WP1
+    name: HHSTA_metadata_and_design_identifiability
+    expression_data_access: false
+    required_outputs:
+      - donor_sample_crosswalk
+      - per_subregion_independent_donor_counts
+      - diagnosis_technical_factor_common_support
+      - design_matrix_rank_audit
+      - reference_donor_independence_audit
+    stop_states:
+      - HOLD_METADATA
+      - STOP_NONIDENTIFIABLE
+  - id: WP2
+    name: CellBin_expression_identity_signature_and_geometry
+    starts_only_if: WP1_PASS
+    effect_blind: true
+    required_audits:
+      - assay_count_layer_and_gene_id
+      - barcode_segmentation_coordinate_crosswalk
+      - segmentation_quality_and_tissue_mask
+      - independent_microglia_astrocyte_identity
+      - frozen_G1_G5_detection_and_partial_score_fidelity
+      - physical_neighborhood_feasibility
+    numeric_thresholds:
+      status: PENDING_BLIND_CALIBRATION
+      may_import_legacy_spatial_cutoffs_without_validation: false
+    stop_states:
+      - NOT_ELIGIBLE
+      - IDENTITY_NOT_CALIBRATED
+      - SIGNATURE_NOT_ESTIMABLE
+      - GEOMETRY_NOT_AUDITABLE
+  - id: WP3
+    name: independent_cohort_metadata_and_role_screen
+    large_matrix_download: false
+    ROSMAP_role: cross_region_auxiliary_only
+    same_region_independent_validation_required_for_G6_PASS: true
+
+candidate_confirmatory_framework:
+  estimand: donor_level_enrichment_of_frozen_direction_high_G1_microglia_around_frozen_direction_high_G5_astrocytes
+  common_hippocampal_subregion_required: true
+  primary_observation: validated_CellBin_cell_or_nucleus
+  biological_replicate: donor
+  aggregation: cell_to_section_subregion_to_donor
+  high_state_threshold: PENDING_BLIND_CALIBRATION
+  neighborhood_scale_um: PENDING_BLIND_CALIBRATION
+  spatial_null: PENDING_BLIND_CALIBRATION
+  donor_level_model: PENDING_EXECUTION_LOCK
+  primary_test_family:
+    candidate_tests: 5
+    modules:
+      - M3_SASP_Senescence
+      - M5_Iron_Uptake
+      - M5_Iron_Export
+      - M6_LPO_ACSL4
+      - M7_FerroAging_Author
+    multiplicity: Benjamini_Hochberg
+    fdr_q: 0.05
+    status: PROPOSED_PENDING_EXECUTION_LOCK
+  effect_direction: fixed_by_frozen_G1_G5_assets
+  same_region_independent_validation:
+    required_for_g6_pass: true
+    current_status: NOT_YET_IDENTIFIED_IN_CURRENT_REGISTRY
+  ROSMAP_can_substitute_for_same_region_validation: false
+  no_automatic_bin100_fallback: true
+
+release_gates:
+  metadata_audit_pass_required_before_expression_access: true
+  identity_and_measurement_calibration_pass_required_before_execution_lock_review: true
+  separate_numbered_execution_lock_required_before_group_effects: true
+  independent_same_region_validation_required_for_g6_pass: true
+  no_branch_auto_starts_group_effect_analysis: true
+
+runner_registry:
+  metadata_size_screen:
+    script: src/98_screen_g6_candidate_size_003.py
+    config: configs/g6_candidate_size_screen_003.yaml
+    may_run_only_if_input_snapshot_hash_matches: true
+    can_compute_effects: false
+  panel_triage:
+    script: src/99_screen_g6_candidate_panel_004.py
+    config: configs/g6_candidate_panel_triage_004.yaml
+    may_run_only_if_input_snapshot_hash_matches: true
+    can_compute_effects: false
+  HHSTA_WP1_WP2_WP3:
+    status: NO_NEW_RUNNERS_REGISTERED
+    SOP_manual_audit_forms_allowed: true
+    do_not_invent_commands: true
+
+provenance:
+  project_git_required: true
+  formal_interim_and_results_dvc_required: true
+  raw_data_read_only: true
+  params_yaml_registered: true
+  environment_lock_required_before_execution_lock: true
+  decision_log_required: true

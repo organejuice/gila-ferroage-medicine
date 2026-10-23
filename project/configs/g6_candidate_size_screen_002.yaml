@@ -1,0 +1,25 @@
+id: G6-META-2026-09-27-002
+status: prospective_candidate_size_screen
+amends: G6-FP-2026-09-27-001_work_package_3_only
+scope: source_metadata_only
+input_registry: results/2026-09-27-g6-new-dataset-search/candidate_registry.tsv
+output_table: results/2026-09-27-g6-new-dataset-search/size_screen_8x8.tsv
+output_audit: results/2026-09-27-g6-new-dataset-search/size_screen_8x8.audit.json
+minimum_independent_donors:
+  AD: 8
+  Control: 8
+size_pass_status: SIZE_PASS_PENDING_FULL_AUDIT
+unknown_count_status: HOLD_DONOR_COUNTS
+size_fail_status: AUXILIARY_ONLY_DONOR_N
+full_primary_eligibility_from_size_alone: false
+diagnosis_group_effects_allowed: false
+historical_protocols_and_results_immutable: true
+unchanged_gates:
+  donor_to_section_and_diagnosis_crosswalk: required
+  technical_factor_common_support_and_full_rank: required
+  reference_donor_independence: required
+  G1_panel_minimum_genes: 61
+  G1_panel_total_genes: 244
+  G5_panel_minimum_module_fraction: 0.25
+  counts_coordinates_and_tissue_mask: required
+  MG_ASC_identity_validation: required

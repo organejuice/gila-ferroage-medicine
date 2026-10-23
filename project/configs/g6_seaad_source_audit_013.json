@@ -1,0 +1,16 @@
+{
+  "id": "G6-SEAAD-SOURCE-2026-09-29-013",
+  "scope": "source_metadata_panel_access_only",
+  "source_level_min_independent_donors_per_group": 4,
+  "clinical_ad_column": "Consensus Clinical Dx (choice=Alzheimers disease)",
+  "clinical_control_column": "Consensus Clinical Dx (choice=Control)",
+  "clinical_positive_value": "Checked",
+  "adnc_column": "Overall AD neuropathological Change",
+  "adnc_high_value": "High",
+  "adnc_not_ad_value": "Not AD",
+  "mtg_merfish_assayed_flag_column": "MERFISH2",
+  "mtg_merfish_assayed_flag_value": "Y",
+  "pathology_high_vs_not_ad_is_sensitivity_definition_only": true,
+  "effect_analysis_authorized": false,
+  "source_level_panel_overlap_is_not_actual_detection_or_score_fidelity": true
+}

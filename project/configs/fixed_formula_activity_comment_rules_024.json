@@ -1,0 +1,9 @@
+{
+  "version":"024-source-comment-validation-02",
+  "inactive_exact_labels":["inactive","not active"],
+  "inconclusive_exact_labels":["inconclusive"],
+  "unspecified_exact_labels":["na","nd","not determined","no data","not evaluated","not tested"],
+  "no_measured_curve_phrases":["dose-reponse curve not measured","dose-response curve not measured"],
+  "uninterpreted_comment_policy":"retain verbatim; quantitative record still subject to endpoint/unit/validity and source review",
+  "no_unified_potency_cutoff":true
+}

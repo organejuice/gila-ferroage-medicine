@@ -1,0 +1,19 @@
+{
+  "id":"2026-10-03-mechanism-deepening-removal-029",
+  "authority":"explicit_user_request",
+  "removed_work_item":"fourth_step_public_mechanism_deepening",
+  "status":"REMOVED_BY_USER",
+  "active":false,
+  "cancelled_followups":["GSE286094_cell_QC_annotation_mechanism","GSE315101_DLK1_receiver_analysis","GSE333352_spatial_neighborhood_analysis","PXD079947_new_missingness_low_abundance_analysis_and_raw_MS_research"],
+  "core_P4_qualification_audit_removed":false,
+  "historical_runs_retained":["025","026","027","028"],
+  "historical_inputs_outputs_and_frozen_configs_immutable":true,
+  "scDblFinder_installation_to_advance_cancelled_work":false,
+  "request_missing_animal_metadata_again":false,
+  "required_for_current_mainline_completion":false,
+  "restart_requires":"explicit_new_user_authorization_and_numbered_protocol",
+  "claim_ceiling":"C0",
+  "reopen_017":false,
+  "reopen_G2c_G6":false,
+  "formula_efficacy_ranking_eligible":false
+}

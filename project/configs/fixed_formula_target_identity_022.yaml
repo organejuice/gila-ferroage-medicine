@@ -1,0 +1,17 @@
+run_id: 2026-09-30-fixed-formula-target-identity-022
+decision_id: DRUG-FORMULA-TARGET-IDENTITY-CORRECTION-2026-09-30-022
+date: 2026-09-30
+supersedes_target_interpretation_from:
+  - 2026-09-30-fixed-formula-drug-prior-020
+  - 2026-09-30-fixed-formula-admet-recovery-021
+formula_candidates: results/2026-09-30-fixed-formula-drug-prior-020/formula_component_candidates.tsv
+previous_assay_cache: results/2026-09-30-fixed-formula-drug-prior-020/formula_assay_level_target_records.tsv
+target_identity_rules:
+  BindingDB: exact_PubChem_CID_plus_exact_RDKit_canonical_isomeric_SMILES_equality_plus_human_target
+  PubChem_BioAssay: exact_PubChem_CID_plus_active_human_gene_numeric_activity
+  ChEMBL: similarity_hits_are_not_direct_formula_compound_records_even_when_similarity_is_100
+g1_robust_signature: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz
+network_target_queries: false
+dependencies_installed: false
+drug_evidence_ceiling: C0
+validation_steps_reopened: false

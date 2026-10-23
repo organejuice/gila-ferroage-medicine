@@ -1,0 +1,61 @@
+run_id: 2026-09-21-disease-side-v3.3-g5
+protocol: docs/protocol/disease_side_v3.3_latest_frozen.md
+protocol_config: configs/disease_side_v3.3_frozen.yaml
+protocol_checksum: docs/protocol/disease_side_v3.3_freeze.sha256
+decision_record: docs/decisions/2026-09-21-disease-side-v3.3-g5-dataset-amendment.md
+
+inputs:
+  g4_decision: results/2026-09-20-disease-side-v3.2-g4/g4_decision.json
+  primary:
+    accession: GSE261698
+    app_counts: data/raw/GSE261698/GSE261698_APP_Astrocyte_Counts.csv.gz
+    wt_counts: data/raw/GSE261698/GSE261698_WT_Astrocyte_Counts.csv.gz
+    family_soft: data/raw/GSE261698/GSE261698_family.soft.gz
+    geo_raw_tar: data/raw/GSE261698/GSE261698_RAW.tar
+    expected_sha256:
+      app_counts: 5b81167e29a8b3be88f0eea31f7cc24443c92f10208875ea3d2a63f6160391d2
+      wt_counts: cd2a6a8aaefcfe2bae41693c5e96778e5b34e8417ade722a7d747d5ac217b15b
+      family_soft: 80d27cad60dfea369d567a980ff8d9c8e1c5a296498cc91d30cb85ecaa154143
+      geo_raw_tar: beb487148d41e65d5d8d08c54ec7d3749de85f6b59326ee1fa488e0f4bdc700a
+    expected_n_model: 24
+    expected_n_control: 24
+    expected_n_genes: 55774
+    sample_id_pattern: '^(APP|WT)([0-9]+)_(12am|2am|4am|6am|8am|10am|12pm|2pm|4pm|6pm|8pm|10pm)_(Male|Female)_batch([12])$'
+
+analysis:
+  primary_dataset_id: GSE261698
+  biological_unit: animal
+  cell_type_endpoint: astrocyte_TRAP_RNA_seq
+  species: Mus_musculus
+  region: cerebral_cortex
+  disease_contrast: APP_PS1_minus_WT
+  primary_formula: 'module_score ~ disease + sin_time + cos_time + batch + sex'
+  primary_coefficient: diseaseAPP_PS1
+  normalization: edgeR_TMM_then_limma_voom
+  frozen_module_family_size: 7
+  multiple_testing: BH_FDR
+  primary_module_fdr_threshold: 0.05
+  minimum_passing_modules: 1
+
+input_gate:
+  strict_integer_counts_required: true
+  fractional_tolerance: 1.0e-8
+  maximum_fractional_value_fraction: 0.0
+  require_identical_gene_order: true
+  require_nonnegative_finite_values: true
+  require_complete_sample_metadata: true
+  require_expected_animal_counts: true
+  raw_fastq_reprocessing_allowed: false
+  alternate_raw_matrix_must_cover_all_primary_animals: true
+
+validation_roles:
+  independent_animal_validation: GSE291239
+  orthogonal_platform_validation: GSE74614
+  mechanistic_subpopulation_sensitivity: GSE290101
+  validation_can_rescue_primary_failure: false
+  time_bin_can_rescue_primary_failure: false
+
+outputs:
+  result_dir: results/2026-09-21-disease-side-v3.3-g5
+  audit_json: tables/GSE261698_input_audit.json
+  input_gate_table: gates/G5_v3.3_input_gate.tsv

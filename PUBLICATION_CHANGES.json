@@ -1,0 +1,65 @@
+{
+  "publication_date": "2026-10-23",
+  "repository": "https://github.com/organejuice/gila-ferroage-medicine",
+  "source": "MBD supplementary/ESM_3.zip",
+  "source_archive_sha256": "b8f5ce2820f728472d77072e5f0f0bf7cb465e122c8ca0b4bf839526b0d77542",
+  "original_archive_member_count": 334,
+  "original_project_manifest_records": 329,
+  "modified_source_files": [
+    {
+      "path": "project/src/prepare_fig_yzdhd.py",
+      "original_sha256": "79d3cb092e001854cd190e9d2823dbd1f5e37a3da01539ebaedc0ad30c45a84b",
+      "published_sha256": "bb079fb347a3c70bce3648d6db78775a20904bc4b8e921b44e62f6d5c3fd8c12",
+      "reason": "Replace two non-corresponding-author personal email assertions with reserved example.invalid placeholders",
+      "substitutions": 2,
+      "scientific_logic_changed": false
+    },
+    {
+      "path": "project/src/audit_fig_yzdhd_submission.py",
+      "original_sha256": "687ad919eddf3e1fdff996a6c73f2f464f065d666702ae86c0c9f439232c5175",
+      "published_sha256": "5ebcccdcc174ef1e226f6108b5e3a046a451b5d055d26209c45b7839d247c732",
+      "reason": "Replace two non-corresponding-author personal email assertions with reserved example.invalid placeholders",
+      "substitutions": 2,
+      "scientific_logic_changed": false
+    }
+  ],
+  "added_frozen_upstream_files": [
+    {
+      "path": "project/external/virtual_ko_033/pcNet_upstream.R",
+      "sha256": "15ebc442f9c1e28bb45ba72e62ef2d1b5c8636cdc3963cee3c275fc1e8789ff5"
+    },
+    {
+      "path": "project/external/virtual_ko_033/COPYING",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "project/external/virtual_ko_033/DESCRIPTION",
+      "sha256": "788eacf81646b3eebda1a0c2b5b5ac5d8be35b1f9070f7c34acf39fc6cba326f"
+    },
+    {
+      "path": "project/external/virtual_ko_033/README.md",
+      "sha256": "41abcc4c1153939c759d781d2de1413605fe3d6cd21653e593d774b9837237fa"
+    },
+    {
+      "path": "project/external/virtual_ko_033/upstream_commit.txt",
+      "sha256": "5a31603d44c77d7209ba591f7191fbfe90ea8331622c57b24819b8fba58dd1d7"
+    }
+  ],
+  "added_documentation": [
+    "README.md",
+    "docs/RUN_GUIDE.md",
+    "docs/DATA_AND_PATHS.md",
+    "THIRD_PARTY_NOTICES.md",
+    "tools/check_source.py",
+    ".gitignore",
+    ".gitattributes",
+    "SHA256SUMS.txt",
+    "PUBLICATION_CHANGES.json"
+  ],
+  "raw_data_included": false,
+  "biological_reanalysis": false,
+  "strict_cross_machine_reproduction_verified": false,
+  "upstream_live_redownload_verified": false,
+  "upstream_identity_check": "Existing frozen local pcNet source has the same MD5 and size as the ESM 033 DVC lock; local attribution/commit/DESCRIPTION/COPYING copied unchanged",
+  "license_scope": "Existing identified GPL-2.0-or-later components retained; no blanket license assigned to other files"
+}

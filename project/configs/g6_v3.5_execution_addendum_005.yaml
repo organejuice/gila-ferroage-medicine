@@ -1,0 +1,14 @@
+addendum_id: G6-EXEC-2026-09-25-005
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_RUNTIME_OPTIMIZATION
+scope: cache_identical_translated_receiver_maps_across_radii
+changes_to_estimand_sampling_method_or_thresholds: false
+
+spatial_runtime:
+  translation_seed_and_candidate_set: unchanged
+  permutations_per_section: 999
+  high_receiver_maps_recomputed_per_radius: false
+  reused_across_radii_um: [25, 50, 75]
+  map_translation_filter: unchanged
+  effects_used: false

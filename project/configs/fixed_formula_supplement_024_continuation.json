@@ -1,0 +1,15 @@
+{
+  "run_id": "2026-10-03-fixed-formula-target-supplement-024-continuation",
+  "parent_config": "configs/fixed_formula_target_supplement_024.json",
+  "parent_results": "results/2026-09-30-fixed-formula-target-supplement-024",
+  "protocol": "docs/protocol/2026-09-30-fixed-formula-target-supplement-SOP-024.md",
+  "decision": "docs/decisions/2026-10-03-supplement-024-continuation.md",
+  "http": {"interval_seconds": 1, "timeout_seconds": 30, "backoff_seconds": [2, 5, 10], "circuit_breaker_consecutive_failures": 3},
+  "BindingDB": {"health_control_smiles": "OCCc1ccccc1", "cooldown_seconds": 30, "max_no_progress_rounds": 3, "fresh_raw_per_round": true},
+  "HERB": {"url": "http://herb.ac.cn/chedi/api/", "search_function": "search_api", "detail_function": "detail_api", "label": "Ingredient", "require_same_CID_and_exact_stereo_structure": true, "association_tier": "H"},
+  "legacy_identity": {"identity_type": "same_stereo_isotope", "require_RDKit_exact_property_recheck": true, "expand_frozen_candidates": false},
+  "claim_ceiling": "C0",
+  "reopen_017": false,
+  "install_dependencies": false,
+  "remote_compute": false
+}

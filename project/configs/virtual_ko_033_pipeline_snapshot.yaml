@@ -1,0 +1,167 @@
+stages:
+  stratified_virtual_ko_033:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/132_run_stratified_virtual_ko.R
+    deps:
+    - src/132_run_stratified_virtual_ko.R
+    - src/130_virtual_ko_cached_backend.R
+    - src/135_sparse_cp_equivalent.R
+    - src/138_implicit_manifold.R
+    - external/virtual_ko_033/pcNet_upstream.R
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    params:
+    - configs/virtual_ko_033.yaml:
+      - seeds
+      - gene_min_fraction
+      - cell_min_counts
+      - cell_max_mt_fraction
+      - max_cells_per_donor_region
+      - network_n_net
+      - network_n_cells
+      - network_n_comp
+      - network_q
+      - td_K
+      - td_max_iter
+      - td_max_error
+      - td_n_decimal
+      - ma_n_dim
+      - ncores
+      - accelerated_pcnet
+      - sparse_cp
+      - implicit_manifold
+      - targets_microglia
+      - targets_astrocyte
+    outs:
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+  stratified_virtual_ko_033_summary:
+    cmd: D:\python\python.exe src/133_summarize_virtual_ko.py
+    deps:
+    - src/133_summarize_virtual_ko.py
+    - results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+    - configs/virtual_ko_033.yaml
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - data/interim/2026-10-03-public-mechanism-analysis-026/frozen_modules.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+    outs:
+    - results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/stratified_target_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/module_enrichment.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/seed_stability.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/report.md
+  stratified_virtual_ko_033_audit:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/141_audit_virtual_ko_artifacts.R
+    deps:
+    - src/141_audit_virtual_ko_artifacts.R
+    - configs/virtual_ko_033.yaml
+    - results/2026-10-04-stratified-virtual-ko-033/provenance.json
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    - data/processed/D3_GSE160936_glia_seurat.rds
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+    outs:
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit_jobs.tsv
+  stratified_virtual_ko_033_target_retention:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/132_run_stratified_virtual_ko.R configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - src/132_run_stratified_virtual_ko.R
+    - src/130_virtual_ko_cached_backend.R
+    - src/135_sparse_cp_equivalent.R
+    - src/138_implicit_manifold.R
+    - external/virtual_ko_033/pcNet_upstream.R
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    params:
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml:
+      - seeds
+      - gene_min_fraction
+      - cell_min_counts
+      - cell_max_mt_fraction
+      - max_cells_per_donor_region
+      - network_n_net
+      - network_n_cells
+      - network_n_comp
+      - network_q
+      - td_K
+      - td_max_iter
+      - td_max_error
+      - td_n_decimal
+      - ma_n_dim
+      - ncores
+      - accelerated_pcnet
+      - sparse_cp
+      - implicit_manifold
+      - targets_microglia
+      - targets_astrocyte
+      - states
+      - target_retention_min_cells
+      - only_newly_eligible_targets
+    outs:
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+  stratified_virtual_ko_033_target_retention_audit:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/141_audit_virtual_ko_artifacts.R configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - src/141_audit_virtual_ko_artifacts.R
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/provenance.json
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    - data/processed/D3_GSE160936_glia_seurat.rds
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+    outs:
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit_jobs.tsv
+  stratified_virtual_ko_033_target_retention_summary:
+    cmd: D:\python\python.exe src/133_summarize_virtual_ko.py configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - src/133_summarize_virtual_ko.py
+    - results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - data/interim/2026-10-03-public-mechanism-analysis-026/frozen_modules.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+    outs:
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/stratified_target_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/module_enrichment.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/seed_stability.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/report.md
+  stratified_virtual_ko_033_scientific_report:
+    cmd: D:\python\python.exe src/143_build_virtual_ko_scientific_report.py
+    deps:
+    - src/143_build_virtual_ko_scientific_report.py
+    - src/133_summarize_virtual_ko.py
+    - configs/virtual_ko_033.yaml
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml
+    - docs/decisions/2026-10-04-stratified-virtual-ko-033.md
+    - results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/stratified_target_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/seed_stability.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/module_enrichment.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/provenance.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/stratified_target_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/seed_stability.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/module_enrichment.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/provenance.json
+    outs:
+    - results/2026-10-05-virtual-ko-scientific-report-033

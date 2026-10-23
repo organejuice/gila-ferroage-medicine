@@ -1,0 +1,48 @@
+drug_side:
+  plan_file: YZDHD_drug_side_complete_plan_v1.3_VC_integrated.html
+  plan_version: v1.3-VC-integrated
+  execution_date: 2026-09-20
+  seed: 42
+  formula:
+    name: YZDHD
+    evidence_mode: Mode B
+    identity_status: literature_defined_exact_current_prescription_not_resolved
+    equivalence_status: FE-R_for_formula_level_until_exact_prescription_and_preparation_are_verified
+    candidate_herbs:
+      - 熟地黄
+      - 丹参
+      - 石菖蒲
+      - 紫河车
+      - 龟甲胶
+      - 茯神
+      - 益智仁
+  local_prior:
+    pubchem_identity_csv: F:\TCM select\raw_data\intergredient_target\PubChem\PubChemPy_compound_matches.csv
+    target_mapping_csv: F:\TCM select\clean_data\10_Ingredient_Target_Mapping.csv
+    evidence_role: database_prior_not_observed_formula_or_exposure
+  disease_interface:
+    package: data/interim/disease_interface_package_v1.3.json
+    module_effects: results/tables/DiseaseModuleEffects_fast.tsv
+    primary_cell_types:
+      - Microglia
+      - Astrocyte
+    strict_normalization_allowed: false
+  target_prior:
+    literature_hubs:
+      - AKT1
+      - PIK3CA
+      - PIK3CD
+      - MTOR
+      - MAPK1
+      - HIF1A
+      - EGFR
+      - TLR4
+    role: hypothesis_prior_only_not_primary_reversal_evidence
+  perturbation:
+    real_compound_dataset_status: unavailable_in_current_workspace
+    map_model_status: code_and_weights_not_configured
+    ranking_allowed: false
+  gates:
+    exposure_required_for_candidate_lock: true
+    real_perturbation_required_for_directional_compatibility: true
+    formula_level_claim_requires_whole_formula_perturbation: true

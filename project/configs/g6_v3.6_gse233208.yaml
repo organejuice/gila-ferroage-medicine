@@ -1,0 +1,64 @@
+protocol_id: G6-PROT-2026-09-26-003
+protocol_version: "3.6"
+parent_protocol: docs/protocol/disease_side_v3.5_latest_frozen.md
+status: primary_selected_input_and_execution_gates_pending
+effect_blind: true
+group_effects_calculated: false
+
+primary:
+  accession: GSE233208
+  platform: 10x_Visium
+  brain_region: human_cortex_source_mapping_pending
+  contrast: late_sporadic_AD_vs_Control
+  expected_unique_donors: {AD: 10, Control: 10}
+  include_author_diagnosis: [AD, Control]
+  exclude_author_diagnosis: [earlyAD, AD_DS]
+  spatial_unit: mixed_cell_spot
+  independent_unit: donor
+  estimand: spot_scale_spatial_coenrichment_proxy
+  cell_contact_or_causal_claim: false
+  source_object: data/raw/GSE233208/GSE233208_Human_visium_ADDS_seurat_processed.rds.gz
+  corrected_object: data/interim/GSE233208/GSE233208_Human_visium_ADDS_seurat_processed.rds
+  author_correction_required: true
+  frozen_signature_source: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries
+
+reference:
+  required: true
+  donor_independent: true
+  current_GSE174367_admissible: false
+  status: source_and_donor_crosswalk_pending
+  admissibility_lock: configs/g6_v3.6_reference_admissibility.json
+  required_types: [MG, ASC, EX, INH, ODC, OPC, PER.END]
+  fit_must_exclude_frozen_state_and_holdout_markers: true
+
+input_audit:
+  prior_metadata_audit: results/2026-09-24-disease-side-v3.5-g6-input-audit/tables
+  current_effect_blind_audit_script: src/81_g6_gse233208_effect_blind_preflight.py
+  check_unique_donor_sample_image_mapping: true
+  check_spot_count_and_coordinate_integrity: true
+  check_integer_counts: true
+  inspect_slide_library_capture_area_confounding: true
+
+analysis_lock:
+  status: pending
+  must_freeze_before_group_effects:
+    - reference_identity_and_cell_type_validation
+    - Visium_spot_QC_and_tissue_mask
+    - G1_G5_signature_detectability_and_estimability
+    - RCTD_output_definition_and_holdout_marker_calibration
+    - spot_neighborhood_graph_and_physical_scale
+    - within_donor_constrained_null
+    - donor_level_summary_and_covariates
+    - primary_testing_family_and_FDR
+  carry_over_stereo_seq_radius_25um: false
+  carry_over_v3_5_weight_threshold_0_5_without_recalibration: false
+
+historical:
+  v3_5_primary: GSE269906
+  v3_5_decision: G6_NOT_EXECUTABLE
+  preserve_old_result_and_freeze: true
+
+validation_candidates:
+  cosmx_zenodo_16938034: metadata_and_donor_independence_pending
+  myeloid_xenium_lee_2026: diagnosis_group_and_panel_coverage_pending
+  gse220442: donor_mapping_unresolved

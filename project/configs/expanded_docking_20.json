@@ -1,0 +1,37 @@
+{
+  "run_id": "2026-10-04-expanded-docking-20",
+  "seed": 42020,
+  "sensitivity_seed": 42021,
+  "sensitivity_exhaustiveness": 16,
+  "exhaustiveness": 8,
+  "num_modes": 9,
+  "energy_range": 3,
+  "box_size": 24,
+  "cpu_per_job": 2,
+  "workers": 4,
+  "vina": "F:/TCM select/docking/bin/vina.exe",
+  "obabel": "D:/conda/envs/pal_cs/Library/bin/obabel.exe",
+  "reused": ["AKR1B1", "LTA4H"],
+  "deferred": {
+    "ALOX15": "No verified human experimental receptor selected; no silent substitution with rabbit ALOX15 or human ALOX15B.",
+    "RELA": "1NFI is a protein complex without validated small-molecule pocket; blind docking not used as binding evidence."
+  },
+  "targets": {
+    "ABCC1": ["8VUX", "B", "1SY", "B", "1601", [], "cGAMP substrate-bound transporter conformation; substrate reference, not inhibitor control"],
+    "ALOX12": ["8GHB", "A", "FE2", "A", "901", ["FE2"], "Iron-centered exploratory box; no ligand redocking control"],
+    "ALOX15B": ["4NRE", "A", "C8E", "A", "702", ["FE2", "CA"], "Substrate-mimic detergent pocket; not inhibitor control"],
+    "ALOX5": ["6NCF", "B", "AF7", "B", "702", ["FE2"], "Engineered stable 5-LOX; AKBA allosteric pocket only"],
+    "CA2": ["3HS4", "A", "AZM", "A", "701", ["ZN"], "Generic Vina metal scoring; no specialized Zn force field"],
+    "DPP4": ["1X70", "A", "715", "A", "801", [], "Single-chain catalytic pocket; glycans removed"],
+    "DYRK1A": ["3ANR", "A", "HRM", "A", "1", ["PTR"], "Retain phosphotyrosine 321"],
+    "GAPDH": ["6M61", "O", "F4F", "O", "406", ["NAD"], "Covalent heptelidic-acid pocket; noncovalent poses exploratory, no valid redocking control"],
+    "MMP9": ["6ESM", "A", "B9Z", "A", "306", ["ZN", "CA"], "Generic Vina metal scoring; no specialized Zn force field"],
+    "MPO": ["4C1M", "AC", "NIH", "A", "606", ["HEM", "CA", "CSO"], "Light/heavy chains retained; generic heme scoring"],
+    "NLRP3": ["7ALV", "A", "RM5", "A", "701", ["ADP"], "NACHT-domain ADP-bound inhibitor pocket"],
+    "PKM": ["4B2D", "A", "SER", "A", "1532", ["FBP", "MG"], "PKM2 serine allosteric site; isoform/site-specific exploratory model"],
+    "PTGS2": ["5IKR", "A", "ID8", "A", "601", ["COH"], "Cobalt-heme crystal analog; exact receptor atom types audited"],
+    "SETD7": ["4JLG", "A", "1L8", "A", "402", ["SAM"], "SAM retained in PFI-2 inhibitor pocket"],
+    "SLC2A1": ["5EQI", "A", "5RH", "A", "501", [], "GLUT1 inhibitor-bound membrane conformation"],
+    "SNCA": ["8X7L", "ABCDEFGHIJ", "IZ8", "I", "202", [], "E46K fibril model only; not wild-type monomer or AD mechanism validation"]
+  }
+}

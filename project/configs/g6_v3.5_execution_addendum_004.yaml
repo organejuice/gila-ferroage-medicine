@@ -1,0 +1,17 @@
+addendum_id: G6-EXEC-2026-09-25-004
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_RUNTIME_NOTE
+scope: memory_guarded_independent_donor_scheduling
+changes_to_estimand_sampling_method_or_thresholds: false
+
+runtime:
+  in_flight_GSM8330070: continue_from_snapshotted_precheckpoint_source
+  maximum_concurrent_donor_fits: 2
+  per_RCTD_fit_max_cores: 1
+  available_memory_mb_to_start_two_fits: 6000
+  minimum_available_memory_mb_before_second_fit: 4500
+  memory_counter_unavailable_fallback: serial
+  checkpointing_and_resume: unchanged
+  independent_donor_outputs: separate_paths
+  effects_used: false

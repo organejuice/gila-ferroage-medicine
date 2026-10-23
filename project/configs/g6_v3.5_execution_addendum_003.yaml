@@ -1,0 +1,17 @@
+addendum_id: G6-EXEC-2026-09-25-003
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_RUNTIME_NOTE
+scope: restartability_only
+changes_to_estimand_sampling_method_or_thresholds: false
+
+effect_blind_rctd_runtime:
+  fixed_fitpixels_chunk_size_bins: 5000
+  section_wide_fitBulk_and_sigma_selection: unchanged
+  per_bin_RCTD_fit_algorithm_and_parameters: unchanged
+  checkpoint_payload: per_bin_raw_weights_and_RCTD_classification_table
+  checkpoint_resume_requires_matching: [execution_lock_id, raw_source_sha256, count_input_md5, reference_md5, RCTD_script_md5, execution_config_md5, gene_and_bin_dimensions, chunk_size, spacexr_version, bin_order]
+  in_flight_GSM8330070_source_snapshot: results/2026-09-24-disease-side-v3.5-g6-input-audit/code_snapshots/72_fit_g6_rctd_effect_blind_precheckpoint.R
+  purpose: avoid_recomputing_completed_fitPixels_chunks_if_a_later_effect_blind_section_run_is_interrupted
+  effects_used: false
+

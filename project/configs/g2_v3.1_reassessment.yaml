@@ -1,0 +1,41 @@
+run_id: 2026-09-20-disease-side-v3.1-g2-reassessment
+protocol: docs/protocol/disease_side_v3.1_latest_frozen.md
+input:
+  peak_dir: data/raw/D1_GSE188765
+  peak_to_gene: results/archive/2026-09-20-pre-v3-freeze/results/tables/D1_peak_to_gene.tsv
+  g1_meta: results/archive/2026-09-20-disease-side-v3.1-g2-stop-historical/meta/random_effects_meta_summary.tsv
+design:
+  contexts:
+    microglia: M
+    total_brain: T
+  conditions:
+    control: WT
+    disease: AD
+  expected_replicates: 2
+  primary_context: microglia
+  supporting_context: total_brain
+analysis:
+  pseudocount: 0.5
+  fdr: 0.05
+  glycolysis_genes:
+    - HK1
+    - HK2
+    - PFKFB3
+    - PFKFB4
+    - ALDOA
+    - ALDOC
+    - GAPDH
+    - PGK1
+    - PGAM1
+    - ENO1
+    - ENO2
+    - PKM
+    - LDHA
+    - PDK1
+    - SLC2A1
+    - HIF1A
+    - PFKP
+  replicate_metrics:
+    interval_overlap_method: any_base_overlap
+    gene_signal: sum_peak_score_per_million_total_peak_score
+  inference_boundary: descriptive_due_to_two_biological_replicates_per_group

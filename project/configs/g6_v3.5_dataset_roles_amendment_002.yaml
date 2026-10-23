@@ -1,0 +1,61 @@
+amendment_id: G6-PROT-2026-09-26-002
+parent_protocol: docs/protocol/disease_side_v3.5_latest_frozen.md
+decision_record: docs/decisions/2026-09-26-g6-replacement-metadata-selection.md
+status: metadata_roles_selected_input_admissibility_pending
+effect_blind: true
+group_effects_calculated: false
+roles:
+  primary_candidate:
+    accession: GSE233208
+    contrast: late_sporadic_AD_vs_control
+    expected_donors:
+      AD: 10
+      control: 10
+    platform: 10x_Visium
+    expression_scope: whole_transcriptome
+    spatial_unit: mixed_cell_spot
+    author_metadata_correction_required: true
+    independent_reference_required: true
+    current_reference_GSE174367_admissible: false
+    estimand_boundary: spot_scale_spatial_coenrichment_proxy
+  high_resolution_validation_candidate:
+    source: Zenodo_16938034
+    object: Nanostring_CosMX_v1.RDS
+    expected_samples_from_paper_figure:
+      AD: 3
+      control: 6
+    platform: CosMx_1000_plex
+    spatial_unit: segmented_cell
+    donor_region_crosswalk_required: true
+    frozen_G1_G5_panel_coverage_required: true
+    independent_donor_crosswalk_required: true
+    status: candidate_not_yet_eligible
+  myeloid_xenium_validation_candidate:
+    study: Lee_et_al_Nature_Genetics_2026
+    doi: 10.1038/s41588-026-02716-6
+    reported_sections: 11
+    reported_donors: 8
+    panel_genes: 366
+    diagnosis_by_donor_region_crosswalk_required: true
+    frozen_G1_G5_panel_coverage_required: true
+    independent_donor_crosswalk_required: true
+    status: high_priority_candidate_group_sizes_unverified
+  same_study_technical_reserve:
+    source: Zenodo_16938034
+    object: Human_VisiumHD_compressed_v1.RDS
+    use: within_study_platform_sensitivity_only_after_metadata_audit
+    independent_validation: false
+  historical_primary:
+    accession: GSE269906
+    status: retain_original_G6_NOT_EXECUTABLE
+  supportive_unresolved:
+    accession: GSE220442
+    status: hold_until_GSM_to_patient_mapping_resolved
+pre_effect_gates:
+  - verify_GSE233208_20_unique_donors_and_corrected_labels
+  - lock_donor_independent_documented_human_reference
+  - blind_identity_marker_and_frozen_state_coverage_audit
+  - verify_spot_QC_coordinates_tissue_masks_regions_sections
+  - reconcile_CosMx_supplement_sample_donor_diagnosis_region_FOV_metadata
+  - verify_CosMx_panel_overlap_with_frozen_G1_and_G5
+  - issue_platform_specific_numbered_execution_lock

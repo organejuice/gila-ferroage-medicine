@@ -1,0 +1,22 @@
+id: G6-META-2026-09-27-004
+status: prospective_candidate_panel_triage
+supersedes_for_future_panel_screening: G6-META-2026-09-27-003_panel_gate_only
+amends: G6-FP-2026-09-27-001_work_package_3_only
+scope: source_metadata_and_panel_overlap_only
+size_screen: results/2026-09-27-g6-new-dataset-search/size_screen_4x4.tsv
+panel_overlap_evidence: results/2026-09-27-g6-new-dataset-search/panel_overlap_evidence_004.tsv
+G5_orthology_registry: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G6_NCBI_one_to_one_orthology_provenance.json
+output_table: results/2026-09-27-g6-new-dataset-search/panel_triage_004.tsv
+output_audit: results/2026-09-27-g6-new-dataset-search/panel_triage_004.audit.json
+legacy_reference_only:
+  G1_genes: 61
+  G1_total: 244
+  G5_module_fraction: 0.25
+below_legacy_coverage_is_hard_exclusion: false
+complete_low_coverage_status: BLIND_VALIDATION_ELIGIBLE_LOW_COVERAGE
+complete_adequate_coverage_status: BLIND_VALIDATION_ELIGIBLE_PANEL_OVERLAP
+incomplete_coverage_status: PENDING_PANEL_EVIDENCE_FOR_BLIND_VALIDATION
+donor_hold_status: HOLD_DONOR_COUNTS
+full_primary_eligibility_from_triage: false
+diagnosis_group_effects_allowed: false
+historical_protocols_and_results_immutable: true

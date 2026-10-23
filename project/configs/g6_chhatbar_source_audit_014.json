@@ -1,0 +1,13 @@
+{
+  "audit_id": "G6-CHHATBAR-SOURCE-2026-09-29-014",
+  "source_doi": "10.1038/s41590-026-02472-z",
+  "data_doi": "10.5281/zenodo.16938034",
+  "minimum_independent_ad_donors_per_region": 4,
+  "minimum_independent_control_donors_per_region": 4,
+  "ad_label": "AD",
+  "control_label": "Control",
+  "candidate_region": "Occipital_cortex",
+  "candidate_tissue_region": "Occipital--Primary_Visual_Cortex_(Brodmann_area_17)",
+  "donor_suffixes": ["_BA17", "_Hip"],
+  "interpretation": "Source-level eligibility audit only; no disease-group effect or G6 execution lock."
+}

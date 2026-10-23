@@ -1,0 +1,908 @@
+[
+  {
+    "before": "Alzheimer disease",
+    "after": "Alzheimer’s disease",
+    "occurrences": 3,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "a registered 16-ingredient",
+    "after": "a predefined 16-ingredient",
+    "occurrences": 2,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the frozen absorption, distribution, metabolism, excretion and toxicity (ADMET) prediction rules",
+    "after": "prespecified absorption, distribution, metabolism, excretion and toxicity (ADMET) prediction rules",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Virtual knockout review of",
+    "after": "Virtual knockout analysis of",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Correcting reference matching improved computational coverage without establishing target specificity.",
+    "after": "Expression-matched reference comparisons did not establish target specificity.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "provide a traceable interface between",
+    "after": "connect",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "with their original model and human observations kept distinct",
+    "after": "although these findings arise from different model and human contexts",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "preserve compound identity, assay provenance, cellular context, and uncertainty as candidates move through successive stages",
+    "after": "account for compound identity, assay provenance, cellular context, and uncertainty",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Finally, we examined numerical validity, donor-resampling stability, expression support, and matched-reference responses. The resulting framework identifies which hypotheses remain testable and which interpretations exceed the available evidence.",
+    "after": "We assessed the robustness of candidate responses through donor resampling, expression support, and matched-reference comparisons. These analyses tested whether the candidate associations were stable and specific enough to motivate experimental validation.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Study design and evidence organization",
+    "after": "Study design",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "public molecular datasets and registered pharmacological records",
+    "after": "public molecular datasets and curated pharmacological records",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "These layers were organized as G1–G5: human microglial AD associations; glycolysis/lactate–H4K12la evidence; senescence/SASP-related evidence; iron-handling, lipid-peroxidation-associated, and ferro-aging-like evidence; and astrocyte responses. G2–G5 conclusions were restricted to their experimental models. Human H4K12la translation and spatial microglia–astrocyte validation were evaluated separately and closed when qualified evidence was insufficient.",
+    "after": "We examined human microglial AD associations alongside model evidence for glycolysis/lactate–H4K12la, senescence-associated secretory phenotype (SASP), iron handling, lipid peroxidation, ferro-aging-like transcription, and astrocyte responses. Inferences from model datasets were restricted to their experimental contexts. Available data were insufficient to establish human H4K12la convergence or spatial microglia–astrocyte interactions.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the project inclusion rules",
+    "after": "the study inclusion criteria",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "For the D7/D8 preparation route",
+    "after": "For GSE148822 and GSE174367",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "D7 additionally",
+    "after": "GSE148822 additionally",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "D8 used",
+    "after": "GSE174367 used",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "D3 reused the previously audited pseudobulk preparation.",
+    "after": "GSE160936 used the existing donor-level pseudobulk preparation.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Doublet detection was not claimed because the required package was unavailable in the original preparation environment.",
+    "after": "Doublet detection was not performed because the required software was unavailable.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "D8 additionally",
+    "after": "GSE174367 additionally",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Complete-PMI and cell-count-adjusted analyses were retained as sensitivities.",
+    "after": "Analyses restricted to complete postmortem interval (PMI) records and analyses adjusting for cell counts assessed sensitivity.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "this limitation is retained in interpreting its uncertainty",
+    "after": "confidence intervals should therefore be interpreted with this limitation",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the source/project coding",
+    "after": "the source dataset terminology",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Registered peak-to-gene annotations",
+    "after": "The selected peak-to-gene annotations",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "classified as site-specific support in an EAE/MS context, not AD replication",
+    "after": "interpreted as site-specific support in an experimental autoimmune encephalomyelitis/multiple sclerosis context, rather than AD replication",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "For G3,",
+    "after": "For the senescence analysis,",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "For G4,",
+    "after": "For the iron and lipid-program analysis,",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the registered 95-gene",
+    "after": "the prespecified 95-gene",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "those histological data were not locally refitted",
+    "after": "we did not reanalyse those histological measurements",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "They could not rescue failure of the primary analysis.",
+    "after": "These datasets were interpreted as complementary evidence and did not replace the primary analysis.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Formula registration and chemical triage",
+    "after": "Ingredient identification and compound selection",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The registered list comprised",
+    "after": "The ingredient list comprised",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "frozen BATMAN-TCM and TCMBank exports",
+    "after": "versioned BATMAN-TCM and TCMBank exports",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Secondary aliases were audited separately.",
+    "after": "Secondary aliases were checked separately.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Chemical triage reused the frozen project policy rather than introducing outcome-dependent thresholds.",
+    "after": "Compound selection followed prespecified physicochemical and ADMET prediction criteria.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "according to the existing implementation",
+    "after": "using the recorded structural-alert rules",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "G1 pathway analysis",
+    "after": "Human microglial pathway analysis",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Prespecified G2–G5 program enrichment supplied annotation rather than independent discovery.",
+    "after": "Enrichment of prespecified model-derived programs provided functional annotation rather than independent discovery.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "through the registered snapshots",
+    "after": "through versioned database snapshots",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the frozen STRING 12.0",
+    "after": "the selected STRING 12.0",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The recorded procedure used",
+    "after": "The analysis used",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "their preparation/cofactor audits were not accepted as validated structural evidence",
+    "after": "limitations in receptor preparation and cofactor handling prevented their interpretation as validated structural evidence",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "registered reference sites",
+    "after": "prespecified reference sites",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "retained as registered",
+    "after": "retained according to the receptor preparation protocol",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Resampling, matched references, and numerical audit",
+    "after": "Robustness and reference-gene comparisons",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "underwent final review",
+    "after": "were assessed for robustness",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "A subsequent correction recalculated mean expression using CP10K denominators from the full available raw-count gene matrix for the identical frozen cells.",
+    "after": "Mean expression was calculated as counts per ten thousand (CP10K) using the full available raw-count gene matrix for the same cells, correcting an earlier filtered-matrix denominator.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The correction did not rerun the earlier donor-resampling or complete enrichment analyses.",
+    "after": "Donor-resampling and complete enrichment analyses were not repeated after this denominator correction.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Audits checked frozen inputs, gene uniqueness, finite numerical outputs, completion markers, enrichment backgrounds, hypergeometric probabilities, BH corrections, and representative GSEA scores. Numerical audit and biological validation were recorded separately. Existing local R/Python environments, parameter files, source hashes, Git history, and DVC pointers provided computational provenance. A DVC remote and cross-machine restore had not been validated.",
+    "after": "Computational checks assessed input integrity, gene uniqueness, finite numerical outputs, enrichment backgrounds, hypergeometric probabilities, BH corrections, and representative GSEA scores. These checks evaluated numerical consistency rather than biological validity. Software versions, parameters, and input provenance are provided in Online Resource 3; the complete upstream analysis has not been independently reproduced on another machine.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "in this journal-conversion step",
+    "after": "during manuscript preparation",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "A staged framework connects disease associations to pharmacological hypotheses",
+    "after": "Human disease associations and model-derived glial programs define the candidate analysis",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Each transition preserved its evidential scope. The human association layer supplied disease relevance, while the model layers supplied experimentally defined contexts for lactylation, senescence-related transcription, iron handling, and astrocyte responses. The drug layer supplied candidate connections without converting these into demonstrated activity of the complete preparation.",
+    "after": "Human expression associations established disease relevance, while model datasets characterized lactylation, senescence-related transcription, iron handling, and astrocyte responses. Compound–target records connected these programs to pharmacological candidates but did not demonstrate activity of the complete preparation.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "This organization yielded two complementary outcomes. It identified reproducible associations and model responses that can anchor future experiments, and it exposed limitations that would otherwise be obscured by a single target ranking. Neither human H4K12la translation nor spatial microglia–astrocyte communication met the requirements for confirmation within the completed project.",
+    "after": "The analyses identified human gene associations and model-specific glial responses suitable for hypothesis testing. However, available evidence did not establish human H4K12la convergence or spatial microglia–astrocyte communication.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the human G1 FDR criterion",
+    "after": "the human meta-analysis FDR criterion",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "This distinction constrained all subsequent pharmacological interpretations.",
+    "after": "Candidate interpretation therefore relied on gene-level associations and context-specific model evidence.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the human M3 comparison",
+    "after": "the human senescence-module comparison",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "one of its two registered genes",
+    "after": "one of its two prespecified genes",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the recorded ADMET prediction rules",
+    "after": "the prespecified ADMET prediction rules",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "These numbers described a frozen structural subset",
+    "after": "These counts describe the analysed structural subset",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The 335 prediction-pass structures were not silently substituted for this larger query universe. Source-specific coverage and identity-hold states were retained. Earlier ChEMBL similarity hits had been incorrectly interpreted as direct activity records; the corrected analysis excluded those hits from experimental connections.",
+    "after": "The broader target query included the earlier structural catalog and was not restricted to the 335 ADMET prediction-pass structures. Coverage and unresolved chemical identities were recorded by source. ChEMBL similarity hits were excluded from direct experimental connections.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Across G1–G5 program memberships",
+    "after": "Across human associations and model-derived programs",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "G2–G5 membership identified a program connection",
+    "after": "Model-program membership identified a program connection",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "proximity to G1",
+    "after": "proximity to the human signature",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "G4/G5 program overlap",
+    "after": "overlap between microglial iron-related and astrocyte programs",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "produced seventy-three new local jobs, including fifty-nine candidate-compound jobs",
+    "after": "comprised seventy-three additional docking calculations, including fifty-nine candidate-compound calculations",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The initial primary assessment registered 132 target–cell-type–state–seed tasks, retaining non-estimable outcomes.",
+    "after": "The primary analysis comprised 132 target–cell-type–state–seed combinations, including non-estimable outcomes.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Final scientific review examined",
+    "after": "Robustness analysis examined",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "1,475 completed outputs",
+    "after": "1,475 estimable results",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the G5 SASP, LPO, and ferro-aging modules",
+    "after": "the astrocyte SASP, LPO, and ferro-aging modules",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Corrected reference matching improves coverage without establishing specificity",
+    "after": "Expression-matched reference perturbations do not establish target specificity",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The final matching correction recalculated full-library CP10K values",
+    "after": "Full-library CP10K values were recalculated",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "including 1,112 reused outputs",
+    "after": "including 1,112 existing results",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "knockout jobs completed",
+    "after": "knockout calculations were completed",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Improved matching resolved an implementation limitation while preserving the uncertainty of the biological interpretation.",
+    "after": "Thus, improved reference matching did not establish target-specific perturbation responses.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Independent numerical audits supported the integrity of the recorded computations.",
+    "after": "Numerical verification supported the consistency of the enrichment calculations.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The final correction also preserved hashes for 1,202 frozen inputs and passed six R checks plus Python rank/tail-fraction fixtures.",
+    "after": "Input integrity was verified for 1,202 source files, together with six R checks and Python rank/tail-fraction checks.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "virtual knockout auditing",
+    "after": "virtual knockout analysis",
+    "occurrences": 2,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "under the frozen workflow",
+    "after": "under the prespecified analysis",
+    "occurrences": 2,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the G1 FDR criterion",
+    "after": "the human meta-analysis FDR criterion",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The completed project therefore retained unresolved human translation rather than interpreting missing confirmation as absence of lactylation biology.",
+    "after": "The absence of human confirmation leaves the relevance of this model mechanism unresolved; it does not demonstrate the absence of lactylation biology.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "its registered Table S2 gene-set snapshot",
+    "after": "the selected Table S2 gene-set version",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The virtual knockout review",
+    "after": "The virtual knockout analysis",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "the complete frozen design",
+    "after": "the prespecified inclusion criteria",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "so no AD–control spatial effect or directed intercellular communication claim was exported. Absence of an executable analysis was kept distinct from a null biological result.",
+    "after": "preventing estimation of AD–control spatial effects or directed intercellular communication. This evidence gap cannot be interpreted as a null biological result.",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The completed analysis provides traceable candidate hypotheses and identifies the measurements required to test them",
+    "after": "These findings define pharmacological hypotheses and the measurements required to test them",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "Network and virtual knockout audits exposed",
+    "after": "Network and virtual knockout analyses identified",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "from the registered source study",
+    "after": "from the cited source study",
+    "occurrences": 1,
+    "reason": "Replace project/report wording with precise research-article prose; preserve claim strength."
+  },
+  {
+    "before": "The registered ingredient list",
+    "after": "The predefined ingredient list",
+    "occurrences": 1,
+    "reason": "Research-article terminology and concise reproducibility statement."
+  },
+  {
+    "before": "Source annotations and marker coexpression were reviewed, but comprehensive doublet and ambient-RNA correction was not completed.",
+    "after": "Cell identity was assessed using source annotations and marker coexpression; comprehensive doublet and ambient-RNA correction was not performed.",
+    "occurrences": 1,
+    "reason": "Research-article terminology and concise reproducibility statement."
+  },
+  {
+    "before": "Analysis scripts, versioned configuration files, environment records, and Git/DVC provenance are retained with the project. Existing scTenifoldKnk, AutoDock Vina, ADMET-AI, and R/Python implementations were reused with recorded versions.",
+    "after": "Analysis scripts, configuration files, software versions, and input provenance are provided in Online Resource 3. The analysis used existing implementations of scTenifoldKnk, AutoDock Vina, ADMET-AI, and R/Python routines.",
+    "occurrences": 1,
+    "reason": "Research-article terminology and concise reproducibility statement."
+  },
+  {
+    "before": "connect human AD associations and YZDHD-related pharmacological hypotheses",
+    "after": "connect human AD associations with YZDHD-related pharmacological hypotheses",
+    "occurrences": 1,
+    "reason": "Correct parallelism and subject–verb agreement."
+  },
+  {
+    "before": "the measurements required to test them; it does not establish",
+    "after": "the measurements required to test them; they do not establish",
+    "occurrences": 1,
+    "reason": "Correct parallelism and subject–verb agreement."
+  },
+  {
+    "before": "熟地黄, 肉苁蓉, 山茱萸, 石斛, 麦冬, 五味子, 石菖蒲, 远志, 龙骨, 龟甲, 巴戟天, 桃仁, 红花, 丹参, 水蛭, and 肉桂",
+    "after": "Rehmanniae Radix Praeparata, Cistanches Herba, Corni Fructus, Dendrobii Caulis, Ophiopogonis Radix, Schisandrae Chinensis Fructus, Acori Tatarinowii Rhizoma, Polygalae Radix, Fossilia Ossis Mastodi, Testudinis Carapax et Plastrum, Morindae Officinalis Radix, Persicae Semen, Carthami Flos, Salviae Miltiorrhizae Radix et Rhizoma, Hirudo, and Cinnamomi Cortex",
+    "occurrences": 1,
+    "reason": "2026-10-15 user document comment: SCI-source medicinal-material nomenclature; no unsupported species or processing additions."
+  },
+  {
+    "before": "Original Chinese names were preserved to avoid unsupported substitutions involving botanical identity or processing.",
+    "after": "Pharmacognostic names identify the medicinal materials and preserve the processing distinction for prepared rehmannia root. Original ingredient identifiers were retained for database matching.",
+    "occurrences": 1,
+    "reason": "2026-10-15 user document comment: SCI-source medicinal-material nomenclature; no unsupported species or processing additions."
+  },
+  {
+    "before": "Integrated human and model analyses identified an AD-associated microglial reference signature and complementary glial response programs relevant to YZDHD candidate evaluation. Compound–target provenance, network proximity, structural assessment, and virtual knockout analysis narrowed the interpretations supported by these connections. These findings define pharmacological hypotheses and the measurements required to test them; they do not establish therapeutic efficacy or a confirmed human lactylation–ferro-aging mechanism for the preparation.",
+    "after": "Published model evidence linked histone lactylation to microglial glycolytic regulation, but our analysis did not establish convergence with human AD expression. Amyloid-exposed microglial cultures showed increased senescence-associated and ferro-aging reference transcription, together with increased iron-uptake and decreased iron-export scores. The astrocyte model showed opposite iron-uptake/export changes, indicating cell-context-dependent iron responses. These findings support related glial response programs rather than a uniformly activated lactylation–senescence–ferro-aging pathway in human AD.\n\nYZDHD-associated compounds had experimental-record connections to proteins in these programs. However, network proximity and virtual knockouts did not establish stable, target-specific modulation across the disease-associated programs. Thus, whether YZDHD increases or reduces histone lactylation, cellular senescence or ferro-aging remains undetermined. Direct YZDHD perturbation with measurements of these processes is required before claiming their modulation or a therapeutic mechanism.",
+    "occurrences": 1,
+    "reason": "User conclusion annotation: specify biological findings and directly state that formula effects and directions remain undetermined without YZDHD treatment evidence."
+  },
+  {
+    "before": "Published model evidence linked histone lactylation to microglial glycolytic regulation, but our analysis did not establish convergence with human AD expression. Amyloid-exposed microglial cultures showed increased senescence-associated and ferro-aging reference transcription, together with increased iron-uptake and decreased iron-export scores. The astrocyte model showed opposite iron-uptake/export changes, indicating cell-context-dependent iron responses. These findings support related glial response programs rather than a uniformly activated lactylation–senescence–ferro-aging pathway in human AD.\n\nYZDHD-associated compounds had experimental-record connections to proteins in these programs. However, network proximity and virtual knockouts did not establish stable, target-specific modulation across the disease-associated programs. Thus, whether YZDHD increases or reduces histone lactylation, cellular senescence or ferro-aging remains undetermined. Direct YZDHD perturbation with measurements of these processes is required before claiming their modulation or a therapeutic mechanism.",
+    "after": "In this work, we integrated human microglial transcriptomics, model-derived glial programs, and network pharmacology to investigate YZDHD-related candidates in AD. By linking disease-associated genes with compound–target records, we identified candidate connections involving lactylation-associated metabolism, senescence-related transcription, and iron homeostasis. Increased senescence-associated and ferro-aging reference scores in amyloid-exposed microglia, alongside contrasting astrocytic iron responses, suggest that these programs may depend on cellular context. These associations provide a rationale for investigating whether YZDHD-related compounds could modulate interconnected glial responses in AD. However, limited human transcriptional convergence, nonsignificant primary network proximity, and variable virtual knockout responses warrant caution in assigning a mechanism to the preparation. Further studies should combine chemically characterized YZDHD with direct measurements of histone lactylation, senescence, iron handling and target engagement. Such studies could clarify whether the preparation affects these processes and, if so, in which direction. Our integrative analysis may help guide these experiments and refine multipathway pharmacological hypotheses for AD.",
+    "occurrences": 1,
+    "reason": "User-supplied rhetorical template: integrated analysis, findings, biological interpretation, potential significance and future validation; use qualified, nonabsolute claims."
+  },
+  {
+    "before": "In this study, we connected human AD microglial associations to model-derived glial programs and then examined YZDHD-related pharmacological candidates through source review, network analysis, structural assessment, and virtual knockout analysis. The human layer identified a directionally stable 244-gene subset under the prespecified analysis. Complementary models supported senescence-related, iron-handling, and lipid-peroxidation-associated responses, including five significant astrocyte modules. However, the integrated candidate analyses did not establish a validated pharmacological mechanism for the complete preparation. Their main contribution was to make the path from disease association to an experimentally testable hypothesis explicit.\n\nThe human and model layers answered different questions. The human cohorts identified expression features associated with AD across retained anatomical contexts, whereas iMGL and animal datasets characterized responses to defined experimental conditions. The failure of the predefined human module composites to meet the human meta-analysis FDR criterion therefore matters: it prevents model convergence from being presented as uniform activation of a human disease pathway. Even the 244-gene subset should be interpreted within its statistical construction. Its direction was preserved after cohort omission, but its significance was not required in every reduced analysis, and its meta-analysis did not explicitly model correlated regions within donors. Disease-associated astrocyte studies and experimental induction of reactive astrocytes by microglial factors likewise illustrate context-dependent glial responses; our cross-dataset similarities do not demonstrate the same communication mechanism (Habib et al. 2020; Liddelow et al. 2017).\n\nLactylation illustrates why mechanistic specificity must be maintained during integration. The H4K12la anchor and the H3K18la/SASP bridge concern distinct modifications and experimental systems (Pan et al. 2022; Wei et al. 2023). Their inclusion provides complementary biological context, but does not demonstrate a continuous H4K12la-driven senescence mechanism in human AD microglia. RNA-based proxies cannot identify occupancy at a histone residue. The absence of human confirmation leaves the relevance of this model mechanism unresolved; it does not demonstrate the absence of lactylation biology. The original demonstration of histone lactylation established a metabolite-linked chromatin modification in other cellular contexts, reinforcing the need for residue- and system-specific validation (Zhang et al. 2019).\n\nIron-related programs were similarly context dependent. iMGLs showed increased uptake and decreased export scores after amyloid exposure, while the astrocyte model showed the opposite directions. This contrast supports separate treatment of cellular states, species, sampling times, and assay layers. It also argues against collapsing iron uptake, storage, export, and ferritinophagy into a single undifferentiated score. Ferro-aging-like expression can be useful as an operational reference, but RNA scores do not establish ferroptosis, iron-driven causality, or direct lipid-peroxidation flux. The original primate framework (Liu et al. 2026a) remains an external biological reference rather than a mechanism automatically transferred to AD glia. Its subsequent correction concerned source data for Figure S2P; the correction notice states that the published figure, analyses, and conclusions remain unchanged (Liu et al. 2026b). The present analysis retained the selected Table S2 gene-set version. Direct ferroptosis studies link iron-dependent oxidative death and ACSL4-mediated lipid composition, while NCOA4 experiments distinguish ferritin cargo turnover from a general iron-response signature (Dixon et al. 2012; Doll et al. 2017; Mancias et al. 2014).\n\nPharmacological evidence also required distinctions beyond target overlap. Exact compound identity and source-reviewed experimental records narrowed the human intersection to five candidates, while the larger program-associated set contained twenty targets. Neither count identified a therapeutically beneficial action. CA2, for example, combined a negative disease expression association with inhibition records, creating a direction question that cannot be resolved by reversing the transcriptomic sign. LTA4H required attention to dual enzyme functions and ingredient provenance; PKM required isoform and site specificity. SNCA aggregation observations could not be equated with direct binding to a wild-type monomer. These qualifications define the experiments needed for each candidate.\n\nThe primary network result further constrained the formula hypothesis. The candidate target collections did not show significant proximity to the human association subset in the direct experimental-channel network. This result does not prove pharmacological inactivity, because coverage and source selection were incomplete. It does show that network proximity cannot currently serve as positive global support for the proposed human mechanism. Significant results for model programs were conditional annotations, particularly where members were shared between microglial and astrocytic modules. Structural calculations likewise provided local geometric assessments, with receptor-specific limitations involving metals, covalent sites, transporter conformations, and aggregation models.\n\nThe virtual knockout analysis showed that an interpretable computational response is not necessarily a stable or target-specific one. Several initial AD pathway observations diminished under donor omission, bootstrap resampling, or removal of translation-related annotation contributors. Reference comparisons revealed that high module disturbance could be shared by many perturbations within the same network. The matching correction improved expression support and numerical comparability, but the corrected responses remained insufficiently distinct to establish specificity. This distinction is useful for experimental design: it discourages selection based solely on one random network realization or a high unsigned perturbation percentile.\n\nCell identity remained another material limitation. Cell identity was assessed using source annotations and marker coexpression; comprehensive doublet and ambient-RNA correction was not performed. In particular, a weakly expressed target can be supported by relatively few cells even in a large background. Balanced sampling and a retained target list do not resolve uncertain cellular origin. Similarly, bootstrap replicates and two random seeds probe stability within the available data; they do not add independent biological donors. These issues are consistent with the broader need to preserve biological replication in single-cell inference (Squair et al. 2021). DoubletFinder, Scrublet, and SoupX exemplify methods designed to address doublet or ambient-RNA artifacts; they are cited as validation options and were not completed in this workflow (McGinnis et al. 2019; Wolock et al. 2019; Young and Behjati 2020).\n\nSeveral additional constraints affect translation. The predefined ingredient list lacks verified dose, preparation, batch composition, and quantitative chemical measurements. Its database chemical space therefore cannot establish the constituents of the administered preparation. ADMET outputs are predictions, and blood–brain barrier estimates do not determine relevant unbound exposure. No formula exposure–potency comparison, direct target-engagement measurement, signed drug-induced state change, or rescue experiment was available. Spatial analysis did not identify a qualified dataset satisfying the prespecified inclusion criteria, preventing estimation of AD–control spatial effects or directed intercellular communication. This evidence gap cannot be interpreted as a null biological result. Experimental work on intracellular bioavailability shows why predicted physicochemical properties do not determine the drug fraction available to an intracellular target (Mateus et al. 2017).\n\nThe framework nevertheless supplies a practical basis for subsequent validation. A chemically characterized preparation could be tested at measured, relevant exposure levels in microglial and astrocytic systems. Candidate hypotheses should specify target identity and action direction before evaluation, with target engagement and perturbation/rescue measurements linked to prespecified endpoints. Lactylation, senescence, iron handling, and lipid-peroxidation-associated hypotheses require their respective direct measurements. For human inference, a covariance-aware synthesis of paired regional effects and stronger cell-identity verification would address remaining statistical and annotation limitations. Such experiments would determine whether the present associations can be converted into a pharmacologically coherent mechanism. Cellular thermal shift assays and live-cell kinase occupancy methods illustrate direct engagement measurements that could be selected after target- and assay-specific validation (Martinez Molina et al. 2013; Vasta et al. 2018).",
+    "after": "In this study, we integrated human microglial transcriptomics with model-derived glial programs and pharmacological records to investigate YZDHD-related candidates in AD. The directionally stable 244-gene subset provided a human disease reference, while five significant astrocyte modules and complementary microglial responses highlighted context-dependent biological programs. Together, these findings suggest that candidate evaluation may benefit from considering metabolic regulation, senescence-associated transcription and iron handling jointly. Their value lies in specifying biological questions and candidate connections that can be examined experimentally, with human associations and model mechanisms contributing different forms of evidence.\n\nThe relationship between human associations and model responses is central to interpreting these findings. Human postmortem expression reflects disease-associated states across anatomical contexts, whereas iMGL and animal datasets capture responses under defined experimental conditions. The absence of significant human module composites suggests that coordinated model responses may not generalize uniformly across human AD microglia. Differences in species, exposure duration, brain region and disease stage offer plausible explanations that would require targeted comparisons. The 244-gene subset may therefore be more useful as a reference for disease relevance than as a unified mechanistic pathway. Its direction persisted after cohort omission, although significance was not required in every reduced analysis and correlated regions within donors were not explicitly modeled. Disease-associated astrocytes and experimentally induced reactive astrocytes likewise illustrate how glial responses depend on their biological setting. Similarity between our datasets may motivate tests of intercellular communication, but does not identify its direction or mediators (Habib et al. 2020; Liddelow et al. 2017).\n\nLactylation offers a potential connection between metabolic state and chromatin regulation that could help explain persistent glial responses. The H4K12la and H3K18la/SASP findings provide complementary evidence from distinct modifications and experimental systems (Pan et al. 2022; Wei et al. 2023). In our analysis, this literature context supports investigating metabolic and inflammatory responses together, while leaving a continuous H4K12la-driven senescence mechanism in human microglia unresolved. Increased senescence-associated transcription after amyloid exposure could reflect overlapping inflammatory and stress responses, rather than durable cellular senescence alone. Distinguishing these possibilities would require direct chromatin measurements alongside functional senescence endpoints and temporal perturbation experiments. The broader discovery of histone lactylation supports this metabolic interpretation, although its consequences may vary with the modified residue and cellular context (Zhang et al. 2019).\n\nThe contrasting iron responses suggest another source of glial heterogeneity. Increased iron-uptake and decreased iron-export scores in iMGLs are consistent with a transcriptional tendency toward iron retention. Opposite astrocytic scores could indicate a different adaptation to amyloid pathology, although differences in species, sampling and assay design offer alternative explanations. These patterns motivate measuring iron exchange and compartmentalization in matched glial systems, rather than assuming a shared response across cell types. Ferro-aging reference expression may help organize such comparisons, but does not itself measure ferroptosis or iron-dependent injury. The primate framework (Liu et al. 2026a) supplies a related biological reference whose relevance to AD glia remains to be tested. Its correction addressed source data for Figure S2P without changing the published analyses or conclusions (Liu et al. 2026b); we retained the selected Table S2 gene-set version. Experimental work on ferroptosis, ACSL4-dependent lipid composition and NCOA4-mediated ferritin turnover further supports evaluating lipid injury and iron trafficking as related but distinct processes (Dixon et al. 2012; Doll et al. 2017; Mancias et al. 2014).\n\nThese biological distinctions also shape the interpretation of YZDHD-related pharmacological candidates. Exact compound identity and experimental-record review narrowed the human intersection to five candidates and the broader program-associated set to twenty targets. Such connections provide starting points for mechanism-focused experiments, but the desired action cannot be inferred from target membership alone. For CA2, a negative disease expression association together with inhibition records raises the question of whether further inhibition would oppose or reinforce the disease-associated state. LTA4H requires attention to its dual enzyme functions, while PKM requires isoform- and site-specific assessment. For SNCA, aggregation-related observations call for assays that distinguish aggregation effects from binding to a wild-type monomer. Candidate-specific questions of this kind may be more informative than a single ranking of presumed beneficial targets. They also provide a rationale for exploring complementary actions among constituents, provided that relevant compounds and exposures can first be established.\n\nThe primary network findings temper a broad multitarget interpretation. Candidate target collections did not show significant proximity to the human association subset in the direct experimental-channel network. Incomplete target coverage and source-dependent network structure may contribute to this result, so it should not be interpreted as evidence of pharmacological inactivity. Nevertheless, the present proximity analysis offers limited support for a global human disease mechanism. Exploratory proximity to model programs may help identify experimental contexts, although shared members reduce the independence of those comparisons. Structural assessments add information about geometric compatibility, but receptor-specific issues involving metals, covalent sites, transporter conformations and aggregation models constrain their interpretation. Agreement between database links, network placement and docking would be most useful when followed by measurements of binding and functional response at relevant exposure.\n\nVirtual knockout analyses further suggest that candidate relevance may depend on donor composition and the surrounding regulatory network. The attenuation of several initial pathway observations under resampling indicates that a response from one inferred network may not represent a reproducible biological dependency. Shared responses to reference-gene perturbations also suggest that high module disturbance can reflect network architecture or broadly responsive annotations. Improved reference matching strengthens numerical comparability, but does not by itself resolve these biological alternatives. This argues for assessing candidate-specific effects against matched perturbations and testing whether they persist across donors. In this setting, expression support, reproducibility and specificity may be more useful selection criteria than unsigned disturbance magnitude alone.\n\nSeveral features strengthen the interpretability of the analysis. Donor-level aggregation preserves biological replication in the human association analysis, while cohort omission evaluates dependence on individual datasets. Keeping human disease associations separate from model-derived programs allows similarities and discrepancies to remain visible. Compound identity and assay provenance make the basis of each pharmacological connection explicit, and matched-reference perturbations challenge apparently strong candidate responses. Together, these features support a more transparent progression from a disease-associated expression pattern to a testable pharmacological hypothesis. They provide complementary checks on interpretation, rather than independent validation of every proposed mechanism.\n\nCell identity and replication remain important limitations. Source annotations and marker coexpression supported the retained populations, but comprehensive doublet and ambient-RNA correction was not performed. Low target expression may therefore reflect a small supported cell population, uncertain cellular origin or both. Balanced sampling cannot fully distinguish these possibilities, and bootstrap replicates or two random seeds do not add independent donors. These considerations may be particularly relevant to neurotransmitter- or synapse-related annotations in microglial profiles. They reinforce the importance of preserving biological replication in single-cell inference (Squair et al. 2021). DoubletFinder, Scrublet and SoupX offer potential approaches for addressing doublet and ambient-RNA contributions in future analyses; they were not applied here (McGinnis et al. 2019; Wolock et al. 2019; Young and Behjati 2020).\n\nTranslation to the complete preparation introduces additional uncertainty. The ingredient list lacks verified dose, preparation, batch composition and quantitative chemical measurements, so database constituents may not reflect the compounds reaching glial cells. ADMET and blood–brain barrier predictions can inform prioritization, but relevant unbound exposure remains to be measured. No formula exposure–potency comparison, direct target-engagement measurement, signed drug-induced state change or rescue experiment was available. Similarly, the absence of a qualified spatial dataset limits interpretation of directed microglia–astrocyte communication. These gaps define the conditions under which the current hypotheses could be evaluated, rather than implying a null biological effect. Experimental studies of intracellular bioavailability emphasize why physicochemical predictions alone may not describe the drug fraction available to a target (Mateus et al. 2017).\n\nFuture work could begin with chemically characterized YZDHD tested at measured exposure levels in matched microglial and astrocytic systems. Direct measurements of histone lactylation, senescence, iron pools and lipid peroxidation would help distinguish coordinated modulation from overlapping transcriptional stress responses. Target perturbation and rescue experiments could then examine whether candidate proteins mediate those changes and in which direction. Covariance-aware synthesis of paired regional effects and stronger cell-identity verification would improve the corresponding human analyses. Cellular thermal shift and live-cell kinase occupancy methods illustrate target-engagement approaches, with assay choice depending on the candidate and experimental system (Martinez Molina et al. 2013; Vasta et al. 2018). Integrating these measurements with transcriptomic responses may clarify whether YZDHD-related compounds influence complementary glial processes and help refine experimentally grounded multipathway hypotheses for AD.",
+    "occurrences": 1,
+    "reason": "User discussion style template: interpret biological findings, competing explanations, candidate mechanisms, strengths, limitations and next experiments; retain qualified claims and source evidence."
+  },
+  {
+    "before": "Alzheimer’s disease (AD) involves heterogeneous glial responses, complicating the translation of molecular associations into pharmacological hypotheses. Here, we integrated human microglial transcriptomics, model-derived epigenetic and transcriptional evidence, compound–target records, structural assessments, and virtual knockout analyses to evaluate candidates associated with a predefined 16-ingredient Yizhi Dihuang Decoction (YZDHD). Region-stratified donor-level analyses of three human cohorts identified 413 AD-associated genes at a false discovery rate (FDR) below 0.05. A subset of 244 genes was estimable in all five region units and retained its direction after each cohort was omitted. Model datasets supported lactylation-associated metabolic, senescence-related, iron-handling, and lipid-peroxidation-associated programs, while human translation of the histone H4 lysine 12 lactylation program remained unresolved. In amyloid-model mouse astrocytes, five of seven predefined modules showed significant disease-associated changes. Chemical triage retained 335 structures under prespecified absorption, distribution, metabolism, excretion and toxicity (ADMET) prediction rules, and layered pharmacological evidence linked 20 candidate targets to 80 unique compound–target pairs across the disease programs. However, the primary experimental-association network did not support significant proximity to the human 244-gene signature. Virtual knockout analysis of 15 targets across 29 contexts likewise revealed substantial dependence on donor sampling, low-expression support, and shared network responses. Expression-matched reference comparisons did not establish target specificity. Together, these analyses connect human AD associations with YZDHD-related pharmacological hypotheses, while defining the experimental evidence required to establish exposure, target engagement, and therapeutic direction.",
+    "after": "Glial responses to Alzheimer’s disease (AD) differ across cell types and experimental models. We combined human microglial transcriptomics with model epigenetic and expression data to examine candidates associated with a predefined 16-ingredient Yizhi Dihuang Decoction (YZDHD). Donor-level analyses of three human cohorts identified 413 AD-associated genes at a false discovery rate (FDR) below 0.05. A subset of 244 genes was estimable in all five region units and retained its direction after each cohort was omitted. Model datasets supported lactylation-associated metabolism, senescence-related transcription, iron handling and lipid-peroxidation-associated responses. Convergence between histone H4 lysine 12 lactylation and human disease expression remained unresolved. Five of seven predefined modules changed significantly in amyloid-model mouse astrocytes. Chemical screening retained 335 structures using prespecified absorption, distribution, metabolism, excretion and toxicity (ADMET) prediction rules. Experimental-record connections linked 20 candidate targets to 80 unique compound–target pairs across the disease programs. None of the pharmacological evidence layers showed significant proximity to the human 244-gene signature in the primary experimental-association network. Virtual knockouts of 15 targets across 29 contexts depended on donor sampling and expression support, with responses shared by reference-gene perturbations. These comparisons did not establish target specificity. The results identify glial responses and candidate connections for experimental study of YZDHD-related compounds. Relevant exposure, target engagement and the direction of any treatment effect remain to be tested.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Alzheimer’s disease (AD) is characterized by molecular changes that vary across brain regions, cell populations, and disease stages. This heterogeneity complicates efforts to identify intervention targets from expression profiles alone. Integrated computational studies can connect disease-associated molecular features to pharmacological candidates, as illustrated by approaches combining interpretable models, network biology, and independent clinical associations (Mottaqi et al. 2025). Yet the evidence supporting each connection remains decisive: a disease-associated gene, a compound-linked protein, and a therapeutically tractable target represent different stages of inference. Human single-nucleus studies have documented cell-specific and anatomical variation in AD-associated transcription (Grubman et al. 2019; Mathys et al. 2019).",
+    "after": "Alzheimer’s disease (AD) affects molecular processes differently across brain regions, cell populations and disease stages. This variation complicates target selection from expression data. Computational approaches have combined interpretable models, network biology and clinical associations to nominate pharmacological candidates (Mottaqi et al. 2025). Such analyses must still establish how each candidate relates to the affected cell population and whether the proposed action is therapeutically relevant. Human single-nucleus studies illustrate the cellular and anatomical variation underlying this problem (Grubman et al. 2019; Mathys et al. 2019).",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Microglia offer a relevant cellular entry point because their inflammatory, homeostatic, and lipid-processing states change during AD progression",
+    "after": "Microglial inflammatory, homeostatic and lipid-processing states change during AD progression",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Metabolism and chromatin regulation provide complementary contexts for interpreting these transitions.",
+    "after": "Metabolic and chromatin changes may help explain these transitions.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Together, these findings motivate examination of relationships among metabolism, lactylation, senescence-related transcription, and iron handling, although they do not establish a single causal pathway across all human AD states.",
+    "after": "These studies raise the question of whether lactylation, senescence-related transcription and iron handling change together in AD glia. A causal link across these processes in human disease remains to be established.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Disease-associated and TREM2–APOE-dependent microglial programs provide mechanistic context for this heterogeneity, although these findings arise from different model and human contexts",
+    "after": "Disease-associated and TREM2–APOE-dependent microglial programs also illustrate how responses vary between experimental models and human disease",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The concept of ferro-aging provides an additional framework for studying coordinated changes in iron metabolism, lipid peroxidation, and cellular senescence.",
+    "after": "Iron metabolism, lipid peroxidation and cellular senescence have also been studied together under the concept of ferro-aging.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Applying this program to AD glia requires care, however, because its original biological system differs from human postmortem brain tissue.",
+    "after": "Whether this program applies to AD glia remains uncertain because the source study differs from human postmortem brain tissue.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Multicomponent preparations pose a further translational challenge.",
+    "after": "For multicomponent preparations, the identity and exposure of the relevant constituents are additional concerns.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "An integrated analysis therefore needs to account for compound identity, assay provenance, cellular context, and uncertainty.",
+    "after": "Compound identity and assay conditions must therefore be considered when interpreting a target connection in a particular cell type.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "In this study, we assembled such an analysis around a predefined 16-ingredient YZDHD list. First, we derived a region-stratified human AD microglial association signature. Next, we evaluated complementary model evidence for lactylation-associated, senescence-related, iron-handling, and astrocytic programs. We then connected these programs to layered pharmacological records and assessed candidate structures and cell-context-specific virtual knockouts. We assessed the robustness of candidate responses through donor resampling, expression support, and matched-reference comparisons. These analyses tested whether the candidate associations were stable and specific enough to motivate experimental validation.",
+    "after": "We examined a predefined 16-ingredient YZDHD list using a region-stratified human microglial association signature and model data on lactylation, senescence-related transcription and iron handling. Compound–target records linked these programs to pharmacological candidates. Structural assessments and virtual knockouts examined the resulting connections, while donor resampling and matched-reference comparisons tested the stability and specificity of candidate responses.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The analysis comprised a human disease-association layer, complementary model layers, a compound–target evidence layer, and computational perturbation assessments.",
+    "after": "We estimated human disease-associated expression changes and examined model responses, compound–target records and computational perturbations.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Available identifiers did not reveal cross-cohort overlap, although identifier comparison cannot establish biological independence with certainty.",
+    "after": "No cross-cohort overlap was found among the available identifiers, although this check could not exclude unrecorded overlap.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Published metabolic and perturbation evidence from the same study was retained as an orthogonal evidence layer (Pan et al. 2022), rather than presented as a new local reanalysis.",
+    "after": "We used the study’s published metabolic and perturbation findings as complementary evidence (Pan et al. 2022). Those experimental results were not reanalysed.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The core set reduced cytokine overlap but did not isolate senescence from every other biological response.",
+    "after": "The core set reduced cytokine overlap, although its score could still reflect responses other than senescence.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The initial layer combined Rule-of-Five and Veber-related criteria, QED, natural-product-likeness, and structural alerts",
+    "after": "The initial screen combined Rule-of-Five and Veber-related criteria, QED, natural-product-likeness, and structural alerts",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Alerts were recorded using the recorded structural-alert rules.",
+    "after": "Structural alerts were recorded using the existing screening rules.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "ADMET-AI was then applied to structures passing this layer",
+    "after": "ADMET-AI was then applied to structures passing this screen",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The model policy rejected predicted HIA",
+    "after": "The ADMET screen rejected structures with predicted HIA",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Human disease associations and model-derived glial programs define the candidate analysis",
+    "after": "Human microglial associations and model responses",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The analysis linked human AD microglial expression to complementary model programs and then to compound–target records, structural assessments, and computational perturbations. Human expression associations established disease relevance, while model datasets characterized lactylation, senescence-related transcription, iron handling, and astrocyte responses. Compound–target records connected these programs to pharmacological candidates but did not demonstrate activity of the complete preparation. See Fig. 1.",
+    "after": "We examined AD-associated microglial expression alongside model responses involving lactylation, senescence-related transcription, iron handling and astrocytes. Compound–target records, structural assessments and virtual knockouts were used to examine YZDHD-related candidates; they did not measure activity of the complete preparation. See Fig. 1.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The analyses identified human gene associations and model-specific glial responses suitable for hypothesis testing. However, available evidence did not establish human H4K12la convergence or spatial microglia–astrocyte communication.",
+    "after": "Human H4K12la convergence and spatial microglia–astrocyte communication remained unresolved.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "This subset contained 128 positive and 116 negative AD-associated effects.",
+    "after": "This subset included 128 positive and 116 negative AD-associated effects.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Candidate interpretation therefore relied on gene-level associations and context-specific model evidence.",
+    "after": "Subsequent candidate analyses used the gene-level associations and the responses observed in each model.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The human glycolytic target-set comparison reinforced this boundary.",
+    "after": "The human glycolytic target set showed no consistent direction.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "We therefore retained the H4K12la component as model evidence rather than human validation.",
+    "after": "We therefore interpreted the H4K12la findings within the experimental model.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The independent lactylation/SASP bridge involved H3K18la",
+    "after": "The separate study linking lactylation and SASP involved H3K18la",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "These data supported a temporally evolving senescence-related transcriptional response to amyloid exposure.",
+    "after": "These scores indicated a senescence-related transcriptional response over the amyloid-exposure time course.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The opposite uptake/export directions in iMGLs and astrocytes highlighted the importance of cellular and experimental context rather than supporting a single shared direction of iron dysregulation.",
+    "after": "Iron-uptake and iron-export scores thus changed in opposite directions in the microglial and astrocyte models.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "These are different counting units.",
+    "after": "Pair counts and source-record counts use different denominators.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Their interpretation remained conditional on network coverage, evidence selection, adaptive randomization, and shared module members.",
+    "after": "These comparisons depended on network coverage, evidence selection, adaptive randomization and overlap between module members.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "These model results did not supply stable support for a candidate-specific astrocytic mechanism.",
+    "after": "The tested astrocytic module responses were not stable across donor resampling.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Thus, improved reference matching did not establish target-specific perturbation responses.",
+    "after": "Target specificity remained unresolved after reference matching.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "In this study, we integrated human microglial transcriptomics with model-derived glial programs and pharmacological records to investigate YZDHD-related candidates in AD. The directionally stable 244-gene subset provided a human disease reference, while five significant astrocyte modules and complementary microglial responses highlighted context-dependent biological programs. Together, these findings suggest that candidate evaluation may benefit from considering metabolic regulation, senescence-associated transcription and iron handling jointly. Their value lies in specifying biological questions and candidate connections that can be examined experimentally, with human associations and model mechanisms contributing different forms of evidence.",
+    "after": "We combined human microglial associations, model responses and compound–target records to examine YZDHD-related candidates in AD. The directionally stable 244-gene subset provided a human disease reference. Five significant astrocyte modules and the microglial analyses showed changes in senescence-related transcription, iron handling and lipid-peroxidation-associated programs. These results suggest which cellular responses might be worth testing with candidate compounds. They also show where model mechanisms and human disease expression diverge.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The relationship between human associations and model responses is central to interpreting these findings. Human postmortem expression reflects disease-associated states across anatomical contexts, whereas iMGL and animal datasets capture responses under defined experimental conditions.",
+    "after": "Postmortem human expression reflects disease-associated states across brain regions, whereas iMGL and animal datasets capture responses under defined experimental conditions.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The absence of significant human module composites suggests that coordinated model responses may not generalize uniformly across human AD microglia.",
+    "after": "The nonsignificant human module composites limit how broadly the model responses can be applied to human AD microglia.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Lactylation offers a potential connection between metabolic state and chromatin regulation that could help explain persistent glial responses.",
+    "after": "Lactylation may link altered metabolism to chromatin regulation in responding glia.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "In our analysis, this literature context supports investigating metabolic and inflammatory responses together, while leaving a continuous H4K12la-driven senescence mechanism in human microglia unresolved.",
+    "after": "These studies support examining metabolic and inflammatory responses together. A continuous H4K12la-driven senescence mechanism in human microglia remains unresolved.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "The contrasting iron responses suggest another source of glial heterogeneity.",
+    "after": "The iron-related scores also differed between the glial models.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "These biological distinctions also shape the interpretation of YZDHD-related pharmacological candidates.",
+    "after": "For YZDHD-related candidates, the relevant question is how a compound’s action relates to the disease-associated state.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Such connections provide starting points for mechanism-focused experiments, but the desired action cannot be inferred from target membership alone.",
+    "after": "A recorded connection identifies a protein for testing; it does not determine whether inhibiting or activating that protein would be beneficial.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Candidate-specific questions of this kind may be more informative than a single ranking of presumed beneficial targets.",
+    "after": "These examples require different functional assays and cannot be resolved by ranking target overlap alone.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Agreement between database links, network placement and docking would be most useful when followed by measurements of binding and functional response at relevant exposure.",
+    "after": "Progressing a candidate would require binding and functional assays at relevant exposure, even if its database links, network placement and docking results agreed.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Several features strengthen the interpretability of the analysis. Donor-level aggregation preserves biological replication in the human association analysis, while cohort omission evaluates dependence on individual datasets. Keeping human disease associations separate from model-derived programs allows similarities and discrepancies to remain visible. Compound identity and assay provenance make the basis of each pharmacological connection explicit, and matched-reference perturbations challenge apparently strong candidate responses. Together, these features support a more transparent progression from a disease-associated expression pattern to a testable pharmacological hypothesis. They provide complementary checks on interpretation, rather than independent validation of every proposed mechanism.",
+    "after": "The analysis used donors as biological replicates and tested how omitting each cohort changed the human associations. Model-derived responses were evaluated separately, so agreement with human data was not assumed. Compound identity and assay records defined each pharmacological connection. Reference-gene perturbations tested whether large virtual knockout responses were specific to the nominated target. These design choices make candidate selection easier to assess, although they do not provide independent validation.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Cell identity and replication remain important limitations.",
+    "after": "Incomplete cell-identity checks limit the perturbation analyses.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Translation to the complete preparation introduces additional uncertainty.",
+    "after": "The main pharmacological limitation is the absence of a chemically characterized preparation and measured cellular exposure.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "These gaps define the conditions under which the current hypotheses could be evaluated, rather than implying a null biological effect.",
+    "after": "These gaps leave the biological effects unresolved.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Integrating these measurements with transcriptomic responses may clarify whether YZDHD-related compounds influence complementary glial processes and help refine experimentally grounded multipathway hypotheses for AD.",
+    "after": "The key test is whether measured constituents alter these glial responses at achievable exposure, with effects that depend on the nominated targets.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "In this work, we integrated human microglial transcriptomics, model-derived glial programs, and network pharmacology to investigate YZDHD-related candidates in AD.",
+    "after": "We combined human microglial transcriptomics, model-derived glial programs and network pharmacology to examine YZDHD-related candidates in AD.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "These associations provide a rationale for investigating whether YZDHD-related compounds could modulate interconnected glial responses in AD.",
+    "after": "The compound–target links nominate YZDHD-related constituents for tests of these glial responses.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Our integrative analysis may help guide these experiments and refine multipathway pharmacological hypotheses for AD.",
+    "after": "Testing these candidates may clarify whether modulation of several glial processes contributes to a pharmacological response.",
+    "occurrences": 1,
+    "reason": "Reference-guided language editing: concrete subjects and verbs, less metadiscourse and repetition; preserve evidence strength."
+  },
+  {
+    "before": "Pair counts and source-record counts use different denominators.",
+    "after": "Pairs and individual source records were counted separately.",
+    "occurrences": 1,
+    "reason": "Final reader pass: remove repeated closing construction and use precise counting units."
+  },
+  {
+    "before": "They also provide a rationale for exploring complementary actions among constituents, provided that relevant compounds and exposures can first be established.",
+    "after": "These assays could also test combinations of constituents once their identities and relevant exposures are established.",
+    "occurrences": 1,
+    "reason": "Final reader pass: remove repeated closing construction and use precise counting units."
+  },
+  {
+    "before": "Testing these candidates may clarify whether modulation of several glial processes contributes to a pharmacological response.",
+    "after": "Target-dependent changes at relevant exposure would help identify which constituents contribute to any observed response.",
+    "occurrences": 1,
+    "reason": "Final reader pass: remove repeated closing construction and use precise counting units."
+  },
+  {
+    "before": "### Consent for publication\n\nNot applicable. The manuscript contains no identifiable individual data.",
+    "after": "### Clinical trial registration\n\nClinical trial number: not applicable.\n\n### Consent for publication\n\nNot applicable. The manuscript contains no identifiable individual data.",
+    "occurrences": 1,
+    "reason": "Editorial technical check: this secondary analysis is not a clinical trial; include the exact requested not-applicable declaration."
+  }
+]

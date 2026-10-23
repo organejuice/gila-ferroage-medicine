@@ -1,0 +1,20 @@
+addendum_id: G6-EXEC-2026-09-25-011
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_PREFLIGHT_COMPLETION
+scope: complete_primary_weight_support_audit_without_reading_diagnosis_labels
+changes_to_primary_estimand_or_G6_pass_rule: false
+
+effect_blind_preflight:
+  donor_manifest_fields_read_before_gate: [GSM, donor_id]
+  diagnosis_and_covariate_fields_read_before_gate: false
+  primary_weight_threshold: 0.5
+  required_per_donor_weight_support: [MG, ASC]
+  required_weight_supported_bins_per_lineage: 1
+  missing_weight_supported_bins: record_as_unestimable_and_fail_preflight
+  raw_weight_sum_qc: collate_saved_per_donor_qc_without_changing_weights_or_thresholds
+  frozen_gene_coverage_rule: unchanged_at_least_25_percent_detected_in_at_least_10_of_12_donors
+  failed_preflight_effect_calculation: prohibited
+
+effects_used: false
+RCTD_refit_required: false

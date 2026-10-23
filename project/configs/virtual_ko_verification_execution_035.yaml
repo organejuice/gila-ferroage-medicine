@@ -1,0 +1,27 @@
+run_id: 2026-10-05-virtual-ko-verification-execution-035
+output_dir: results/2026-10-05-virtual-ko-verification-execution-035
+interim_dir: data/interim/2026-10-05-virtual-ko-verification-execution-035
+sop_config: configs/virtual_ko_verification_SOP_035.yaml
+scope_path: docs/protocol/2026-10-05-virtual-ko-verification-035/verification_targets.tsv
+network_config: configs/virtual_ko_033.yaml
+retention_config: configs/virtual_ko_033_target_retention_sensitivity.yaml
+input_dir: data/interim/2026-10-04-stratified-virtual-ko-033
+bootstrap_replicates: 20
+matched_controls: 20
+sampling_seed_base: 35035
+network_workers: 1
+libraries: [GO_BP, KEGG, Reactome]
+library_dir: data/interim/2026-10-03-stage-a-mechanism-030
+fdr: 0.05
+seed: 35035
+ora: {min_size: 5, max_size: 500, min_overlap: 2}
+gsea:
+  min_size: 15
+  max_size: 500
+  algorithm: fgseaSimple
+  nperm: 100000
+  scoreType: pos
+  modes: {weighted: 1, unweighted_sensitivity: 0}
+  workers: 1
+execution_workers: 1
+interpretation: unsigned network perturbation; exploratory donor bootstrap and matched-reference distributions

@@ -1,0 +1,21 @@
+run_id: 2026-10-11-virtual-ko-matching-correction-036
+output_dir: results/2026-10-11-virtual-ko-matching-correction-036
+interim_dir: data/interim/2026-10-11-virtual-ko-matching-correction-036
+source_dir: results/2026-10-05-virtual-ko-verification-execution-035
+baseline_dir: data/interim/2026-10-05-virtual-ko-verification-execution-035
+scope_path: docs/protocol/2026-10-05-virtual-ko-verification-035/verification_targets.tsv
+network_config: configs/virtual_ko_033.yaml
+retention_config: configs/virtual_ko_033_target_retention_sensitivity.yaml
+expanded_analysis: target_retention
+expanded_context: Microglia_AD
+expanded_targets: [CA2, DPP4, PTGS2, SLC2A1]
+seeds: [42, 43]
+matched_controls: 20
+preselection_per_target: 20
+preselection_rule: nearest two expression percentile features among non-target genes with >=25 detected cells and <5% detection; gene-symbol ties
+final_selection_rule: original four percentile features; mean distance across two seeds; both-seed outgoing edges; no KO outcome selection
+CP10K_denominator: full available raw-count gene matrix for identical frozen baseline cells
+comparison: frozen modules and original 034 weighted focus; common-gene mean percentile distance and gene-significant fraction
+inference: descriptive conditional reference only; no formal specificity P
+direction_estimated: false
+drug_evidence_ceiling: C0

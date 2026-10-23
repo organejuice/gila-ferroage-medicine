@@ -1,0 +1,120 @@
+id: G6-FP-2026-09-27-001
+date: 2026-09-27
+status: EXECUTION_COMPLETE_EFFECTS_PROHIBITED_G6_NOT_EXECUTABLE
+parent_protocols:
+  - docs/protocol/disease_side_v3.5_latest_frozen.md
+  - docs/protocol/disease_side_v3.6_G6_GSE233208.md
+  - docs/protocol/2026-09-27-g6-next-feasibility-protocol.md
+  - docs/protocol/2026-09-27-g6-next-feasibility-sop.md
+scope: diagnosis_blind_feasibility_only
+diagnosis_group_effects: false
+group_labels_allowed:
+  model_and_cellbin_work_packages: false
+  metadata_design_audit_only: true
+frozen_signatures:
+  G1_genes: 244
+  G5_registry: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G5_receiver_one_to_one_human_ortholog_registry.tsv.gz
+  G1_registry: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz
+work_package_1:
+  id: numi_model_sensitivity
+  dataset: GSE269906
+  GSMs: [GSM8330063, GSM8330064]
+  donor_selection: preserve_prior_locked_low_high_MG_support_pair
+  fit_umi_modes: [full_library, fitted_feature_subset]
+  R_version: 4.3.3
+  spacexr_version: 2.2.1
+  R_LIBS_USER: C:/Users/administer/.codex/visualizations/2026/09/23/01a0ce11-eaa9-7cb1-aa30-49773cbedb70/g6_R_library
+  seed: 42
+  fit_state_and_holdout_genes_excluded: true
+  reference_status: identity_unresolved_diagnostic_only
+  base_fit_max_abs_weight_difference: 0.000001
+  minimum_MG_bins_weight_ge_0_5_per_donor: 40
+  minimum_G1_genes_detected: 61
+  minimum_G1_detection_fraction: 0.01
+  required_donors_meeting_all_rules: 2
+  marker_rho_minimum: 0
+  marker_score_selected_gt_unselected: true
+  original_results_overwrite: false
+work_package_2:
+  id: cellbin_nucleus_feasibility
+  dataset: GSE269906
+  donors: 12
+  source_layer: paired_CellBin_GEF:/cellBin/cellExp
+  crosscheck_layer: paired_CellBin_GEF:/cellBin/geneExp
+  spatial_coordinate_source: paired_CellBin_GEF:/cellBin/cellBorder_and_cell_centroid
+  tissue_bin1_role: coordinate_and_total_UMI_crosscheck_only
+  segmentation_source: paired_CellBin_GEF
+  expression_assignment:
+    use_direct_nucleus_matrix_if_auditable: true
+    fallback: assign_DNB_points_inside_exactly_one_valid_polygon
+    duplicate_or_unassigned_DNB: exclude_and_account
+    aggregate_by: nucleus_id_gene
+  minimum_detected_genes_per_nucleus: 150
+  identity_train_markers:
+    MG: [CD74, CD14]
+    ASC: [AQP4, GLUL]
+  identity_validation_markers:
+    MG: [AIF1, C1QA, C1QB, C1QC, CX3CR1, LST1, P2RY12, TMEM119, TREM2, TYROBP]
+    ASC: [ALDH1L1, GFAP, GJA1, S100B, SLC1A2, SLC1A3, SOX9]
+  minimum_disjoint_validation_markers_per_lineage: 3
+  minimum_donors_with_validation_direction: 10
+  G1_coverage: {genes: 61, total: 244, detection_fraction: 0.01, minimum_donors: 10}
+  G5_coverage: {minimum_module_gene_fraction: 0.25, detection_fraction: 0.01, minimum_donors: 10}
+  neighborhood_radii_um: [10, 25, 50]
+  neighborhood_rule: smallest_radius_with_at_least_20_unique_MG_ASC_neighbor_pairs_in_at_least_10_of_12_donors
+  label_default_zero_as_cell_type: false
+  merge_nuclei_or_expand_radius_posthoc: false
+work_package_3:
+  id: metadata_only_candidate_screen
+  expression_matrices_allowed: false
+  candidates:
+    - GSE233208
+    - GSE220442
+    - Zenodo_16938034_CosMx
+    - Zenodo_16938034_VisiumHD
+  minimum_donors_for_primary_candidate: {AD: 10, Control: 10}
+  G1_panel_minimum_genes: 61
+  G1_panel_total_genes: 244
+  G5_panel_minimum_module_fraction: 0.25
+  exact_diagnosis_technical_factor_alias_is_stop: true
+  design_matrix_must_be_full_rank: true
+  donor_independence_requires_auditable_crosswalk: true
+  candidate_tie_break: [higher_minimum_group_donor_count, higher_frozen_signature_panel_coverage, accession_lexicographic]
+output:
+  interim: data/interim/G6_next_feasibility_001
+  results: results/2026-09-27-g6-next-feasibility
+  original_raw_read_only: true
+  preserve_historical_outputs: true
+  DVC_track_formal_large_intermediates: true
+  work_package_1_runner: src/89_fit_g6_numi_sensitivity.R
+  work_package_1_auditor: src/90_audit_g6_numi_sensitivity.R
+  work_package_2_build_runner: src/91_build_g6_cellbin_nucleus_counts.R
+  work_package_2_annotation_runner: src/92_annotate_g6_cellbin_nuclei.R
+  work_package_2_neighborhood_auditor: src/93_audit_g6_cellbin_neighborhoods.py
+  work_package_3_integrator: src/94_audit_g6_candidate_designs.py
+  work_package_2_marker_availability_diagnostic: src/95_audit_g6_cellbin_marker_availability.R
+  execution_report_finalizer: src/96_finalize_g6_next_feasibility.py
+execution_result:
+  git_base_revision: d5761b248942fbb112eaa8db8e6edefa43c73672
+  worktree_at_start: dirty
+  commit_created: false
+  DVC_version: 3.67.1
+  DVC_SITE_CACHE_DIR: .dvc/tmp/site-cache-g6-next-feasibility
+  DVC_remote: null
+  work_package_1: STOP_NO_FULL_COHORT_REFIT
+  work_package_2: CELLBIN_NOT_ELIGIBLE
+  work_package_3: NO_PRIMARY_CANDIDATE
+  diagnosis_group_effects_computed: false
+  overall: G6_NOT_EXECUTABLE
+  report: docs/reports/g6-next-feasibility-summary/execution_report.md
+stop_rules:
+  missing_or_mismatched_input_hash: stop
+  coordinate_or_donor_mapping_failure: stop
+  failed_baseline_RCTD_reproduction: stop_work_package_1
+  CellBin_expression_not_auditable: stop_work_package_2
+  cell_identity_not_calibrated: stop_CellBin_route
+  G1_or_G5_coverage_failure: stop_CellBin_route
+  no_eligible_neighborhood_radius: stop_CellBin_route
+  perfect_diagnosis_technical_alias: stop_confirmatory_candidate
+  diagnosis_group_effects: prohibited
+  lower_MG_weight_threshold_to_claim_pass: prohibited

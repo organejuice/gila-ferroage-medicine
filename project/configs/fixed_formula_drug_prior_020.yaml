@@ -1,0 +1,52 @@
+run_id: 2026-09-30-fixed-formula-drug-prior-020
+decision_id: DRUG-FORMULA-PRIOR-CORRECTION-2026-09-30-020
+date: 2026-09-30
+supersedes: 2026-09-30-fixed-formula-drug-prior-019
+reason: initial_run_qc_found_missing_canonical_smiles_aggregation_and_TCMBank_CRLF_wrapping
+formula_source: results/2026-09-30-fixed-formula-registration-018/formula_herbs.tsv
+ingredient_sources:
+  - provider: BATMAN-TCM 2.0 local export
+    path: F:/TCM select/raw_data/BATMAN/batman_herb_ingredient_table.txt
+    match_column: Chinese.Name
+    match_rule: exact_string_after_trim
+    ingredient_column: Ingredients
+    parsing: pipe_delimited; numeric_parenthetical_identifier_is_provisional_until_exact_TCMBank_CID_match
+  - provider: TCMBank local export
+    path: F:/TCM select/raw_data/TCMbank/tcmbank_ingredient_table.xlsx
+    match_column: TCM_name
+    match_rule: exact_string_after_trim
+    secondary_alias_column: TCM_name2
+    secondary_alias_use: coverage_audit_only
+structure_resolution:
+  source: TCMBank local CID-SMILES rows
+  join: exact_numeric_PubChem_CID
+  parser_normalization: remove_CRLF_from_parser_copy_only
+  preserve_raw_structure_string: true
+  conflicting_structures_by_cid: flag_and_exclude_from_property_models
+chemical_space:
+  rdkit_pipeline: F:/TCM select/code/6_ADMET_filter.py
+  policy: F:/TCM select/config/pipeline_policy.json
+  policy_step: step6
+  interpretation: heuristic_triage_only
+admet:
+  model: ADMET-AI local installed ensemble
+  policy: F:/TCM select/config/pipeline_policy.json
+  policy_step: step7
+  input: unique_valid_structures_passing_step6_heuristics
+  interpretation: predictive_only_no_measured_absorption_toxicity_or_brain_exposure
+targets:
+  prior_mapping: F:/TCM select/clean_data/10_Ingredient_Target_Mapping.csv
+  normalized_target_table: F:/TCM select/clean_data/9_Compound_Target_Table.csv
+  assay_sources:
+    - F:/TCM select/raw_data/intergredient_target/PubChem/PubChem_bioactivity_CID__binIDR9beudNzXjU-qwx894iv0IhhCN2WVM4OkJCKjtCWxY.csv
+    - F:/TCM select/raw_data/intergredient_target/BindingDB/BindingDB_human_targets_normalized.csv
+    - F:/TCM select/raw_data/intergredient_target/ChEMBL/ChEMBL_activity_targets_human.csv
+  matching: exact_PubChem_CID
+  action_direction: not_inferred_from_affinity_or_association_alone
+disease_interface:
+  g1_robust_signature: results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz
+  matching: exact_gene_symbol_descriptive_overlap_only
+claim_ceiling: C0
+closed_steps_reopen: false
+network_queries: false
+install_dependencies: false

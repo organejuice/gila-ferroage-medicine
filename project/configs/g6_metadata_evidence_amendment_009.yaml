@@ -1,0 +1,27 @@
+schema_version: 1
+amendment:
+  id: G6-META-2026-09-28-009
+  parent_plan: G6-PLAN-2026-09-27-005
+  scope: prospective_effect_blind_metadata_audit_only
+  protocol: docs/protocol/2026-09-28-g6-metadata-evidence-amendment-009.md
+  decision_log: docs/decisions/2026-09-28-g6-metadata-evidence-amendment-009.md
+  execution_authorized: false
+  diagnosis_group_effects_allowed: false
+  historical_results_rewritten: false
+metadata_policy:
+  public_standalone_crosswalk_required: false
+  project_audit_crosswalk_is_output: true
+  multiple_citable_sources_allowed: true
+  source_provenance_and_second_review_required: true
+  verified_independent_donor_diagnosis_and_nested_sections_required: true
+  common_comparable_region_required: true
+  filenames_alone_prove_donor_independence: false
+  per_sample_technical_batch_field_required_to_start_blind_wp2: false
+  unreported_technical_metadata_state: TECHNICAL_METADATA_UNREPORTED
+  infer_unreported_batch_values: false
+  assume_no_batch_confounding_when_unreported: false
+  stop_if_known_diagnosis_technical_alias: true
+  matrix_rank_applies_to_observed_prespecified_terms: true
+  residual_confounding_review_required_before_execution_lock: true
+  unresolved_donor_or_region_starts_wp2: false
+  wp1_pass_authorizes_group_effects: false

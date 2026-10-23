@@ -1,0 +1,50 @@
+sop_id: VKO-VERIFY-035
+version: '1.0'
+status: DOCUMENTED_NOT_END_TO_END_EXECUTED
+scope_dir: docs/protocol/2026-10-05-virtual-ko-verification-035
+execution_run_id: null  # 实施时填写唯一ID，不能直接覆盖033/034/035方案目录。
+source_network_config: configs/virtual_ko_033.yaml
+source_retention_config: configs/virtual_ko_033_target_retention_sensitivity.yaml
+source_pathway_config: configs/virtual_ko_pathways_034.yaml
+expected_scope:
+  unique_targets: 15
+  target_context_combinations: 29
+  AD_combinations: 14
+  Control_combinations: 15
+execution:
+  default_network_workers: 1
+  threads_per_worker: 1
+  network_seeds: [42, 43]
+  baseline_sampling_seed: 42
+  resampling_seed_base: 35035
+  network_cache_key: [input_hash, ordered_cell_instance_ids, ordered_gene_ids, network_config_hash, network_seed, backend_code_hash, package_versions]
+resampling:
+  unit: donor
+  preserve: [disease, donor_region_structure]
+  donor_instances_per_bootstrap: 6
+  per_instance_region_cell_cap: 500
+  within_instance_cells_with_replacement: false
+  exploratory_bootstrap_replicates: 20
+  expanded_bootstrap_replicates: 100
+  expansion_rule: lock_exploratory_or_expanded_mode_before_response_inspection
+  denominator_includes_nonestimable: true
+matching:
+  exclude_all_original_research_targets: true
+  features: [detection_fraction, mean_library_normalized_expression, out_degree, out_abs_weight_sum]
+  transform: within_context_percentile_rank_with_average_ties
+  distance: rms_equal_weight_percentile_difference
+  tie_break: gene_symbol_ascending
+  exploratory_controls: 20
+  expanded_controls: 99
+  empirical_probability_interpretation: conditional_reference_not_randomized_causal_p_value
+ribosome_sensitivity:
+  freeze_annotation_before_results: true
+  sets: [cytoplasmic_ribosomal_proteins, mitochondrial_ribosomal_proteins]
+  variants: [exclude_cytoplasmic, exclude_both]
+  operation: rerank_existing_KO_output_and_recompute_enrichment_background
+  rebuild_network: false
+interpretation:
+  gene_distance: unsigned_network_perturbation
+  NES: high_perturbation_rank_enrichment
+  direction_estimated: false
+  automatic_biological_pass_threshold: null

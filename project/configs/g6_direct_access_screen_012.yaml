@@ -1,0 +1,20 @@
+id: G6-ACCESS-2026-09-29-012
+scope: prospective_candidate_selection_only
+source: user_preference_2026-09-29
+required_input_access:
+  rule: anonymous_direct_download_without_application
+  check_at_file_level: true
+  processed_data_sufficient_if_all_required_fields_are_auditable: true
+  controlled_raw_data_may_be_ignored_only_if_not_needed_for_g6: true
+  unknown_access: hold_no_large_download
+  application_or_owner_approval_required: exclude_from_active_g6_candidates
+  acceptable_use_conditions:
+    - ordinary_public_license
+    - citation_requirement
+  not_acceptable_as_direct_access:
+    - institutional_data_use_application
+    - data_use_certificate
+    - owner_granted_permission
+    - controlled_repository_request
+effect_analysis_authorized: false
+historical_g6_status: G6_NOT_EXECUTABLE

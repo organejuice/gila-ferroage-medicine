@@ -1,0 +1,5 @@
+[
+ {"id":"train-ko-state","split":"train","prompt":"Return the fixed token KO_STATE_SEPARATE.","answer":"KO_STATE_SEPARATE"},
+ {"id":"val-ko-low-expression","split":"val","prompt":"Return the fixed token LOW_EXPRESSION_NOT_NEGATIVE.","answer":"LOW_EXPRESSION_NOT_NEGATIVE"},
+ {"id":"test-ko-boundary","split":"test","prompt":"Return the fixed token NETWORK_DISTANCE_NOT_EXPRESSION_DIRECTION.","answer":"NETWORK_DISTANCE_NOT_EXPRESSION_DIRECTION"}
+]

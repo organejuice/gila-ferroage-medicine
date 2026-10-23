@@ -1,0 +1,260 @@
+project:
+  name: YZDHD_AD_disease_side
+  plan_version: "AD disease-side v3.6 (G6 amendment; G1-G5 inherit v3.5)"
+  seed: 42
+  status: LATEST_G6_EXECUTION_STOPPED
+  frozen_protocol: docs/protocol/disease_side_v3.6_G6_GSE233208.md
+  execution_status: G6_NOT_EXECUTABLE_REFERENCE_AND_CAPTURE_AREA_ALIAS
+  latest_execution_run: 2026-09-26-g6-v3.6-execution
+  latest_execution_result: results/2026-09-26-g6-v3.6-execution
+
+scope:
+  primary_datasets:
+    - D1_GSE188765
+    - D2_GSE227221
+    - D3_GSE160936
+    - D5_CellMetab2026_ferro_aging_reference
+    - D7_GSE148822
+    - D8_GSE174367
+    - G5_GSE261698
+    - G6_GSE233208
+  g1_primary_cohorts:
+    - D3_GSE160936
+    - D7_GSE148822
+    - D8_GSE174367
+  expanded_sensitivity_datasets:
+    - D9_GSE263468_BA9
+    - GSE264648
+    - SEA_AD
+    - ROSMAP
+    - GSE157827
+    - GSE263789
+  exploratory_only_datasets:
+    - D6_GSE214979
+  primary_discovery: D3_GSE160936
+  primary_validation: D7_GSE148822
+  secondary_validation: D8_GSE174367
+  g1_sensitivity: D9_GSE263468_BA9
+  g1_exploratory_only: D6_GSE214979
+  g5_primary: GSE261698
+  g5_independent_validation: GSE291239
+  g5_orthogonal_validation: GSE74614
+  g5_mechanistic_sensitivity: GSE290101
+  g6_primary: GSE233208_late_sporadic_AD_vs_Control
+  g6_historical_v3_5_primary: GSE269906
+  g6_independent_validation: pending_independence_audit
+  g6_cross_region_support: GSE220442
+  g6_descriptive_only: D4_GSE263791
+  g6_reserve: Zenodo_16938034
+  g6_role_status: primary_selected_but_v3_6_not_executable
+  g6_analysis_lock_status: blocked_reference_independence_and_capture_area_alias
+  g6_input_metadata_preflight_passed: true
+  g6_effect_blind_preflight_passed: false
+  g6_group_effects_calculated: false
+  g6_execution_decision: G6_NOT_EXECUTABLE
+  g6_execution_report: results/2026-09-26-g6-v3.6-execution/G6_execution_report.md
+
+input_policy:
+  prefer_processed_integer_counts: true
+  fastq_required_for_g1: false
+  raw_reprocessing_only_if_processed_audit_fails: true
+  raw_data_read_only: true
+
+interfaces:
+  signed_disease_signature: pending
+  signed_regulatory_activity: pending
+  module_vector_7d: pending
+  communication_state: pending
+
+statistics:
+  primary_unit: donor_region_celltype
+  g6_primary_unit: donor
+  g6_estimand: spot_scale_spatial_coenrichment_proxy
+  primary_disease_contrast: AD_vs_control
+  minimum_QC_passing_microglia_per_donor_region: 20
+  count_model: edgeR_quasi_likelihood_or_limma_voom_after_metadata_audit
+  module_score_model: donor_level_linear_model
+  covariates: age_sex_region_batch_PMI_RIN_if_available
+  alpha: 0.05
+  fdr: 0.05
+
+modules:
+  M1_glycolysis: HALLMARK_GLYCOLYSIS_plus_Reactome_support
+  M2_H4K12la_program: derive_from_D1_GSE188765
+  M3_SASP_senescence: SenMayo_CellAge_SASP_cell_cycle_arrest
+  M4_microglia_astrocyte_state: C1_state_association_then_communication
+  M5_iron_handling: retain_subcomponents_before_composite
+  M6_LPO_ACSL4: ACSL4_centered_lipid_peroxidation_program
+  M7_ferro_aging_like: D5_author_signature_plus_Iron_LPO_Senescence_construct
+
+reproducibility:
+  level_target: 2
+  upgrade_to_level_3_when_pipeline_is_stable: true
+  raw_data_read_only: true
+  dvc_remote: pending_local_or_NAS_path
+
+g6_multiscale_pilot:
+  id: G6-MS-2026-09-26-001
+  config: configs/g6_multiscale_pilot_001.yaml
+  plan_and_sop: docs/protocol/2026-09-26-g6-gse269906-multiscale-plan-sop.md
+  status: COMPLETE_EFFECT_BLIND_BOTH_SCALES_NOT_ELIGIBLE
+  candidate_dataset: GSE269906
+  bin_width_DNB: [50, 110]
+  diagnosis_group_effects_allowed: false
+  changes_current_g6_primary: false
+  gate_addendum: docs/decisions/2026-09-26-g6-multiscale-gates-addendum-002.md
+  result_report: results/2026-09-26-g6-multiscale-blind-pilot/report.md
+  scales_eligible_for_next_protocol_review: 0
+
+g6_next_feasibility:
+  id: G6-FP-2026-09-27-001
+  status: LOCKED_BEFORE_NEW_ANALYSIS_RUNNERS_PENDING
+  protocol: docs/protocol/2026-09-27-g6-next-feasibility-protocol.md
+  sop: docs/protocol/2026-09-27-g6-next-feasibility-sop.md
+  config: configs/g6_next_blind_feasibility_001.yaml
+  checksums: docs/protocol/g6_next_feasibility_001.sha256
+  decision: docs/decisions/2026-09-27-g6-next-feasibility-lock.md
+  diagnosis_group_effects: false
+  work_packages:
+    - numi_model_sensitivity_GSM8330063_GSM8330064
+    - GSE269906_CellBin_nucleus_feasibility_12_donors
+    - metadata_only_candidate_design_screen
+  runners_pending:
+    - src/89_fit_g6_numi_sensitivity.R
+    - src/90_audit_g6_numi_sensitivity.R
+    - src/91_build_g6_cellbin_nucleus_counts.R
+    - src/92_annotate_g6_cellbin_nuclei.py
+    - src/93_audit_g6_cellbin_neighborhoods.py
+    - src/94_audit_g6_candidate_designs.py
+
+g6_candidate_panel_triage:
+  id: G6-META-2026-09-27-004
+  config: configs/g6_candidate_panel_triage_004.yaml
+  protocol_and_sop: docs/protocol/2026-09-27-g6-candidate-panel-amendment-004.md
+  decision: docs/decisions/2026-09-27-g6-candidate-panel-triage-004.md
+  source_level_legacy_G1_panel_genes: 61
+  source_level_legacy_G5_module_fraction: 0.25
+  below_legacy_coverage_is_hard_exclusion: false
+  diagnosis_group_effects_allowed: false
+
+g6_gse269906_plan005_reassessment:
+  id: G6-GSE269906-REASSESS-2026-09-28-001
+  status: EFFECT_BLIND_G6_NOT_EXECUTABLE
+  parent_plan: docs/protocol/2026-09-27-g6-staged-research-plan-005.md
+  amendment: docs/protocol/2026-09-28-g6-gse269906-reopen-amendment-006.md
+  config: configs/g6_gse269906_plan005_reassessment_001.yaml
+  decision: docs/decisions/2026-09-28-g6-gse269906-reassessment-001.md
+  report: results/2026-09-28-g6-gse269906-plan005-reassessment/reassessment_report.md
+  dataset: GSE269906_BA10_out_of_region_feasibility_only
+  diagnosis_group_effects: false
+  g6_pass_allowed: false
+  reused_blind_result: results/2026-09-27-g6-next-feasibility
+  raw_data_read_only: true
+  dvc_pointer: results/2026-09-28-g6-gse269906-plan005-reassessment.dvc
+
+fixed_formula_target_supplement_024:
+  config: configs/fixed_formula_target_supplement_024.json
+  protocol: docs/protocol/2026-09-30-fixed-formula-target-supplement-SOP-024.md
+  decision: docs/decisions/2026-09-30-fixed-formula-target-supplement-024.md
+  results: results/2026-09-30-fixed-formula-target-supplement-024
+  claim_ceiling: C0
+  reopen_017: false
+  g1_main_genes: 244
+  g1_exploratory_significant_genes: 413
+  intersection_quantity_target: null
+
+fixed_formula_target_supplement_024_continuation:
+  config: configs/fixed_formula_supplement_024_continuation.json
+  decision: docs/decisions/2026-10-03-supplement-024-continuation.md
+  results: results/2026-10-03-fixed-formula-target-supplement-024-continuation
+  claim_ceiling: C0
+  reopen_017: false
+  biological_inputs_unchanged: true
+
+public_mechanism_analysis_026:
+  config: configs/public_mechanism_analysis_026.json
+  protocol: docs/protocol/2026-10-03-public-mechanism-analysis-026.md
+  decision: docs/decisions/2026-10-03-public-mechanism-analysis-026.md
+  results: results/2026-10-03-public-mechanism-analysis-026
+  claim_ceiling: C0
+  reopen_017: false
+  raw_read_only: true
+  strict_cross_machine_reproducibility: false
+
+disease_interface_perturbation_audit_027:
+  config: configs/disease_interface_perturbation_audit_027.json
+  protocol: docs/protocol/2026-10-03-disease-interface-perturbation-audit-027.md
+  decision: docs/decisions/2026-10-03-disease-interface-perturbation-audit-027.md
+  results: results/2026-10-03-disease-interface-perturbation-audit-027
+  claim_ceiling: C0
+  reopen_G6: false
+  effects_recalculated: false
+  strict_cross_machine_reproducibility: false
+
+gse286094_mechanism_028:
+  config: configs/gse286094_mechanism_028.json
+  protocol: docs/protocol/2026-10-03-gse286094-mechanism-028.md
+  decision: docs/decisions/2026-10-03-gse286094-mechanism-028.md
+  results: results/2026-10-03-gse286094-mechanism-028
+  claim_ceiling: C0
+  mechanism_effects_executed: false
+  unresolved_independent_unit: true
+  reopen_G6: false
+
+project_scope_override_029:
+  config: configs/project_scope_override_029.json
+  protocol: docs/protocol/2026-10-03-mechanism-deepening-removal-029.md
+  decision: docs/decisions/2026-10-03-mechanism-deepening-removal-029.md
+  mechanism_deepening_fourth_step_active: false
+  removal_status: REMOVED_BY_USER
+  historical_outputs_retained: true
+  core_P4_audit_retained: true
+  claim_ceiling: C0
+
+stage_a_030:
+  config: configs/stage_a_030.json
+  protocol: docs/protocol/2026-10-03-stage-a-mechanism-030.md
+  decision: docs/decisions/2026-10-03-stage-a-mechanism-030.md
+  results: results/2026-10-03-stage-a-mechanism-030
+  claim_ceiling: C0
+  seed: 30030
+  fdr: 0.05
+  reopen_017: false
+  reopen_029: false
+
+stage_b_tcmsp_docking_032:
+  config: configs/stage_b_tcmsp_docking_032.json
+  decision: docs/decisions/2026-10-04-stage-b-tcmsp-docking-032.md
+  results: results/2026-10-04-stage-b-tcmsp-docking-032
+  preparation_seed: 42
+  actual_docking: TCMSP_GUI_cloud
+  docking_complete: true
+  result_audit_accepted: false
+  claim_ceiling: exploratory_structure_only
+
+expanded_docking_20:
+  config: configs/expanded_docking_20.json
+  decision: docs/decisions/2026-10-04-expanded-docking-20.md
+  results: results/2026-10-04-expanded-docking-20
+  seed: 42020
+  exhaustiveness: 8
+  claim_ceiling: exploratory_structure_only
+virtual_ko_033:
+  config: configs/virtual_ko_033.yaml
+  decision: docs/decisions/2026-10-04-stratified-virtual-ko-033.md
+  result_dir: results/2026-10-04-stratified-virtual-ko-033
+  status: COMPLETED_WITH_NONESTIMABLE_TARGETS
+virtual_ko_pathways_034:
+  config: configs/virtual_ko_pathways_034.yaml
+  status: COMPLETED_AUDITED_AND_REPORTED
+  reuse: stage-A frozen GMT libraries and fgsea
+  scope: 84 valid KO outputs;198 original assessments retained
+virtual_ko_scientific_review_035:
+  config: configs/virtual_ko_scientific_review_035.yaml
+  source_results: results/2026-10-05-virtual-ko-verification-execution-035
+  review_results: results/2026-10-11-virtual-ko-scientific-review-035
+  final_status_file: results/2026-10-11-virtual-ko-scientific-review-035/final_review_status.json
+  decision: docs/decisions/2026-10-11-virtual-ko-final-scientific-review-035.md
+  new_networks: false
+  claim_ceiling: C0
+  direction_estimated: false

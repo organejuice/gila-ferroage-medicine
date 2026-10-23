@@ -1,0 +1,22 @@
+run_id: 2026-09-21-disease-side-v3.2-g5-model-scoped
+route: cell_model_rescue_after_animal_route
+protocol: docs/protocol/disease_side_v3.2_latest_frozen.md
+parent_animal_run: results/2026-09-21-disease-side-v3.2-g5-model-scoped
+inputs:
+  counts: data/raw/GSE319380/GSE319380_tximport_counts.csv.gz
+  metadata: data/raw/GSE319380/GSE319380_sample_metadata.csv.gz
+  g4_decision: results/2026-09-20-disease-side-v3.2-g4/g4_decision.json
+analysis:
+  biological_unit: iPSC_astrocyte_line_by_stressor
+  technical_replicates: sum_three_replicates_within_line_and_stressor
+  disease_contrast: sAD_vs_control_adjusted_for_stressor
+  block: cell_line
+  normalization: edgeR_TMM_then_limma_voom
+  gene_mapping: org.Hs.eg.db_ENSEMBL_to_SYMBOL
+  fdr: BH_FDR
+  fdr_threshold: 0.05
+  response_modules: [M3_SASP_Senescence, M5_Iron_Uptake, M5_Iron_Storage, M5_Iron_Export, M5_Ferritinophagy, M6_LPO_ACSL4, M7_FerroAging_Author]
+gate:
+  minimum_passing_modules: 1
+  cell_model_can_satisfy_g5: true
+  human_tissue_translation_is_supportive_only: true

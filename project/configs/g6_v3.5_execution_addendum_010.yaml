@@ -1,0 +1,16 @@
+addendum_id: G6-EXEC-2026-09-25-010
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_QC_IMPLEMENTATION_CORRECTION
+scope: align_rejected_bin_raw_weight_qc_with_saved_rctd_object_semantics
+changes_to_primary_estimand_or_G6_pass_rule: false
+
+RCTD_weight_semantics:
+  weights_raw: unmodified_RCTD_weights_including_bins_later_classified_reject
+  analysis_weights: normalized_for_nonrejected_bins_and_zero_for_rejected_bins
+  rejected_bin_gate: normalized_lineage_weights_are_zero
+  usable_bin_gate: raw_weight_sum_is_positive_and_normalized_weight_sum_is_one
+  rejected_raw_weights_required_to_be_zero: false
+
+effects_used: false
+RCTD_refit_required: false

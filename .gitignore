@@ -1,0 +1,17 @@
+# Source snapshot: do not accidentally publish local data, credentials or caches.
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+/data/
+/results/
+/workspaces/
+/project/data/
+/project/results/
+/project/workspaces/
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local

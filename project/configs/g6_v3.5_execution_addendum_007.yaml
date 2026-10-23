@@ -1,0 +1,19 @@
+addendum_id: G6-EXEC-2026-09-25-007
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_IMPLEMENTATION_CORRECTION
+scope: spatial_translation_null_denominator
+changes_to_estimand_or_thresholds: false
+
+spatial_translation_null:
+  denominator: original_high_receiver_bin_count
+  out_of_grid_receiver_slots: retained_as_no_neighbor
+  in_grid_outside_mask_receiver_slots: retained_as_no_neighbor
+  minimum_mask_overlap_fraction: 0.8
+  unique_translations_per_section: 999
+  translation_distance_um: [250, 1000]
+  frozen_seed_rule: unchanged
+  effect_blind_assertion: fixed_denominator_boundary_microfixture
+
+RCTD_refit_required: false
+effects_used: false

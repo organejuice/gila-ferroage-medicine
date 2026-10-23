@@ -1,0 +1,70 @@
+run_id: 2026-10-05-virtual-ko-target-retention-sensitivity-033
+source: D3_GSE160936
+input_dir: data/interim/2026-10-04-stratified-virtual-ko-033
+output_dir: results/2026-10-05-virtual-ko-target-retention-sensitivity-033
+primary_state: AD
+sensitivity_state: Control
+seeds:
+- 42
+- 43
+gene_min_fraction: 0.05
+cell_min_counts: 1000
+cell_max_mt_fraction: 0.1
+max_cells_per_donor_region: 500
+network_n_net: 10
+network_n_cells: 500
+network_n_comp: 3
+network_q: 0.9
+td_K: 3
+td_max_iter: 1000
+td_max_error: 1.0e-05
+td_n_decimal: 3
+ma_n_dim: 2
+ncores: 1
+accelerated_pcnet: true
+sparse_cp: true
+implicit_manifold: true
+fdr: 0.05
+targets_microglia:
+- AKR1B1
+- LTA4H
+- ALOX15B
+- CA2
+- SNCA
+- PKM
+- GAPDH
+- SLC2A1
+- MMP9
+- RELA
+- DPP4
+- NLRP3
+- PTGS2
+- DYRK1A
+- SETD7
+- ALOX5
+- ALOX12
+- ALOX15
+- MPO
+- ABCC1
+targets_astrocyte:
+- MMP9
+- RELA
+- ALOX12
+- ALOX15
+- ALOX5
+- ABCC1
+- DPP4
+- DYRK1A
+- MPO
+- NLRP3
+- PTGS2
+- SETD7
+- SNCA
+scope: 5-percent backbone plus prespecified targets detected in at least 25 QC-balanced
+  AD cells; only newly eligible targets are run; not a full-transcriptome 25-cell
+  gene-filter replication; cannot promote low-expression findings to primary evidence.
+states:
+- AD
+target_retention_min_cells: 25
+only_newly_eligible_targets: true
+analysis_mode: exploratory_target_retention_sensitivity

@@ -1,0 +1,24 @@
+run_id: 2026-10-02-public-mechanism-bridge-search-025
+date: 2026-10-02
+scope: public_data_discovery_and_access_audit_only
+user_constraint: no_new_wet_lab_experiments
+sources: [NCBI_GEO, NCBI_PubMed, SRA, BioStudies_ArrayExpress, ProteomeXchange, publisher_source_data]
+access_policy: prioritize_direct_access; record_request_or_controlled_routes_separately
+discovery:
+  date_restriction: none
+  language_restriction: none
+  geo_retmax_per_query: 100
+  publication_cutoff: 2026-10-02
+evidence_rules:
+  - distinguish_publication_experiment_from_deposited_data
+  - distinguish_H4K12la_H3K18la_H3K9la_and_nonhistone_marks
+  - distinguish_formula_compound_and_unrelated_drug_perturbation
+  - preserve_species_cell_type_model_and_statistical_unit
+  - do_not_reopen_or_relabel_historical_G2c_G6_or_drug_gates_from_search_alone
+  - report_access_and_metadata_failure_as_unresolved_not_as_biological_negative
+outputs:
+  - candidate_registry.tsv
+  - search_log.json
+  - official_geo_candidates.tsv
+  - report.md
+  - audit.json

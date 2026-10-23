@@ -1,0 +1,14 @@
+run_id: 2026-09-30-fixed-formula-admet-recovery-021
+decision_id: DRUG-FORMULA-ADMET-RECOVERY-2026-09-30-021
+date: 2026-09-30
+input_run: results/2026-09-30-fixed-formula-drug-prior-020
+input_table: formula_structure_and_step6_screen.tsv
+step7_input_rule: Step6_Status_equals_pass_heuristic
+model: ADMET-AI local installed ensemble
+policy: F:/TCM select/config/pipeline_policy.json
+policy_step: step7
+console_encoding: UTF-8
+interpretation: model_prediction_only_not_experimental_ADME_or_brain_exposure
+network_queries: false
+install_dependencies: false
+drug_evidence_ceiling: C0

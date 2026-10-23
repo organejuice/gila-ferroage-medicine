@@ -1,0 +1,17 @@
+addendum_id: G6-EXEC-2026-09-25-009
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_OPERATIONAL_PREFLIGHT
+scope: provide_reproducible_effect_blind_preflight_entry_point
+changes_to_primary_estimand_or_G6_pass_rule: false
+
+preflight_entry_point:
+  script: src/77_run_g6_effect_blind_preflight.R
+  source_of_gate_logic: src/73_run_g6_primary_analysis.R
+  stop_sentinel: "Effect-blind G6 gate failed. No G6 group effects were calculated."
+  execution_boundary: evaluate_only_through_the_locked_effect_blind_gate
+  diagnosis_aware_expressions_evaluated: false
+  purpose: permit_input_audit_snapshot_to_be_updated_after_preflight_and_before_DVC_primary_stage
+
+effects_used: false
+RCTD_refit_required: false

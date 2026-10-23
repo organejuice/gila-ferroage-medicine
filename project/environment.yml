@@ -1,0 +1,21 @@
+name: yzdhd-ad-disease-side
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - r-base=4.4
+  - r-essentials
+  - bioconductor-edger
+  - bioconductor-limma
+  - bioconductor-singlecellexperiment
+  - bioconductor-scran
+  - bioconductor-gsva
+  - bioconductor-decoupler
+  - pandas
+  - numpy
+  - scipy
+  - anndata
+  - scanpy
+  - pyyaml
+  - pip

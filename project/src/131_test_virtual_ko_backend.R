@@ -1,0 +1,13 @@
+suppressPackageStartupMessages({library(Matrix);library(scTenifoldKnk);library(yaml)})
+source('src/130_virtual_ko_cached_backend.R')
+cfg <- yaml::read_yaml('configs/virtual_ko_033.yaml')
+cfg$network_n_net<-2;cfg$network_n_cells<-50;cfg$network_n_comp<-2;cfg$td_K<-2;cfg$td_max_iter<-10
+set.seed(1); counts<-matrix(rpois(30*200,rep(seq(1,30),200)),30,dimnames=list(c('AKR1B1',paste0('G',1:29)),paste0('C',1:200)))
+set.seed(42)
+direct<-scTenifoldKnk::scTenifoldKnk(counts,qc=FALSE,gKO='AKR1B1',nc_nNet=2,nc_nCells=50,nc_nComp=2,nc_q=0.9,td_K=2,td_maxIter=10,nCores=1)
+cached<-build_knk_wt(counts,cfg,42)
+stopifnot(isTRUE(all.equal(as.matrix(direct$tensorNetworks$WT),cached$WT,tolerance=1e-8)))
+res<-delete_knk_gene(cached$WT,'AKR1B1',cfg,42)
+stopifnot(all(as.matrix(res$tensorNetworks$KO)['AKR1B1',]==0),all(as.matrix(res$tensorNetworks$KO)[-1,]==cached$WT[-1,]),all(is.finite(res$diffRegulation$distance)))
+writeLines(c('PASS: cached WT equals official 1.0.3 WT','PASS: only target outgoing edges removed','PASS: finite differential regulation distances'), 'results/2026-10-04-stratified-virtual-ko-033/backend_tests.txt')
+print(names(res$diffRegulation));print(head(res$diffRegulation))

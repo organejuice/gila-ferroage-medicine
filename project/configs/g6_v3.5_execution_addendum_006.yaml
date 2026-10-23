@@ -1,0 +1,22 @@
+addendum_id: G6-EXEC-2026-09-25-006
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_CHECKPOINT_PROVENANCE_CORRECTION
+scope: checkpoint_directory_namespacing
+changes_to_estimand_sampling_method_or_thresholds: false
+
+checkpoint_key:
+  includes_hashes_for: [raw_source_sha256, count_input_md5, reference_md5, RCTD_script_md5]
+  includes_short_hash_for_each_execution_config: true
+  includes_full_config_digest_in_checkpoint_signature: true
+  resume_requires_full_signature_and_exact_bin_order: true
+  stale_checkpoints_are_not_modified_or_reused: true
+
+execution_follow_up:
+  GSM8330062: complete_four_chunks_and_required_outputs_written
+  GSM8330063: prior_checkpoint_signature_mismatch_rejected; restart_from_chunk_1
+  GSM8330070: prior_fit_did_not_write_complete_outputs; restart_from_chunk_1
+  GSM8330070_prior_parser_error_cause: source_file_edited_during_active_R_read
+  effects_used: false
+
+method_changes: false

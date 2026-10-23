@@ -1,0 +1,70 @@
+run_id: 2026-09-20-disease-side-v3.2-g2
+protocol: docs/protocol/disease_side_v3.2_latest_frozen.md
+input:
+  peak_dir: data/raw/D1_GSE188765
+  peak_to_gene: results/archive/2026-09-20-pre-v3-freeze/results/tables/D1_peak_to_gene.tsv
+  g1_meta: results/archive/2026-09-20-disease-side-v3.1-g2-stop-historical/meta/random_effects_meta_summary.tsv
+  audited_gene_effects: results/2026-09-20-disease-side-v3.1-g2-reassessment/tables/gene_mapped_h4k12la_effects.tsv
+design:
+  contexts:
+    microglia: M
+    total_brain: T
+  conditions:
+    control: WT
+    disease: AD
+  expected_replicates: 2
+  primary_context: M
+  supporting_context: T
+analysis:
+  pseudocount: 0.5
+  fdr: 0.05
+  glycolysis_target_set:
+    id: M1_glycolysis_predeclared_v3_2
+    source: params.yaml M1_glycolysis plus v3.1 disease-side G2 target definition
+    genes:
+      - HK1
+      - HK2
+      - PFKFB3
+      - PFKFB4
+      - ALDOA
+      - ALDOC
+      - GAPDH
+      - PGK1
+      - PGAM1
+      - ENO1
+      - ENO2
+      - PKM
+      - LDHA
+      - PDK1
+      - SLC2A1
+      - HIF1A
+      - PFKP
+  orthogonal_activity_sources:
+    - id: G2b_Pan_2022_Cell_Metabolism
+      accession_or_identifier: PMID_35303422_DOI_10.1016/j.cmet.2022.02.013
+      url: https://pubmed.ncbi.nlm.nih.gov/35303422/
+      evidence_tier: C
+      same_model_or_system: true
+      role: publication_level_orthogonal_functional_support
+      source_design: 5XFAD_AD_model_and_microglial_experiments
+      orthogonal_evidence:
+        - criterion: lactate_H4K12la_dependence
+          finding: H4K12la was reported as lactate-dependent in plaque-adjacent microglia.
+        - criterion: glycolytic_transcription_and_activity
+          finding: H4K12la promoter enrichment activated glycolytic-gene transcription and increased glycolytic activity.
+        - criterion: pharmacologic_interruption
+          finding: PKM2 inhibition attenuated microglial activation.
+        - criterion: non_drug_genetic_interruption
+          finding: Microglia-specific Pkm2 ablation improved spatial learning and memory in 5XFAD mice.
+    - id: G2d_GSE296797
+      accession_or_identifier: GSE296797
+      url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296797
+      evidence_tier: B
+      same_model_or_system: false
+      role: independent_H4K12la_same_site_support_not_AD_replication
+  replicate_metrics:
+    interval_overlap_method: any_base_overlap
+    gene_signal: sum_peak_score_per_million_total_peak_score
+  inference_boundary: descriptive_due_to_two_biological_replicates_per_group
+  whole_gene_spearman_role: exploratory_only
+  global_sign_concordance_role: exploratory_only

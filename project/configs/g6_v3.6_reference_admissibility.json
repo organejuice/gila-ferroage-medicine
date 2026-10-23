@@ -1,0 +1,24 @@
+{
+  "protocol_id": "G6-PROT-2026-09-26-003",
+  "status": "PENDING",
+  "source": null,
+  "accession": null,
+  "reference_path": null,
+  "reference_sha256": null,
+  "donor_manifest_path": null,
+  "donor_manifest_sha256": null,
+  "donor_independence": {
+    "status": "PENDING",
+    "identity_crosswalk_path": null,
+    "identity_crosswalk_sha256": null,
+    "method": null,
+    "eligible_spatial_donors_checked": 20,
+    "unresolved_matches": null
+  },
+  "cell_type_annotation_source": null,
+  "required_cell_types": ["MG", "ASC", "EX", "INH", "ODC", "OPC", "PER.END"],
+  "effect_blind": true,
+  "group_effects_calculated": false,
+  "approved_by": null,
+  "approved_on": null
+}

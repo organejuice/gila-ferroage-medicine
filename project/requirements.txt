@@ -1,0 +1,9 @@
+# Initial reproducibility layer. Analysis dependencies will be pinned after
+# the processed-data formats and R/Python environment are validated.
+pyyaml
+pandas
+numpy
+scipy
+anndata
+scanpy
+openpyxl

@@ -1,0 +1,25 @@
+run_id: 2026-10-05-virtual-ko-pathways-034
+output_dir: results/2026-10-05-virtual-ko-pathways-034
+library_dir: data/interim/2026-10-03-stage-a-mechanism-030
+inputs:
+  primary: results/2026-10-04-stratified-virtual-ko-033
+  target_retention: results/2026-10-05-virtual-ko-target-retention-sensitivity-033
+libraries: [GO_BP, KEGG, Reactome]
+fdr: 0.05
+seed: 34034
+ora:
+  min_size: 5
+  max_size: 500
+  min_overlap: 2
+gsea:
+  min_size: 15
+  max_size: 500
+  algorithm: fgseaSimple
+  nperm: 100000
+  scoreType: pos
+  modes:
+    weighted: 1
+    unweighted_sensitivity: 0
+  workers: 1
+execution_workers: 4
+interpretation: unsigned regulatory-network perturbation; no expression or activity direction

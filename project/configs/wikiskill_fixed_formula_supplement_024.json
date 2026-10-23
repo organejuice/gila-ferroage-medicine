@@ -1,0 +1,5 @@
+{
+  "project":{"name":"fixed-formula-supplement-024","paper":"internal deterministic architecture audit","seed":42},
+  "evolution":{"iterations":1,"early_stop":true,"max_sample_total":8,"max_fail":5,"max_pass":3,"max_trace_chars":15000,"react_turns":12,"strict_improvement":true},
+  "backend":{"name":"deterministic","model":"synthetic-deterministic-v1","temperature":0.0}
+}

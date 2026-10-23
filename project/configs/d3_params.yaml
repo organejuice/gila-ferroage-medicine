@@ -1,0 +1,15 @@
+d3:
+  min_features: 200
+  max_feature_quantile: 0.995
+  max_mt_quantile: 0.995
+  nfeatures: 3000
+  npcs: 30
+  neighbor_k: 20
+  cluster_resolution: 0.4
+  min_cells_per_pseudobulk: 30
+  min_count_genes: 10
+  min_replicate_groups: 3
+  doublet_filter: not_available_in_public_filtered_matrix
+  primary_cell_types:
+    - Microglia
+    - Astrocyte

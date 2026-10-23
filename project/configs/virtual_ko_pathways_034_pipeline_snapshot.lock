@@ -1,0 +1,121 @@
+schema: '2.0'
+stages:
+  virtual_ko_pathways_034:
+    cmd: D:\python\python.exe src/prepare_virtual_ko_pathways_034.py && D:\conda\Scripts\conda.exe
+      run --no-capture-output -n zhang2026-nicotine-copd-r D:\python\python.exe src/run_virtual_ko_pathways_034.py
+      && D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/audit_virtual_ko_GSEA_034.R && D:\python\python.exe src/report_virtual_ko_pathways_034.py
+      && D:\python\python.exe src/finalize_virtual_ko_pathways_034.py
+    deps:
+    - path: configs/virtual_ko_pathways_034.yaml
+      hash: md5
+      md5: 8172968d9235789cf9b310d2baf6910b
+      size: 691
+    - path: data/interim/2026-10-03-stage-a-mechanism-030/GO_BP.gmt
+      hash: md5
+      md5: a90559deaf1ee6bf287bab5b1449aadf
+      size: 9816139
+    - path: data/interim/2026-10-03-stage-a-mechanism-030/KEGG.gmt
+      hash: md5
+      md5: f494df0951490d74f431b1154302024b
+      size: 270867
+    - path: data/interim/2026-10-03-stage-a-mechanism-030/Reactome.gmt
+      hash: md5
+      md5: 8f874bdd93619b92424a340348fc545f
+      size: 1035054
+    - path: docs/decisions/2026-10-05-virtual-ko-pathways-034.md
+      hash: md5
+      md5: 6a317a27735a4b8c09c4f97d43c5dcb3
+      size: 5450
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+      hash: md5
+      md5: 5cb89f0831d279ac46ed43e7cd0623d7.dir
+      size: 295121136
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+      hash: md5
+      md5: 87ed39fbb299a34c00f2d246a37b8e1f.dir
+      size: 318370547
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+      hash: md5
+      md5: 660d58d29b0ddb6af7784b4dd5b0dc44.dir
+      size: 233507724
+      nfiles: 71
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+      hash: md5
+      md5: 4d716615399e7cc6493226e8613f56fa.dir
+      size: 205863311
+      nfiles: 69
+    - path: results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+      hash: md5
+      md5: 83c36e60d3931fb0ed3bf138edcea570
+      size: 9068
+    - path: results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+      hash: md5
+      md5: dd69b04e5383650eed37a41992b33b11
+      size: 397
+    - path: results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+      hash: md5
+      md5: adaa5a0731ecb4cfc0f560389569cb5b
+      size: 327
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+      hash: md5
+      md5: 2286834e9bb0626985916a5f2904e4b8.dir
+      size: 292597985
+      nfiles: 41
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+      hash: md5
+      md5: 196b4cd77c826f7f9f7a6b773236d175.dir
+      size: 212084018
+      nfiles: 58
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+      hash: md5
+      md5: a2b92bce5dfff1da9d2c0127be0a9045
+      size: 4504
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+      hash: md5
+      md5: 8fdfaa980e55032147f1837e2b556609
+      size: 395
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+      hash: md5
+      md5: f9b6ce8cfbbb8d5406342a506909e88d
+      size: 325
+    - path: src/133_summarize_virtual_ko.py
+      hash: md5
+      md5: 86dd04f90ab6ba027df0a4daf5a79239
+      size: 16007
+    - path: src/audit_virtual_ko_GSEA_034.R
+      hash: md5
+      md5: 45f05f6d2bcc13a94913cd115a122939
+      size: 2320
+    - path: src/enrich_virtual_ko_pathways_034.R
+      hash: md5
+      md5: b0fb1b50d16d895eaa5fa2069c8244c4
+      size: 5403
+    - path: src/finalize_virtual_ko_pathways_034.py
+      hash: md5
+      md5: 2a47004354e11b9ce543af1c7a64f918
+      size: 10638
+    - path: src/prepare_virtual_ko_pathways_034.py
+      hash: md5
+      md5: 74224f9ec886c00a561347aeb9f23180
+      size: 3999
+    - path: src/report_virtual_ko_pathways_034.py
+      hash: md5
+      md5: 3ad15c42928fd21c58398a24ce9c4a90
+      size: 18723
+    - path: src/run_virtual_ko_pathways_034.py
+      hash: md5
+      md5: 69b192405ab75535070567eef5ff8955
+      size: 1898
+    - path: tests/test_virtual_ko_pathways_034.R
+      hash: md5
+      md5: e22d811e9fc73615369674f48fdce1e2
+      size: 690
+    outs:
+    - path: results/2026-10-05-virtual-ko-pathways-034
+      hash: md5
+      md5: 3d6f00e7240a5402852cebc35cbcb3ba.dir
+      size: 483995438
+      nfiles: 553

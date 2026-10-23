@@ -1,0 +1,38 @@
+run_id: 2026-09-21-disease-side-v3.2-g5-model-scoped
+protocol: docs/protocol/disease_side_v3.2_latest_frozen.md
+superseded_run: results/2026-09-20-disease-side-v3.2-g5
+model_route: animal_or_cell_model_sufficient
+human_translation_status: HUMAN_TRANSLATION_UNRESOLVED
+inputs:
+  g4_decision: results/2026-09-20-disease-side-v3.2-g4/g4_decision.json
+  counts: data/interim/GSE143758/GSE143758_astrocyte_pseudobulk_counts.tsv.gz
+  metadata: data/interim/GSE143758/GSE143758_astrocyte_pseudobulk_metadata.tsv
+  raw_series_metadata: data/raw/GSE143758/GSE143758_series_metadata.txt
+  raw_gsm_metadata: data/raw/GSE143758/GSE143758_gsm_metadata.txt
+  raw_hippocampus: data/raw/GSE143758/GSE143758_Admouse_Hippocampus_3TimeCourses_Astrocytes_WT_AD_Aging.csv.gz
+  raw_cortex: data/raw/GSE143758/GSE143758_Admouse_Crtx_7-10m_Astrocytes_UMIcounts.csv.gz
+analysis:
+  biological_unit: animal_sample
+  cell_type: astrocyte_source_defined
+  primary_model: 5xFAD_vs_WT
+  primary_region: Hippocampus
+  sensitivity_region: Cortex
+  minimum_cells_per_animal: 20
+  covariate: age_months_if_estimable
+  normalization: edgeR_TMM_then_limma_voom
+  fdr: BH_FDR
+  fdr_threshold: 0.05
+  response_modules:
+    - M3_SASP_Senescence
+    - M5_Iron_Uptake
+    - M5_Iron_Storage
+    - M5_Iron_Export
+    - M5_Ferritinophagy
+    - M6_LPO_ACSL4
+    - M7_FerroAging_Author
+  gate:
+    primary_region_module_fdr_max: 0.05
+    minimum_passing_modules: 1
+    sensitivity_region_is_supportive_not_hard: true
+    human_translation_is_supportive_not_hard: true
+    cell_model_can_rescue_animal_failure: true

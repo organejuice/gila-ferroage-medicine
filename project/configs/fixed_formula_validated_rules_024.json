@@ -1,0 +1,11 @@
+{
+  "concentration_endpoints":["Ki","Kd","IC50","EC50","AC50"],
+  "molar_units":["M","mM","uM","µM","nM","pM"],
+  "positive_experimental_outcomes":["active","quantitative_record"],
+  "relations_not_positive_confirmation":[">",">="],
+  "manual_unknown_assay_species":"DOWNGRADE_E2",
+  "manual_G1_source_basis":"official original assay description plus exact chemical/activity/target metadata; full paper access not assumed",
+  "unified_potency_cutoff":null,
+  "rule_version":"024-validated-after-small-batch",
+  "initial_input_configuration_unchanged":true
+}

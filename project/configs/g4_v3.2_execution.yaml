@@ -1,0 +1,58 @@
+run_id: 2026-09-20-disease-side-v3.2-g4
+protocol: docs/protocol/disease_side_v3.2_latest_frozen.md
+superseded_run: results/2026-09-20-disease-side-v3.2-g3-model-scoped
+
+inputs:
+  g3_decision: results/2026-09-20-disease-side-v3.2-g3-model-scoped/g3_decision.json
+  d2_gene_tpm: results/archive/2026-09-20-pre-v3-freeze/results/tables/D2_gene_tpm.tsv
+  d2_sample_metadata: results/archive/2026-09-20-pre-v3-freeze/results/tables/D2_sample_metadata.tsv
+  d5_ferroaging_reference: results/archive/2026-09-20-pre-v3-freeze/results/tables/D5_ferroaging_reference.tsv
+  human_region_module_effects: results/archive/2026-09-20-disease-side-v3.1-g2-stop-historical/effects/primary_region_module_effects.tsv
+  frozen_config: configs/disease_side_v3.2_frozen.yaml
+
+analysis:
+  expression_transform: log2_TPM_plus_1
+  module_score: mean_gene_score_then_global_standardization
+  independent_unit: D2 biological replicate; human cohort-region stratum for context only
+  alpha: 0.05
+  correction: Benjamini-Hochberg across all D2 G4 module-by-time tests
+  minimum_modalities: 2
+  minimum_positive_iron_timepoints: 2
+  minimum_positive_lpo_timepoints: 1
+  minimum_positive_ferro_aging_timepoints: 2
+
+external_evidence:
+  - evidence_id: Kenkhuis_2021_direct_iron_microglia
+    title: Iron loading is a prominent feature of activated microglia in Alzheimer's disease patients
+    doi: 10.1186/s40478-021-01126-5
+    pmid: 33597025
+    source_url: https://pubmed.ncbi.nlm.nih.gov/33597025/
+    supplementary_url: https://doi.org/10.6084/m9.figshare.14053524
+    supplementary_file: 40478_2021_1126_MOESM1_ESM.pdf
+    supplementary_expected_md5: 7b4798ab8559dc2ddb4b3c6fa58bef5c
+    modality: direct_iron_histology_and_microscopy
+    context: human_AD_microglia
+    sample_design: 12_AD_and_9_control; iron_positive_analysis_11_AD_and_9_control
+    assays: Perls_iron_stain; FTL_Iba1_TMEM119_P2RY12_multispectral_IF; T2star_MRI
+    result: increased_iron_positive_cells_and_FTL_positive_microglia_in_AD
+    evidence_tier: C_publication_level_direct_measure
+    counts_as_second_modality: true
+    local_quantitative_reanalysis: false
+    limitation: effect_size_and_uncertainty_not_reconstructed_from_current_public_summary
+  - evidence_id: D5_ferroaging_reference
+    title: Frozen author ferro-aging reference gene set
+    modality: reference_gene_set
+    context: non_direct_reference
+    result: descriptive_reference_only
+    evidence_tier: C_reference_only
+    counts_as_second_modality: false
+  - evidence_id: GSE264648_sensitivity_candidate
+    title: Characterization of premature cell senescence in Alzheimer's disease using single nuclear transcriptomics
+    accession: GSE264648
+    source_url: https://www.ncbi.nlm.nih.gov/gds?LinkName=bioproject_gds&from_uid=1103739
+    modality: snRNA_seq_and_imaging_mass_cytometry
+    context: human_AD_senescence_sensitivity
+    result: candidate_senescence_orthogonal_support
+    evidence_tier: B_processed_public_candidate
+    counts_as_second_modality: false
+    exclusion_reason: non_independent_overlap_with_D3_and_not_a_direct_iron_or_lipid_peroxidation_measure

@@ -1,0 +1,16 @@
+suppressPackageStartupMessages(library(Matrix))
+source('src/matching_correction_036_helpers.R')
+x<-Matrix(matrix(c(1,3,6,2,2,16),3,2),sparse=TRUE)
+rownames(x)<-c('A','B','C');colnames(x)<-c('cell1','cell2')
+b<-list(counts=x[1:2,,drop=FALSE],all_gene_counts=x)
+f<-full_expression_features(b)
+stopifnot(isTRUE(all.equal(f$features$mean_CP10K,c(1000,2000,7000))),
+ isTRUE(all.equal(f$features$old_mean_CP10K,c(3750,6250,27500))),
+ identical(as.numeric(f$libraries$full_library_UMI),c(10,20)))
+bad<-b;bad$counts<-bad$counts[,2:1];stopifnot(inherits(try(full_expression_features(bad),silent=TRUE),'try-error'))
+ff<-data.frame(gene=c('T','A','B'),detection_fraction=c(.01,.02,.02),mean_CP10K=c(1,2,2),out_degree=c(1,2,2),out_abs_weight_sum=c(1,2,2))
+r<-select_references(list('42'=ff,'43'=ff), 'T',c('A','B'),1)
+stopifnot(all(r$selected$control=='A'),all(r$selected$matching_limited),!any(r$selected$insufficient_controls))
+r<-select_references(list('42'=ff,'43'=ff),'T',c('A','B'),20)
+stopifnot(all(r$selected$insufficient_controls),nrow(r$selected)==4)
+cat('PASS: full-library cell-mean CP10K, filtered denominator reproduction, cell identity, deterministic ties, limited matching, insufficient controls\n')

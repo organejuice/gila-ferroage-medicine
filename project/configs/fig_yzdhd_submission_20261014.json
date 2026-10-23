@@ -1,0 +1,19 @@
+{
+  "source_manuscript": "data/raw/FIG_YZDHD_20261014/manuscript_en.md",
+  "output_dir": "results\\2026-10-14-FIG-YZDHD",
+  "article_type": "Research",
+  "references_minimum": 61,
+  "source_boundary": "Project manuscript for scientific content; designated ADNI document for author metadata only",
+  "biological_reanalysis": false,
+  "new_environment": false,
+  "existing_results_unchanged": true,
+  "font": "Times New Roman",
+  "body_points": 11,
+  "spacing": 1.25,
+  "page_size": "A4 inherited manuscript design",
+  "author_year_citations": true,
+  "keywords": 6,
+  "figures_separate": true,
+  "submission_to_portal": false,
+  "title": "Glial lactylation, senescence and iron homeostasis in Alzheimer’s disease: an integrative transcriptomic and network pharmacology analysis of Yizhi Dihuang Decoction"
+}

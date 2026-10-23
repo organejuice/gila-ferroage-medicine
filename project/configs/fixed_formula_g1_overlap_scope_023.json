@@ -1,0 +1,37 @@
+{
+  "run_id": "2026-09-30-fixed-formula-g1-overlap-scope-023",
+  "candidate_table": "results/2026-09-30-fixed-formula-admet-recovery-021/formula_component_candidates_with_admet.tsv",
+  "broad_prior_table": "results/2026-09-30-fixed-formula-drug-prior-020/formula_target_database_priors.tsv",
+  "strict_assay_table": "results/2026-09-30-fixed-formula-target-identity-022/candidate_compound_exact_identity_target_records.tsv",
+  "g1_robust_table": "results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz",
+  "g1_full_meta_table": "results/archive/2026-09-20-disease-side-v3.1-g2-stop-historical/meta/random_effects_meta_summary.tsv",
+  "previous_summary": "results/2026-09-30-fixed-formula-target-identity-022/summary.json",
+  "published_abstract": {
+    "title": "Yizhi Dihuang Decoction Ameliorates Mild Cognitive Impairment by Restoring Autophagy via PI3K-AKT-mTOR Modulation: In Vivo Validation and Network Pharmacology Analysis",
+    "doi": "10.1177/15491684261460820",
+    "publisher_url": "https://journals.sagepub.com/doi/abs/10.1177/15491684261460820",
+    "abstract_accessed": "2026-09-30",
+    "full_target_list_accessed": false
+  },
+  "published_abstract_hub_symbols": ["AKT1", "PIK3CA", "PIK3CD", "MTOR"],
+  "rules": {
+    "gene_match": "exact human gene symbol, with surrounding whitespace removed",
+    "broad_prior": "unique Target_Symbol in 020 imported human target mapping, hypothesis tier",
+    "strict_assay": "unique Target_Symbol in 022 exact-structure candidate-compound activity records, pending source assay verification",
+    "g1": "frozen 244-gene human AD microglial set",
+    "significance_test": "none; descriptive overlap only"
+  },
+  "expected": {
+    "g1_genes": 244,
+    "g1_full_meta_genes": 19738,
+    "g1_244_full_meta_matches": 244,
+    "candidate_cids": 2276,
+    "prior_rows": 1824,
+    "prior_cids": 6,
+    "prior_target_symbols": 372,
+    "broad_overlap_genes": 8,
+    "published_hubs_in_g1_244": 0,
+    "strict_assay_rows": 1,
+    "strict_overlap_genes": 0
+  }
+}

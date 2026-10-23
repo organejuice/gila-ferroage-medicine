@@ -1,0 +1,23 @@
+{
+  "run_id":"2026-10-03-disease-interface-perturbation-audit-027",
+  "parent_run":"2026-10-03-public-mechanism-analysis-026",
+  "scope":"freeze_existing_D0; curate_P4_P7; audit_three_candidate_files_and_samples_only",
+  "candidate_accessions":["GSE286094","GSE315101","GSE333352"],
+  "network":{"timeout_seconds":30,"max_metadata_bytes":8388608,"attempts":3,"interval_seconds":1},
+  "rules":{
+    "unknown_is_not_pass":true,
+    "D0_historical_inputs_immutable":true,
+    "new_disease_or_drug_effect_analysis":false,
+    "no_new_cell_QC_cutoffs":true,
+    "P5_expression_exploration_not_therapeutic_qualification":true,
+    "P6_no_arbitrary_context_total_score":true,
+    "P7_only_measured_approved_genes":true,
+    "compound_identity_to_current_formula":"must_be_exact_and_traceable; external_references_not_automatically_formula_components",
+    "gene_sign_not_Desired_direction":true,
+    "no_rankings":true,
+    "claim_ceiling":"C0",
+    "reopen_017":false,
+    "reopen_G2c_G6":false
+  },
+  "reproducibility":"local_architecture_and_offline_table_replay; DVC_remote_unconfigured"
+}

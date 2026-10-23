@@ -1,0 +1,47 @@
+{
+  "run_id": "2026-09-30-fixed-formula-target-supplement-024",
+  "inputs": {
+    "herbs": "results/2026-09-30-fixed-formula-registration-018/formula_herbs.tsv",
+    "candidates": "results/2026-09-30-fixed-formula-admet-recovery-021/formula_component_candidates_with_admet.tsv",
+    "source_records": "results/2026-09-30-fixed-formula-drug-prior-020/formula_component_source_records.tsv",
+    "structures": "results/2026-09-30-fixed-formula-drug-prior-020/formula_structure_and_step6_screen.tsv",
+    "admet": "results/2026-09-30-fixed-formula-admet-recovery-021/formula_admet_predictions.tsv",
+    "priors": "results/2026-09-30-fixed-formula-drug-prior-020/formula_target_database_priors.tsv",
+    "historical_assays": "results/2026-09-30-fixed-formula-drug-prior-020/formula_assay_level_target_records.tsv",
+    "strict_022": "results/2026-09-30-fixed-formula-target-identity-022/candidate_compound_exact_identity_target_records.tsv",
+    "baseline_023": "results/2026-09-30-fixed-formula-g1-overlap-scope-023/broad_prior_G1_overlap.tsv",
+    "g1_244": "results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz",
+    "g1_full": "results/archive/2026-09-20-disease-side-v3.1-g2-stop-historical/meta/random_effects_meta_summary.tsv",
+    "g5_modules": "results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G5_frozen_receiver_module_gene_registry.tsv.gz",
+    "g5_orthologs": "results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G5_receiver_one_to_one_human_ortholog_registry.tsv.gz"
+  },
+  "expected": {"candidate_cids": 2276, "structures": 1299, "priority_structures": 335, "g1_244": 244, "g1_significant": 413},
+  "http": {"interval_seconds": 1, "timeout_seconds": 30, "backoff_seconds": [2, 5, 10], "circuit_breaker_consecutive_failures": 3},
+  "batch_sizes": {"pubchem_properties": 50, "pubchem_assays": 10, "chembl_molecules": 30, "chembl_activities": 20, "chembl_metadata": 50},
+  "sources": {
+    "HGNC": "https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt",
+    "PubChem": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/",
+    "ChEMBL": "https://www.ebi.ac.uk/chembl/api/data/",
+    "BindingDB": "https://bindingdb.org/rest/getTargetByCompound",
+    "HERB": "https://herb.ac.cn/",
+    "BATMAN": "http://bionet.ncpsb.org.cn/batman-tcm/"
+  },
+  "rules": {
+    "structure_identity": "exact RDKit canonical isomeric SMILES; preserve stereo/salt/conflicts; no similarity promotion",
+    "E1": "exact chemical, stable human single-protein ID, binding assay, quantitative positive value with interpretable units and relation, source assay and document; ChEMBL confidence=9; manual source verification required for G1 intersection release",
+    "E2": "experimental record failing one or more E1 criteria; retain explicit gaps",
+    "P": "traceable prediction or inference with exact candidate identity and method",
+    "S": "similar structure only",
+    "H": "unqualified association, identity conflict, or untraceable inference; not a qualified target",
+    "potency_cutoff": null,
+    "g1_main": "frozen 244",
+    "g1_exploratory": "frozen full meta FDR<0.05, expected 413",
+    "claim_ceiling": "C0",
+    "reopen_017": false
+  },
+  "references": [
+    {"title": "The ChEMBL Database in 2023: a drug discovery platform spanning multiple bioactivity data types and time periods", "doi": "10.1093/nar/gkad1004"},
+    {"title": "BindingDB in 2024: a FAIR knowledgebase of protein-small molecule binding data", "doi": "10.1093/nar/gkae1075"},
+    {"title": "An update on PUG-REST: RESTful interface for programmatic access to PubChem", "doi": "10.1093/nar/gky294"}
+  ]
+}

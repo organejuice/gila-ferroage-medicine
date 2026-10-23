@@ -1,0 +1,24 @@
+addendum_id: G6-EXEC-2026-09-25-002
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_AUDIT_OBSERVATION
+scope: reporting_caveat_only
+changes_to_estimand_sampling_method_or_thresholds: false
+
+primary_reference_identity_audit:
+  primary_accession: GSE269906
+  reference_accession: GSE174367
+  demographic_diagnosis_candidate_pairs: 7
+  candidate_primary_donors: [B01806B6, B02008D2, C02248B5, D02175A4, D02175A6]
+  candidate_reference_donors: [Sample-100, Sample-33, Sample-52, Sample-58, Sample-82, Sample-96]
+  exact_identity_crosswalk_found: false
+  pairs_matching_braak_and_plaque_stage: 0
+  audited_before_disease_effects: true
+  disposition: retain_the_locked_18_donor_reference_and_report_possible_subject_overlap_unresolved
+  interpretation_limit: do_not_describe_the_RCTD_reference_as_confirmed_subject_independent
+  leave_one_reference_donor_out_sensitivity: planned_but_not_yet_run
+
+validation_roles_unchanged:
+  GSE233208: NOT_ELIGIBLE_after_fail_closed_candidate_overlap_exclusion
+  GSE220442: NOT_ELIGIBLE_patient_mapping_unresolved
+  GSE263791: descriptive_AD_only_background

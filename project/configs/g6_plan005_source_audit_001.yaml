@@ -1,0 +1,43 @@
+schema_version: 1
+audit:
+  id: G6-AUDIT-2026-09-27-001
+  plan_id: G6-PLAN-2026-09-27-005
+  date: 2026-09-27
+  mode: effect_blind_source_and_design_metadata_only
+  current_status: HOLD_METADATA
+  final_confirmatory_status: G6_NOT_EXECUTABLE
+scope:
+  expression_matrix_download: false
+  expression_matrix_access: false
+  diagnosis_expression_linkage: false
+  group_effects_allowed: false
+  wp2_started: false
+  separate_execution_lock_created: false
+screening:
+  minimum_independent_donors_per_group: 4
+  source_reported_hhsta_ad: 8
+  source_reported_hhsta_control: 8
+  counts_are_power_claim: false
+  source_sample_codes_are_verified_donor_ids: false
+cohorts:
+  primary_candidate: HHSTA
+  primary_candidate_admitted: false
+  auxiliary_candidate: ROSMAP_spatial
+  auxiliary_region: DLPFC
+  auxiliary_can_substitute_for_same_region_validation: false
+blockers:
+  - donor_sample_section_crosswalk_not_available_in_accessible_sources
+  - donor_by_subregion_crosswalk_not_available
+  - per_sample_processing_or_sequencing_batch_map_not_available
+  - design_matrix_rank_not_assessed
+provenance:
+  protocol: docs/protocol/2026-09-27-g6-staged-research-plan-005.md
+  sop: docs/protocol/2026-09-27-g6-staged-research-sop-005.md
+  source_manifest: results/2026-09-27-g6-plan005-execution/source_manifest.tsv
+  dataset_size_audit: results/2026-09-27-g6-plan005-execution/dataset_size_audit.tsv
+  dataset_size_summary: results/2026-09-27-g6-plan005-execution/dataset_size_summary.tsv
+  outputs: results/2026-09-27-g6-plan005-execution
+  raw_data_read_only: true
+  expression_data_downloaded: false
+  filename_alias_reconciled: false
+  dvc_tracking_status: unavailable_due_local_sqlite_error

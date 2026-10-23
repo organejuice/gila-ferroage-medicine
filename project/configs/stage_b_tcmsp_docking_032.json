@@ -1,0 +1,53 @@
+{
+  "run": "2026-10-04-stage-b-tcmsp-docking-032",
+  "preparation_seed": 42,
+  "conformer_method": "RDKit ETKDGv3 then MMFF94 maxIters=2000, convergence required",
+  "protonation": "catalogue exact state plus carboxylate sensitivity; no claim of pH population or full tautomer enumeration",
+  "targets": {
+    "AKR1B1": {
+      "pdb": "2FZD",
+      "reference_ligand": "TOL",
+      "receptor": "data\\processed\\2026-10-04-stage-b-tcmsp-docking-032\\AKR1B1_2FZD_receptor.pdb",
+      "center": [
+        16.534,
+        -7.666,
+        13.609
+      ],
+      "box": [
+        24.0,
+        24.0,
+        24.0
+      ],
+      "retain_residue": "NAP",
+      "rationale": "Full resolved human WT inhibitor complex; centroid of crystallographic inhibitor; 24 A box covers ligand and pocket, not blind whole protein",
+      "waters": "removed; not modeled",
+      "alternate_locations": "maximum occupancy per atom; ties first record"
+    },
+    "LTA4H": {
+      "pdb": "4L2L",
+      "reference_ligand": "1V6",
+      "receptor": "data\\processed\\2026-10-04-stage-b-tcmsp-docking-032\\LTA4H_4L2L_receptor.pdb",
+      "center": [
+        12.297,
+        -14.124,
+        16.55
+      ],
+      "box": [
+        24.0,
+        24.0,
+        24.0
+      ],
+      "retain_residue": "ZN",
+      "rationale": "Full resolved human WT inhibitor complex; centroid of crystallographic inhibitor; 24 A box covers ligand and pocket, not blind whole protein",
+      "waters": "removed; not modeled",
+      "alternate_locations": "maximum occupancy per atom; ties first record"
+    }
+  },
+  "docking_engine": "TCMSP AI Agent GUI cloud AutoDock Vina; backend version/seed/exhaustiveness to inspect from results",
+  "validation": "symmetry-aware heavy atom RMSD to co-crystal in fixed receptor coordinates; no ligand fitting",
+  "source_sha256": "1021b920e838029bdda2ce927c57539b9fd584c734bfbded168b83239c824133",
+  "environment": {
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:12:15) [MSC v.1942 64 bit (AMD64)]",
+    "rdkit": "2025.09.6"
+  }
+}

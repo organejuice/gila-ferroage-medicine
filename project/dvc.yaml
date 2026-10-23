@@ -1,0 +1,393 @@
+stages:
+  fixed_formula_target_supplement_024_replay:
+    cmd: D:\conda\envs\TCM_select\python.exe -X utf8 
+      src/114_finalize_formula_targets_024.py
+    deps:
+    - src/113_supplement_formula_targets_024.py
+    - src/114_finalize_formula_targets_024.py
+    - configs/fixed_formula_target_supplement_024.json
+    - configs/fixed_formula_validated_rules_024.json
+    - configs/fixed_formula_activity_comment_rules_024.json
+    - configs/g2_v3.2_execution.yaml
+    - configs/g3_v3.2_execution.yaml
+    - src/32_run_g4_v3_2.py
+    - results/archive/2026-09-20-pre-v3-freeze/results/tables/D5_ferroaging_reference.tsv
+    - data/raw/2026-09-30-fixed-formula-target-supplement-024
+    - results/2026-09-30-fixed-formula-target-supplement-024/compound_identity_audit.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/source_sha256.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/prior_source_access.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/manual_assay_adjudication.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/ledger_ChEMBL.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/ledger_BindingDB.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/ledger_PubChem.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/evidence_ChEMBL.json
+    - results/2026-09-30-fixed-formula-target-supplement-024/evidence_BindingDB.json
+    - results/2026-09-30-fixed-formula-target-supplement-024/evidence_PubChem.json
+    - results/2026-09-30-fixed-formula-registration-018/formula_herbs.tsv
+    - results/2026-09-30-fixed-formula-admet-recovery-021/formula_component_candidates_with_admet.tsv
+    - results/2026-09-30-fixed-formula-drug-prior-020/formula_component_source_records.tsv
+    - results/2026-09-30-fixed-formula-drug-prior-020/formula_structure_and_step6_screen.tsv
+    - results/2026-09-30-fixed-formula-admet-recovery-021/formula_admet_predictions.tsv
+    - results/2026-09-30-fixed-formula-drug-prior-020/formula_target_database_priors.tsv
+    - results/2026-09-30-fixed-formula-drug-prior-020/formula_assay_level_target_records.tsv
+    - results/2026-09-30-fixed-formula-target-identity-022/candidate_compound_exact_identity_target_records.tsv
+    - results/2026-09-30-fixed-formula-g1-overlap-scope-023/broad_prior_G1_overlap.tsv
+    - results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz
+    - results/archive/2026-09-20-disease-side-v3.1-g2-stop-historical/meta/random_effects_meta_summary.tsv
+    - results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G5_frozen_receiver_module_gene_registry.tsv.gz
+    - results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G5_receiver_one_to_one_human_ortholog_registry.tsv.gz
+    outs:
+    - results/2026-09-30-fixed-formula-target-supplement-024/evidence_layered.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/G1_244_layered_connections.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/exploratory_disease_connections.tsv
+    - results/2026-09-30-fixed-formula-target-supplement-024/G1_layer_summary.tsv
+  fixed_formula_supplement_024_continuation_replay:
+    cmd: D:\conda\envs\TCM_select\python.exe -X utf8 
+      src/122_audit_continuation_024.py
+    deps:
+    - src/113_supplement_formula_targets_024.py
+    - src/114_finalize_formula_targets_024.py
+    - src/118_continue_formula_supplement_024.py
+    - src/119_query_herb_candidates_024.py
+    - src/120_resolve_legacy_structures_024.py
+    - src/121_finalize_continuation_024.py
+    - src/122_audit_continuation_024.py
+    - src/124_ingest_publication_supplements_024.py
+    - configs/fixed_formula_target_supplement_024.json
+    - configs/fixed_formula_validated_rules_024.json
+    - configs/fixed_formula_activity_comment_rules_024.json
+    - configs/fixed_formula_supplement_024_continuation.json
+    - tests/test_formula_target_supplement_024.py
+    - tests/test_formula_continuation_024.py
+    - data/raw/2026-09-30-fixed-formula-target-supplement-024
+    - data/raw/2026-10-03-fixed-formula-target-supplement-024-continuation
+    - results/2026-09-30-fixed-formula-target-supplement-024
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/evidence_BindingDB.json
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/evidence_HERB.json
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/HERB_CID_query_ledger.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/ledger_BindingDB.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/legacy_structure_identity_followup.tsv
+    outs:
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/evidence_layered.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/G1_244_layered_connections.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/exploratory_disease_connections.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/G1_G5_gate_layer_summary.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/raw_source_verification.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/offline_replay_verification.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/acceptance_audit.json
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/publication_supplement_table1.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/publication_supplement_table2.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/publication_gene_disease_comparison.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/publication_G1_G5_summary.tsv
+  public_mechanism_effects_026:
+    cmd: D:/conda/envs/TCM_select/python.exe src/135_run_mechanism_026.py
+    deps:
+    - configs/public_mechanism_analysis_026.json
+    - data/interim/2026-10-03-public-mechanism-analysis-026
+    - data/raw/2026-10-03-public-mechanism-analysis-026
+    - docs/protocol/2026-10-03-public-mechanism-analysis-026.md
+    - results/2026-10-02-public-mechanism-bridge-search-025/candidate_registry.tsv
+    - results/2026-10-02-public-mechanism-bridge-search-025/sample_mapping.tsv
+    - src/125_prepare_mechanism_analysis_026.py
+    - src/127_prepare_expression_026.py
+    - src/128_fit_mechanism_effects_026.R
+    - src/129_audit_TQ_reference_026.py
+    - src/131_review_samples_sources_026.py
+    - src/133_report_audit_mechanism_026.py
+    - src/134_finalize_provenance_026.py
+    - src/135_run_mechanism_026.py
+    - tests/test_mechanism_026.py
+    - workspaces/2026-10-02-public-mechanism-bridge-search-025/raw/sources/E-MTAB-15005.sdrf.txt
+    outs:
+    - results/2026-10-03-public-mechanism-analysis-026:
+        persist: true
+  disease_interface_audit_027:
+    cmd: D:/conda/envs/TCM_select/python.exe -X utf8 src/140_run_audit_027.py
+    deps:
+    - configs/disease_interface_perturbation_audit_027.json
+    - docs/protocol/2026-10-03-disease-interface-perturbation-audit-027.md
+    - docs/decisions/2026-10-03-disease-interface-perturbation-audit-027.md
+    - data/raw/2026-10-03-disease-interface-perturbation-audit-027
+    - data/interim/2026-10-03-public-mechanism-analysis-026
+    - results/2026-10-03-public-mechanism-analysis-026
+    - results/2026-09-24-disease-side-v3.5-g6-input-audit/registries
+    - results/2026-09-20-disease-side-v3.2-g2/tables/g2b_target_set_h4k12la_effects.tsv
+    - results/2026-09-20-disease-side-v3.2-g3-model-scoped/tables/D2_model_temporal_evidence.tsv
+    - results/2026-09-20-disease-side-v3.2-g4/tables/D2_G4_RNA_sample_level_module_effects.tsv
+    - results/2026-09-22-disease-side-v3.4-g5/tables/GSE261698_primary_module_effects.tsv
+    - data/raw/2026-09-30-fixed-formula-target-supplement-024/HGNC/hgnc_complete_set.tsv
+    - workspaces/2026-10-02-public-mechanism-bridge-search-025/raw/sources
+    - src/127_prepare_expression_026.py
+    - src/138_build_interface_qualification_027.py
+    - src/139_audit_candidates_027.py
+    - src/140_run_audit_027.py
+    - tests/test_interface_audit_027.py
+    outs:
+    - results/2026-10-03-disease-interface-perturbation-audit-027:
+        persist: true
+  gse286094_input_audit_028:
+    cmd: D:/conda/envs/TCM_select/python.exe -X utf8 src/143_finalize_gse286094_028.py
+    deps:
+    - configs/gse286094_mechanism_028.json
+    - configs/wikiskill_gse286094_028.json
+    - docs/protocol/2026-10-03-gse286094-mechanism-028.md
+    - docs/decisions/2026-10-03-gse286094-mechanism-028.md
+    - data/raw/2026-10-03-gse286094-mechanism-028
+    - data/raw/2026-10-03-disease-interface-perturbation-audit-027
+    - results/2026-10-03-disease-interface-perturbation-audit-027
+    - src/05_prepare_glial_pseudobulk.py
+    - src/127_prepare_expression_026.py
+    - src/142_audit_gse286094_028.py
+    - src/143_finalize_gse286094_028.py
+    - tests/test_gse286094_audit_028.py
+    - workspaces/2026-10-03-gse286094-mechanism-028-deterministic
+    outs:
+    - results/2026-10-03-gse286094-mechanism-028:
+        persist: true
+  stage_a_030:
+    cmd: D:/conda/envs/TCM_select/python.exe -X utf8 src/148_run_stage_a_030.py
+    deps:
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/compound_identity_audit.tsv
+    - results/2026-10-03-disease-interface-perturbation-audit-027/P7_shared_gene_effects.tsv.gz
+    - configs/fixed_formula_activity_comment_rules_024.json
+    - configs/fixed_formula_target_supplement_024.json
+    - configs/fixed_formula_validated_rules_024.json
+    - configs/stage_a_030.json
+    - data/raw/2026-09-30-fixed-formula-target-supplement-024/HGNC/hgnc_complete_set.tsv
+    - data/raw/2026-10-03-stage-a-mechanism-030
+    - data/raw/NCBI_gene_orthologs/Homo_sapiens.gene_info.gz
+    - data/raw/NCBI_gene_orthologs/gene_orthologs.gz
+    - docs/decisions/2026-10-03-stage-a-mechanism-030.md
+    - docs/protocol/2026-10-03-stage-a-mechanism-030.md
+    - results/2026-09-22-disease-side-v3.4-g5/registries/GSE261698_gene_mapping.tsv
+    - results/2026-09-22-disease-side-v3.4-g5/tables/GSE261698_filter_genes.tsv
+    - results/2026-09-24-disease-side-v3.5-g6-input-audit/registries/G1_microglia_signed_sender_244.tsv.gz
+    - results/2026-10-03-disease-interface-perturbation-audit-027/D0_TQ_Desired_reference.tsv
+    - results/2026-10-03-disease-interface-perturbation-audit-027/D0_functional_evidence_cards.tsv
+    - results/2026-10-03-disease-interface-perturbation-audit-027/D0_interface_genes.tsv
+    - results/2026-10-03-disease-interface-perturbation-audit-027/D0_interface_registry.tsv
+    - results/2026-10-03-disease-interface-perturbation-audit-027/P4_P5_qualification_matrix.tsv
+    - results/2026-10-03-disease-interface-perturbation-audit-027/P6_context_comparability.tsv
+    - results/2026-10-03-disease-interface-perturbation-audit-027/P7_shared_measurement_coverage.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/G1_244_layered_connections.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/G1_E1_released_target_summary.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/G1_G5_gate_layer_summary.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/evidence_layered.tsv
+    - results/2026-10-03-fixed-formula-target-supplement-024-continuation/exploratory_disease_connections.tsv
+    - results/archive/2026-09-20-disease-side-v3.1-g2-stop-historical/meta/random_effects_meta_summary.tsv
+    - results/archive/2026-09-20-pre-v3-freeze/results/tables/D2_gene_tpm.tsv
+    - src/113_supplement_formula_targets_024.py
+    - src/114_finalize_formula_targets_024.py
+    - src/144_prepare_stage_a_030.py
+    - src/145_enrich_stage_a_030.R
+    - src/146_network_stage_a_030.py
+    - src/147_finalize_stage_a_030.py
+    - src/148_run_stage_a_030.py
+    - src/149_wikiskill_cli_compat_030.py
+    - tests/test_stage_a_030.py
+    params:
+    - stage_a_030
+    outs:
+    - data/interim/2026-10-03-stage-a-mechanism-030:
+        persist: true
+    - results/2026-10-03-stage-a-mechanism-030:
+        persist: true
+  stratified_virtual_ko_033:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r Rscript src/132_run_stratified_virtual_ko.R
+    deps:
+    - src/132_run_stratified_virtual_ko.R
+    - src/130_virtual_ko_cached_backend.R
+    - src/135_sparse_cp_equivalent.R
+    - src/138_implicit_manifold.R
+    - external/virtual_ko_033/pcNet_upstream.R
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    params:
+    - configs/virtual_ko_033.yaml:
+      - seeds
+      - gene_min_fraction
+      - cell_min_counts
+      - cell_max_mt_fraction
+      - max_cells_per_donor_region
+      - network_n_net
+      - network_n_cells
+      - network_n_comp
+      - network_q
+      - td_K
+      - td_max_iter
+      - td_max_error
+      - td_n_decimal
+      - ma_n_dim
+      - ncores
+      - accelerated_pcnet
+      - sparse_cp
+      - implicit_manifold
+      - targets_microglia
+      - targets_astrocyte
+    outs:
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+  stratified_virtual_ko_033_summary:
+    cmd: D:\python\python.exe src/133_summarize_virtual_ko.py
+    deps:
+    - src/133_summarize_virtual_ko.py
+    - results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+    - configs/virtual_ko_033.yaml
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - data/interim/2026-10-03-public-mechanism-analysis-026/frozen_modules.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+    outs:
+    - results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/stratified_target_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/module_enrichment.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/seed_stability.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/report.md
+  stratified_virtual_ko_033_audit:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r Rscript src/141_audit_virtual_ko_artifacts.R
+    deps:
+    - src/141_audit_virtual_ko_artifacts.R
+    - configs/virtual_ko_033.yaml
+    - results/2026-10-04-stratified-virtual-ko-033/provenance.json
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    - data/processed/D3_GSE160936_glia_seurat.rds
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+    outs:
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit_jobs.tsv
+  stratified_virtual_ko_033_target_retention:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/132_run_stratified_virtual_ko.R configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - src/132_run_stratified_virtual_ko.R
+    - src/130_virtual_ko_cached_backend.R
+    - src/135_sparse_cp_equivalent.R
+    - src/138_implicit_manifold.R
+    - external/virtual_ko_033/pcNet_upstream.R
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    params:
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml:
+      - seeds
+      - gene_min_fraction
+      - cell_min_counts
+      - cell_max_mt_fraction
+      - max_cells_per_donor_region
+      - network_n_net
+      - network_n_cells
+      - network_n_comp
+      - network_q
+      - td_K
+      - td_max_iter
+      - td_max_error
+      - td_n_decimal
+      - ma_n_dim
+      - ncores
+      - accelerated_pcnet
+      - sparse_cp
+      - implicit_manifold
+      - targets_microglia
+      - targets_astrocyte
+      - states
+      - target_retention_min_cells
+      - only_newly_eligible_targets
+    outs:
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+  stratified_virtual_ko_033_target_retention_audit:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/141_audit_virtual_ko_artifacts.R configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - src/141_audit_virtual_ko_artifacts.R
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/provenance.json
+    - data/interim/2026-10-04-stratified-virtual-ko-033
+    - data/processed/D3_GSE160936_glia_seurat.rds
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+    outs:
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit_jobs.tsv
+  stratified_virtual_ko_033_target_retention_summary:
+    cmd: D:\python\python.exe src/133_summarize_virtual_ko.py configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - src/133_summarize_virtual_ko.py
+    - results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - data/interim/2026-10-03-public-mechanism-analysis-026/frozen_modules.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+    outs:
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/stratified_target_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/module_enrichment.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/seed_stability.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/report.md
+  stratified_virtual_ko_033_scientific_report:
+    cmd: D:\python\python.exe src/143_build_virtual_ko_scientific_report.py
+    deps:
+    - src/143_build_virtual_ko_scientific_report.py
+    - src/133_summarize_virtual_ko.py
+    - configs/virtual_ko_033.yaml
+    - configs/virtual_ko_033_target_retention_sensitivity.yaml
+    - docs/decisions/2026-10-04-stratified-virtual-ko-033.md
+    - results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/stratified_target_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/seed_stability.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/module_enrichment.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/provenance.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/stratified_target_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/seed_stability.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/module_enrichment.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/provenance.json
+    outs:
+    - results/2026-10-05-virtual-ko-scientific-report-033
+  virtual_ko_pathways_034:
+    cmd: D:\python\python.exe src/prepare_virtual_ko_pathways_034.py && D:\conda\Scripts\conda.exe
+      run --no-capture-output -n zhang2026-nicotine-copd-r D:\python\python.exe src/run_virtual_ko_pathways_034.py
+      && D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/audit_virtual_ko_GSEA_034.R && D:\python\python.exe src/report_virtual_ko_pathways_034.py
+      && D:\python\python.exe src/finalize_virtual_ko_pathways_034.py
+    deps:
+    - configs/virtual_ko_pathways_034.yaml
+    - src/prepare_virtual_ko_pathways_034.py
+    - src/enrich_virtual_ko_pathways_034.R
+    - src/run_virtual_ko_pathways_034.py
+    - src/report_virtual_ko_pathways_034.py
+    - src/133_summarize_virtual_ko.py
+    - docs/decisions/2026-10-05-virtual-ko-pathways-034.md
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - data/interim/2026-10-03-stage-a-mechanism-030/GO_BP.gmt
+    - data/interim/2026-10-03-stage-a-mechanism-030/KEGG.gmt
+    - data/interim/2026-10-03-stage-a-mechanism-030/Reactome.gmt
+    - src/audit_virtual_ko_GSEA_034.R
+    - src/finalize_virtual_ko_pathways_034.py
+    - tests/test_virtual_ko_pathways_034.R
+    outs:
+    - results/2026-10-05-virtual-ko-pathways-034:
+        persist: true

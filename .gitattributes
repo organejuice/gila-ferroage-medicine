@@ -1,0 +1,2 @@
+# Retain frozen scientific file bytes, including historical CRLF line endings.
+* -text

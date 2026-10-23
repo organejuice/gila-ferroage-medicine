@@ -1,0 +1,36 @@
+stages:
+  virtual_ko_pathways_034:
+    cmd: D:\python\python.exe src/prepare_virtual_ko_pathways_034.py && D:\conda\Scripts\conda.exe
+      run --no-capture-output -n zhang2026-nicotine-copd-r D:\python\python.exe src/run_virtual_ko_pathways_034.py
+      && D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/audit_virtual_ko_GSEA_034.R && D:\python\python.exe src/report_virtual_ko_pathways_034.py
+      && D:\python\python.exe src/finalize_virtual_ko_pathways_034.py
+    deps:
+    - configs/virtual_ko_pathways_034.yaml
+    - src/prepare_virtual_ko_pathways_034.py
+    - src/enrich_virtual_ko_pathways_034.R
+    - src/run_virtual_ko_pathways_034.py
+    - src/report_virtual_ko_pathways_034.py
+    - src/133_summarize_virtual_ko.py
+    - docs/decisions/2026-10-05-virtual-ko-pathways-034.md
+    - results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+    - results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+    - results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+    - results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+    - data/interim/2026-10-03-stage-a-mechanism-030/GO_BP.gmt
+    - data/interim/2026-10-03-stage-a-mechanism-030/KEGG.gmt
+    - data/interim/2026-10-03-stage-a-mechanism-030/Reactome.gmt
+    - src/audit_virtual_ko_GSEA_034.R
+    - src/finalize_virtual_ko_pathways_034.py
+    - tests/test_virtual_ko_pathways_034.R
+    outs:
+    - results/2026-10-05-virtual-ko-pathways-034:
+        persist: true

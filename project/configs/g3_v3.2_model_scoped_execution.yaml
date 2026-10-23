@@ -1,0 +1,51 @@
+run_id: 2026-09-20-disease-side-v3.2-g3-model-scoped
+protocol: docs/protocol/disease_side_v3.2_latest_frozen.md
+reassessment_reason: prior_execution_incorrectly_required_positive_human_donor_meta
+superseded_run: results/archive/2026-09-20-disease-side-v3.2-g3-human-hard-gate-historical
+
+inputs:
+  d2_temporal_effects: results/archive/2026-09-20-disease-side-v3.2-g3-human-hard-gate-historical/tables/D2_G3_temporal_module_effects.tsv
+  human_meta_context: results/archive/2026-09-20-disease-side-v3.2-g3-human-hard-gate-historical/meta/G3_random_effects_meta.tsv
+  g2_decision: results/2026-09-20-disease-side-v3.2-g2/g2_decision.json
+  d2_geo_record: data/interim/GSE227221_geo_full.txt
+
+frozen_interpretation:
+  eligible_evidence_contexts: [human, iPSC, animal]
+  positive_human_result_required: false
+  human_role_when_model_evidence_passes: translation_context_not_veto
+  model_scoped_pass_allowed: true
+
+model_gate:
+  require_positive_M3_timepoint_FDR_below: 0.05
+  require_minimum_biological_replicates_per_group: 3
+  require_positive_non_inflammation_core_timepoint_FDR_below: 0.05
+  require_G2_model_scoped_pass: true
+  cell_composition_test: purified_iMGL_monoculture_passes_by_design
+  require_independent_lactylation_SASP_mechanistic_support: true
+
+external_model_evidence:
+  - evidence_id: Pan_2022_H4K12la_AD_microglia
+    title: Positive feedback regulation of microglial glucose metabolism by histone H4 lysine 12 lactylation in Alzheimer's disease
+    doi: 10.1016/j.cmet.2022.02.013
+    pmid: 35303422
+    role: direct_G2_H4K12la_model_anchor
+    site: H4K12la
+    models: 5XFAD_microglia
+    project_tier: C_publication_level
+    result: H4K12la_up_and_glycolysis_loop_supported
+  - evidence_id: Wei_2023_H3K18la_SASP
+    title: H3K18 lactylation of senescent microglia potentiates brain aging and Alzheimer's disease through the NF-kappaB signaling pathway
+    doi: 10.1186/s12974-023-02879-7
+    pmid: 37697347
+    role: independent_model_lactylation_to_senescence_SASP_bridge
+    site: H3K18la
+    models: BV2;HMC3;FAD4T;APP_PS1;natural_aging
+    project_tier: C_publication_level
+    result: senescence_markers_and_H3K18la_NFkB_SASP_mechanism_supported
+
+claim_boundary:
+  pass_scope: model_level_lactylation_to_senescence_SASP_directional_linkage
+  human_translation: unresolved
+  direct_H4K12la_to_SASP_causality: unresolved
+  D2_donor_generalizability: single_donor_derived_iMGL_line
+

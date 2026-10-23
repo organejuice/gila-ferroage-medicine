@@ -1,0 +1,523 @@
+schema: '2.0'
+stages:
+  stratified_virtual_ko_033_target_retention:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/132_run_stratified_virtual_ko.R configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - path: data/interim/2026-10-04-stratified-virtual-ko-033
+      hash: md5
+      md5: c2d990cd3857a40e2ad4a698af07882f.dir
+      size: 591983324
+      nfiles: 4
+    - path: external/virtual_ko_033/pcNet_upstream.R
+      hash: md5
+      md5: 974ad35b48b4de423f51ecbab21730d3
+      size: 21110
+    - path: src/130_virtual_ko_cached_backend.R
+      hash: md5
+      md5: a1f51cec2d693e2df968d33ea59905b4
+      size: 2238
+    - path: src/132_run_stratified_virtual_ko.R
+      hash: md5
+      md5: 4a49ba292eb5eb5fa3cffd16d6ee912c
+      size: 4999
+    - path: src/135_sparse_cp_equivalent.R
+      hash: md5
+      md5: 168b4a75e00507d2358210feaf2a5789
+      size: 2119
+    - path: src/138_implicit_manifold.R
+      hash: md5
+      md5: f24b518688c2d7b3e246fe2b93e2aa18
+      size: 1706
+    params:
+      configs/virtual_ko_033_target_retention_sensitivity.yaml:
+        accelerated_pcnet: true
+        cell_max_mt_fraction: 0.1
+        cell_min_counts: 1000
+        gene_min_fraction: 0.05
+        implicit_manifold: true
+        ma_n_dim: 2
+        max_cells_per_donor_region: 500
+        ncores: 1
+        network_n_cells: 500
+        network_n_comp: 3
+        network_n_net: 10
+        network_q: 0.9
+        only_newly_eligible_targets: true
+        seeds:
+        - 42
+        - 43
+        sparse_cp: true
+        states:
+        - AD
+        target_retention_min_cells: 25
+        targets_astrocyte:
+        - MMP9
+        - RELA
+        - ALOX12
+        - ALOX15
+        - ALOX5
+        - ABCC1
+        - DPP4
+        - DYRK1A
+        - MPO
+        - NLRP3
+        - PTGS2
+        - SETD7
+        - SNCA
+        targets_microglia:
+        - AKR1B1
+        - LTA4H
+        - ALOX15B
+        - CA2
+        - SNCA
+        - PKM
+        - GAPDH
+        - SLC2A1
+        - MMP9
+        - RELA
+        - DPP4
+        - NLRP3
+        - PTGS2
+        - DYRK1A
+        - SETD7
+        - ALOX5
+        - ALOX12
+        - ALOX15
+        - MPO
+        - ABCC1
+        td_K: 3
+        td_max_error: 1e-05
+        td_max_iter: 1000
+        td_n_decimal: 3
+    outs:
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+      hash: md5
+      md5: 2286834e9bb0626985916a5f2904e4b8.dir
+      size: 292597985
+      nfiles: 41
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+      hash: md5
+      md5: 196b4cd77c826f7f9f7a6b773236d175.dir
+      size: 212084018
+      nfiles: 58
+  stratified_virtual_ko_033_target_retention_audit:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/141_audit_virtual_ko_artifacts.R configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - path: configs/virtual_ko_033_target_retention_sensitivity.yaml
+      hash: md5
+      md5: 887a99fbe41d8518b40838db668406a4
+      size: 1375
+    - path: data/interim/2026-10-04-stratified-virtual-ko-033
+      hash: md5
+      md5: c2d990cd3857a40e2ad4a698af07882f.dir
+      size: 591983324
+      nfiles: 4
+    - path: data/processed/D3_GSE160936_glia_seurat.rds
+      hash: md5
+      md5: 26c64db41e3871bb5e71cf9665c5b45f
+      size: 3728669919
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+      hash: md5
+      md5: 2286834e9bb0626985916a5f2904e4b8.dir
+      size: 292597985
+      nfiles: 41
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+      hash: md5
+      md5: 196b4cd77c826f7f9f7a6b773236d175.dir
+      size: 212084018
+      nfiles: 58
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/provenance.json
+      hash: md5
+      md5: c05060b7d49cef2a1007ff7e13380fc9
+      size: 7164
+    - path: src/141_audit_virtual_ko_artifacts.R
+      hash: md5
+      md5: c52ce1a20947ed9a7b47f30be3e30150
+      size: 4764
+    outs:
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+      hash: md5
+      md5: 8fdfaa980e55032147f1837e2b556609
+      size: 395
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit_jobs.tsv
+      hash: md5
+      md5: 2585391764839f185aed8b8ef273ab17
+      size: 3415
+  stratified_virtual_ko_033_target_retention_summary:
+    cmd: D:\python\python.exe src/133_summarize_virtual_ko.py configs/virtual_ko_033_target_retention_sensitivity.yaml
+    deps:
+    - path: configs/virtual_ko_033_target_retention_sensitivity.yaml
+      hash: md5
+      md5: 887a99fbe41d8518b40838db668406a4
+      size: 1375
+    - path: data/interim/2026-10-03-public-mechanism-analysis-026/frozen_modules.tsv
+      hash: md5
+      md5: 2f27e15d557de01ebc96c113097c8803
+      size: 58425
+    - path: results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+      hash: md5
+      md5: cbb47e08063a1c8c8dcca27a51659e6a
+      size: 2956
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Astrocyte_AD
+      hash: md5
+      md5: 2286834e9bb0626985916a5f2904e4b8.dir
+      size: 292597985
+      nfiles: 41
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/Microglia_AD
+      hash: md5
+      md5: 196b4cd77c826f7f9f7a6b773236d175.dir
+      size: 212084018
+      nfiles: 58
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+      hash: md5
+      md5: 8fdfaa980e55032147f1837e2b556609
+      size: 395
+    - path: src/133_summarize_virtual_ko.py
+      hash: md5
+      md5: 86dd04f90ab6ba027df0a4daf5a79239
+      size: 16007
+    outs:
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+      hash: md5
+      md5: a2b92bce5dfff1da9d2c0127be0a9045
+      size: 4504
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+      hash: md5
+      md5: f9b6ce8cfbbb8d5406342a506909e88d
+      size: 325
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/module_enrichment.tsv
+      hash: md5
+      md5: ec5cd056e5c8fa403829a384538597a1
+      size: 15865
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/report.md
+      hash: md5
+      md5: b87d23b6fed033afe6115f67bd14d201
+      size: 13663
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/seed_stability.tsv
+      hash: md5
+      md5: 7a251c52e8c64463ebae2000ccf1f0bb
+      size: 770
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/stratified_target_summary.tsv
+      hash: md5
+      md5: 7472b97fa42c21a756b17584b0cc8d9e
+      size: 6988
+  stratified_virtual_ko_033:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/132_run_stratified_virtual_ko.R
+    deps:
+    - path: data/interim/2026-10-04-stratified-virtual-ko-033
+      hash: md5
+      md5: c2d990cd3857a40e2ad4a698af07882f.dir
+      size: 591983324
+      nfiles: 4
+    - path: external/virtual_ko_033/pcNet_upstream.R
+      hash: md5
+      md5: 974ad35b48b4de423f51ecbab21730d3
+      size: 21110
+    - path: src/130_virtual_ko_cached_backend.R
+      hash: md5
+      md5: a1f51cec2d693e2df968d33ea59905b4
+      size: 2238
+    - path: src/132_run_stratified_virtual_ko.R
+      hash: md5
+      md5: 4a49ba292eb5eb5fa3cffd16d6ee912c
+      size: 4999
+    - path: src/135_sparse_cp_equivalent.R
+      hash: md5
+      md5: 168b4a75e00507d2358210feaf2a5789
+      size: 2119
+    - path: src/138_implicit_manifold.R
+      hash: md5
+      md5: f24b518688c2d7b3e246fe2b93e2aa18
+      size: 1706
+    params:
+      configs/virtual_ko_033.yaml:
+        accelerated_pcnet: true
+        cell_max_mt_fraction: 0.1
+        cell_min_counts: 1000
+        gene_min_fraction: 0.05
+        implicit_manifold: true
+        ma_n_dim: 2
+        max_cells_per_donor_region: 500
+        ncores: 1
+        network_n_cells: 500
+        network_n_comp: 3
+        network_n_net: 10
+        network_q: 0.9
+        seeds:
+        - 42
+        - 43
+        sparse_cp: true
+        targets_astrocyte:
+        - MMP9
+        - RELA
+        - ALOX12
+        - ALOX15
+        - ALOX5
+        - ABCC1
+        - DPP4
+        - DYRK1A
+        - MPO
+        - NLRP3
+        - PTGS2
+        - SETD7
+        - SNCA
+        targets_microglia:
+        - AKR1B1
+        - LTA4H
+        - ALOX15B
+        - CA2
+        - SNCA
+        - PKM
+        - GAPDH
+        - SLC2A1
+        - MMP9
+        - RELA
+        - DPP4
+        - NLRP3
+        - PTGS2
+        - DYRK1A
+        - SETD7
+        - ALOX5
+        - ALOX12
+        - ALOX15
+        - MPO
+        - ABCC1
+        td_K: 3
+        td_max_error: 1e-05
+        td_max_iter: 1000
+        td_n_decimal: 3
+    outs:
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+      hash: md5
+      md5: 5cb89f0831d279ac46ed43e7cd0623d7.dir
+      size: 295121136
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+      hash: md5
+      md5: 87ed39fbb299a34c00f2d246a37b8e1f.dir
+      size: 318370547
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+      hash: md5
+      md5: 660d58d29b0ddb6af7784b4dd5b0dc44.dir
+      size: 233507724
+      nfiles: 71
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+      hash: md5
+      md5: 4d716615399e7cc6493226e8613f56fa.dir
+      size: 205863311
+      nfiles: 69
+  stratified_virtual_ko_033_audit:
+    cmd: D:\conda\Scripts\conda.exe run --no-capture-output -n zhang2026-nicotine-copd-r
+      Rscript src/141_audit_virtual_ko_artifacts.R
+    deps:
+    - path: configs/virtual_ko_033.yaml
+      hash: md5
+      md5: fd7348cbe4544409155bed680d29be33
+      size: 977
+    - path: data/interim/2026-10-04-stratified-virtual-ko-033
+      hash: md5
+      md5: c2d990cd3857a40e2ad4a698af07882f.dir
+      size: 591983324
+      nfiles: 4
+    - path: data/processed/D3_GSE160936_glia_seurat.rds
+      hash: md5
+      md5: 26c64db41e3871bb5e71cf9665c5b45f
+      size: 3728669919
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+      hash: md5
+      md5: 5cb89f0831d279ac46ed43e7cd0623d7.dir
+      size: 295121136
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+      hash: md5
+      md5: 87ed39fbb299a34c00f2d246a37b8e1f.dir
+      size: 318370547
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+      hash: md5
+      md5: 660d58d29b0ddb6af7784b4dd5b0dc44.dir
+      size: 233507724
+      nfiles: 71
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+      hash: md5
+      md5: 4d716615399e7cc6493226e8613f56fa.dir
+      size: 205863311
+      nfiles: 69
+    - path: results/2026-10-04-stratified-virtual-ko-033/provenance.json
+      hash: md5
+      md5: 6f57b85cbd7bcd205c098f4a81430dcd
+      size: 7118
+    - path: src/141_audit_virtual_ko_artifacts.R
+      hash: md5
+      md5: c52ce1a20947ed9a7b47f30be3e30150
+      size: 4764
+    outs:
+    - path: results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+      hash: md5
+      md5: dd69b04e5383650eed37a41992b33b11
+      size: 397
+    - path: results/2026-10-04-stratified-virtual-ko-033/artifact_audit_jobs.tsv
+      hash: md5
+      md5: f4fff2662d9fc359889414b90b370b06
+      size: 6377
+  stratified_virtual_ko_033_summary:
+    cmd: D:\python\python.exe src/133_summarize_virtual_ko.py
+    deps:
+    - path: configs/virtual_ko_033.yaml
+      hash: md5
+      md5: fd7348cbe4544409155bed680d29be33
+      size: 977
+    - path: data/interim/2026-10-03-public-mechanism-analysis-026/frozen_modules.tsv
+      hash: md5
+      md5: 2f27e15d557de01ebc96c113097c8803
+      size: 58425
+    - path: results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+      hash: md5
+      md5: cbb47e08063a1c8c8dcca27a51659e6a
+      size: 2956
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_AD
+      hash: md5
+      md5: 5cb89f0831d279ac46ed43e7cd0623d7.dir
+      size: 295121136
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Astrocyte_Control
+      hash: md5
+      md5: 87ed39fbb299a34c00f2d246a37b8e1f.dir
+      size: 318370547
+      nfiles: 43
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_AD
+      hash: md5
+      md5: 660d58d29b0ddb6af7784b4dd5b0dc44.dir
+      size: 233507724
+      nfiles: 71
+    - path: results/2026-10-04-stratified-virtual-ko-033/Microglia_Control
+      hash: md5
+      md5: 4d716615399e7cc6493226e8613f56fa.dir
+      size: 205863311
+      nfiles: 69
+    - path: results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+      hash: md5
+      md5: dd69b04e5383650eed37a41992b33b11
+      size: 397
+    - path: src/133_summarize_virtual_ko.py
+      hash: md5
+      md5: 86dd04f90ab6ba027df0a4daf5a79239
+      size: 16007
+    outs:
+    - path: results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+      hash: md5
+      md5: 83c36e60d3931fb0ed3bf138edcea570
+      size: 9068
+    - path: results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+      hash: md5
+      md5: adaa5a0731ecb4cfc0f560389569cb5b
+      size: 327
+    - path: results/2026-10-04-stratified-virtual-ko-033/module_enrichment.tsv
+      hash: md5
+      md5: 83e1fe9f392d512cf2a9a11e4900d0c5
+      size: 65590
+    - path: results/2026-10-04-stratified-virtual-ko-033/report.md
+      hash: md5
+      md5: 9dde86e998b6f3f7db9aff86aeceb97c
+      size: 20619
+    - path: results/2026-10-04-stratified-virtual-ko-033/seed_stability.tsv
+      hash: md5
+      md5: 35da445f9a4b2c43b00b1e144b5e3afd
+      size: 10443
+    - path: results/2026-10-04-stratified-virtual-ko-033/stratified_target_summary.tsv
+      hash: md5
+      md5: 1308659faa5f60dd14bece23bbe9ed1a
+      size: 13993
+  stratified_virtual_ko_033_scientific_report:
+    cmd: D:\python\python.exe src/143_build_virtual_ko_scientific_report.py
+    deps:
+    - path: configs/virtual_ko_033.yaml
+      hash: md5
+      md5: fd7348cbe4544409155bed680d29be33
+      size: 977
+    - path: configs/virtual_ko_033_target_retention_sensitivity.yaml
+      hash: md5
+      md5: 887a99fbe41d8518b40838db668406a4
+      size: 1375
+    - path: docs/decisions/2026-10-04-stratified-virtual-ko-033.md
+      hash: md5
+      md5: 5c03a79e13920ee41039659b8d72c6c1
+      size: 8438
+    - path: results/2026-10-04-expanded-docking-20/20靶点分析汇总.csv
+      hash: md5
+      md5: cbb47e08063a1c8c8dcca27a51659e6a
+      size: 2956
+    - path: results/2026-10-04-stratified-virtual-ko-033/all_context_summary.tsv
+      hash: md5
+      md5: 83c36e60d3931fb0ed3bf138edcea570
+      size: 9068
+    - path: results/2026-10-04-stratified-virtual-ko-033/artifact_audit.json
+      hash: md5
+      md5: dd69b04e5383650eed37a41992b33b11
+      size: 397
+    - path: results/2026-10-04-stratified-virtual-ko-033/completion_audit.json
+      hash: md5
+      md5: adaa5a0731ecb4cfc0f560389569cb5b
+      size: 327
+    - path: results/2026-10-04-stratified-virtual-ko-033/module_enrichment.tsv
+      hash: md5
+      md5: 83e1fe9f392d512cf2a9a11e4900d0c5
+      size: 65590
+    - path: results/2026-10-04-stratified-virtual-ko-033/provenance.json
+      hash: md5
+      md5: 6f57b85cbd7bcd205c098f4a81430dcd
+      size: 7118
+    - path: results/2026-10-04-stratified-virtual-ko-033/seed_stability.tsv
+      hash: md5
+      md5: 35da445f9a4b2c43b00b1e144b5e3afd
+      size: 10443
+    - path: results/2026-10-04-stratified-virtual-ko-033/stratified_target_summary.tsv
+      hash: md5
+      md5: 1308659faa5f60dd14bece23bbe9ed1a
+      size: 13993
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/all_context_summary.tsv
+      hash: md5
+      md5: a2b92bce5dfff1da9d2c0127be0a9045
+      size: 4504
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/artifact_audit.json
+      hash: md5
+      md5: 8fdfaa980e55032147f1837e2b556609
+      size: 395
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/completion_audit.json
+      hash: md5
+      md5: f9b6ce8cfbbb8d5406342a506909e88d
+      size: 325
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/module_enrichment.tsv
+      hash: md5
+      md5: ec5cd056e5c8fa403829a384538597a1
+      size: 15865
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/provenance.json
+      hash: md5
+      md5: c05060b7d49cef2a1007ff7e13380fc9
+      size: 7164
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/seed_stability.tsv
+      hash: md5
+      md5: 7a251c52e8c64463ebae2000ccf1f0bb
+      size: 770
+    - path: results/2026-10-05-virtual-ko-target-retention-sensitivity-033/stratified_target_summary.tsv
+      hash: md5
+      md5: 7472b97fa42c21a756b17584b0cc8d9e
+      size: 6988
+    - path: src/133_summarize_virtual_ko.py
+      hash: md5
+      md5: 86dd04f90ab6ba027df0a4daf5a79239
+      size: 16007
+    - path: src/143_build_virtual_ko_scientific_report.py
+      hash: md5
+      md5: e287cf30830c1b1b02ec37f81806b4fb
+      size: 14090
+    outs:
+    - path: results/2026-10-05-virtual-ko-scientific-report-033
+      hash: md5
+      md5: 0e349135079c14d411cab529c19c3e7c.dir
+      size: 67269
+      nfiles: 20

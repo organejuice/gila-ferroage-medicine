@@ -1,0 +1,19 @@
+embeddings:
+  current: esm2-cellxgene
+  esm2-cellxgene:
+    all_embeddings: F:/益智地黄汤_小胶质_表观遗传_免疫微环境/data/raw/MAP_official/Homo_sapiens.GRCh38.gene_symbol_to_embedding_ESM2.pt
+    ds_emb_mapping: null
+    valid_genes_masks: null
+    size: 5120
+    num: 19790
+
+model:
+  use_flash_attention: true
+  rda: true
+  counts: true
+  dataset_correction: true
+
+dataset:
+  current: map-local
+  map-local:
+    num_datasets: 14420

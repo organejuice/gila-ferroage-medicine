@@ -1,0 +1,16 @@
+{
+ "run_id":"2026-10-03-gse286094-mechanism-028",
+ "accession":"GSE286094",
+ "parent_run":"2026-10-03-disease-interface-perturbation-audit-027",
+ "input":"official filtered 10x GRCm39, Chromium 3prime v3; cortex CD45+ sorted cells",
+ "analysis_scope":"Atg7 genotype by 5xFAD model; no compound/formula efficacy; no G2c/G6 reopening",
+ "independence_gate":"explicit biological libraries retained; animal/pool identity must be resolved or inference withheld",
+ "sample_groups":{"WT":3,"KO":3,"AD_WT":2,"AD_KO":3},
+ "qc_gate":"verify all triplets, sparse integer counts and barcode uniqueness; assess per-sample core metrics; required scDblFinder before qualified cell analyses; filtered-only matrices cannot establish empty-droplet ambient correction",
+ "statistics_gate":"no cell-level p-values; no inferential effects until independent biological unit and QC are qualified; no invented sex/batch",
+ "prospective_contrasts":["KO-WT","AD_KO-AD_WT","AD_WT-WT","(AD_KO-AD_WT)-(KO-WT)"],
+ "seed":42,
+ "claim_ceiling":"C0",
+ "network":{"timeout_seconds":90,"attempts":3,"parallel_files":4},
+ "reproducibility":"local input audit and offline replay; remote unconfigured"
+}

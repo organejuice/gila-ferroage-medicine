@@ -1,0 +1,19 @@
+addendum_id: G6-EXEC-2026-09-25-008
+date: 2026-09-25
+applies_to_execution_lock: G6-EXEC-2026-09-24-001
+status: LOCKED_PRE_EFFECT_SENSITIVITY_COMPLETION
+scope: report_cell_type_abundance_separately_from_state_scores
+changes_to_primary_estimand_or_G6_pass_rule: false
+
+abundance_sensitivity:
+  measures: [mean_normalized_MG_RCTD_weight, mean_normalized_ASC_RCTD_weight]
+  bins: non_rejected_spatial_bins
+  unit: donor
+  age_adjusted_model: abundance ~ diagnosis + age_midpoint
+  unadjusted_sensitivity: Welch_two_sample
+  confidence_interval: 95_percent_t_interval
+  multiplicity: BH_across_two_abundance_measures
+  contributes_to_G6_pass: false
+
+RCTD_refit_required: false
+effects_used: false
